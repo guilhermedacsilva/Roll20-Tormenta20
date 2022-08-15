@@ -1,0 +1,11 @@
+body {
+    width: 770px;
+    padding: 0 15px;
+}
+.coluna300 {
+    width: 200px;
+}
+.nome-click {
+    cursor: pointer;
+    text-decoration: underline;
+}
