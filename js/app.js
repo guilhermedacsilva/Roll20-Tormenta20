@@ -12,6 +12,8 @@ function prepararLinkPoder(nTd, sData, oData, iRow, iCol) {
 }
 
 $(document).ready(function () {
+  gerarArquivoMagias();
+  return;
   $('#tabelaPoderes').DataTable({
     //info: false,
     data: dbPoderes,
@@ -26,6 +28,14 @@ $(document).ready(function () {
     ],
   });
 });
+
+function gerarArquivoMagias() {
+  let html = '';
+  for (let [_, magia] of Object.entries(allSpells)) {
+    html += magia.nome + '<br>';
+  }
+  $('body').html(html);
+}
 
 function fichaInserirPoder(poder, colunaDireita) {
   console.log('fichaInserirPoder()');
