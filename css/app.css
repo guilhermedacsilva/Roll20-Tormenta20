@@ -9,3 +9,6 @@ body {
     cursor: pointer;
     text-decoration: underline;
 }
+.margin-bottom-10 {
+    margin-bottom: 10px;
+}

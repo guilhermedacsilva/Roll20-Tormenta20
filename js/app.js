@@ -12,8 +12,7 @@ function prepararLinkPoder(nTd, sData, oData, iRow, iCol) {
 }
 
 $(document).ready(function () {
-  gerarArquivoMagias();
-  return;
+  //gerarArquivoMagias(); return;
   $('#tabelaPoderes').DataTable({
     //info: false,
     data: dbPoderes,
@@ -29,11 +28,21 @@ $(document).ready(function () {
   });
 });
 
+
 function gerarArquivoMagias() {
-  let html = '';
+  let html = 'dbMagias = [<br>';
   for (let [_, magia] of Object.entries(allSpells)) {
-    html += magia.nome + '<br>';
+    html += '{<br>';
+    html += 'circulo: '+ magia.spellCircle + ',<br>';
+    html += 'nome: "'+ magia.nome + '",<br>';
+    html += 'execucao: "'+ magia.execucao + '",<br>';
+    html += 'alcance: "'+ magia.alcance + '",<br>';
+    html += 'alvo: "'+ magia.alvo + '",<br>';
+    html += 'duracao: "'+ magia.duracao + '",<br>';
+    html += 'escola: "'+ magia.school + '",<br>';
+    html += '},<br>';
   }
+  html += '];';
   $('body').html(html);
 }
 

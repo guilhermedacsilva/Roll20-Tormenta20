@@ -1,9 +1,9 @@
 spellsCircles = {
-    c1 : '1º Circulo',
-    c2 : '2º Circulo',
-    c3 : '3º Circulo',
-    c4 : '4º Circulo',
-    c5 : '5º Circulo',
+    c1 : 1,
+    c2 : 2,
+    c3 : 3,
+    c4 : 4,
+    c5 : 5,
 };
 
 spellsCircle1Names = {
@@ -227,7 +227,7 @@ spellsCircle1 = {
     alcance: 'Curto',
     alvo: 'Alimento para 1 criatura',
     duracao: 'Cena',
-    school: 'Trans',
+    school: 'Transmutação',
     aprimoramentos: [
       {
         addPm: 0,
@@ -251,7 +251,7 @@ spellsCircle1 = {
     alvo: '1 animal',
     duracao: 'Cena',
     resistencia: 'Vontade anula',
-    school: 'Encan',
+    school: 'Encantamento',
     aprimoramentos: [
       {
         addPm: 1,
@@ -279,7 +279,7 @@ spellsCircle1 = {
     alvo: '1 criatura',
     duracao: 'Instantânea',
     resistencia: 'Vontade parcial',
-    school: 'Encan',
+    school: 'Encantamento',
     aprimoramentos: [
       {
         addPm: 1,
@@ -302,7 +302,7 @@ spellsCircle1 = {
     alcance: 'Curto',
     area: 'Esfera de 9m de raio',
     duracao: '1 dia',
-    school: 'Abjur',
+    school: 'Abjuração',
     aprimoramentos: [
       {
         addPm: 2,
@@ -326,7 +326,7 @@ spellsCircle1 = {
     alvo: '1 animal ou humanoide de ND 2 ou menor',
     duracao: 'Cena',
     resistencia: 'Vontade parcial',
-    school: 'Necro',
+    school: 'Necromancia',
     aprimoramentos: [
       {
         addPm: 2,
@@ -350,7 +350,7 @@ spellsCircle1 = {
     alvo: 'Quadrado de 3m ou 1 objeto',
     duracao: 'Cena',
     resistencia: 'Reflexos',
-    school: 'Conv',
+    school: 'Convocação',
     aprimoramentos: [
       {
         addPm: 1,
@@ -373,7 +373,7 @@ spellsCircle1 = {
     alcance: 'Pessoal',
     alvo: 'Você',
     duracao: 'Cena',
-    school: 'Conv',
+    school: 'Convocação',
     aprimoramentos: [
       {
         addPm: 1,
@@ -404,7 +404,7 @@ spellsCircle1 = {
     alcance: 'Toque',
     alvo: '1 arma',
     duracao: 'Cena',
-    school: 'Trans',
+    school: 'Transmutação',
     aprimoramentos: [
       {
         addPm: 2,
@@ -423,7 +423,7 @@ spellsCircle1 = {
     alcance: 'Pessoal',
     alvo: 'Você',
     duracao: 'Cena',
-    school: 'Abjur',
+    school: 'Abjuração',
   },
   [spellsCircle1Names.armamentoDaNatureza]: {
     spellCircle: spellsCircles.c1,
@@ -432,7 +432,7 @@ spellsCircle1 = {
     alcance: 'Toque',
     alvo: '1 arma',
     duracao: 'Cena',
-    school: 'Trans',
+    school: 'Transmutação',
     aprimoramentos: [
       {
         addPm: 1,
@@ -459,7 +459,7 @@ spellsCircle1 = {
     alcance: 'Longo',
     alvo: '1 criatura',
     duracao: 'Instantânea',
-    school: 'Adiv',
+    school: 'Advinhação',
     aprimoramentos: [
       {
         addPm: 1,
@@ -486,7 +486,7 @@ spellsCircle1 = {
     alcance: 'Curto',
     alvo: 'Criaturas escolhidas',
     duracao: 'Cena',
-    school: 'Encan',
+    school: 'Encantamento',
     aprimoramentos: [
       {
         addPm: 1,
@@ -505,7 +505,7 @@ spellsCircle1 = {
     alcance: 'Curto',
     alvo: '1 arma',
     duracao: 'Cena',
-    school: 'Conv',
+    school: 'Convocação',
     aprimoramentos: [
       {
         addPm: 0,
@@ -529,7 +529,7 @@ spellsCircle1 = {
     alvo: '1 humanoide',
     duracao: '1 rodada',
     resistencia: 'Vontade anula',
-    school: 'Encan',
+    school: 'Encantamento',
     aprimoramentos: [
       {
         addPm: 1,
@@ -549,7 +549,7 @@ spellsCircle1 = {
     alvo: '1 criatura ou texto',
     duracao: 'Cena',
     resistencia: 'Vontade anula',
-    school: 'Adiv',
+    school: 'Advinhação',
     aprimoramentos: [
       {
         addPm: 1,
@@ -576,7 +576,7 @@ spellsCircle1 = {
     alcance: 'Pessoal',
     alvo: 'Você',
     duracao: '1 rodada',
-    school: 'Adiv',
+    school: 'Advinhação',
     aprimoramentos: [
       {
         addPm: 2,
@@ -603,7 +603,7 @@ spellsCircle1 = {
     alcance: 'Curto',
     alvo: '1 criatura conjurada',
     duracao: 'Sustentada',
-    school: 'Conv',
+    school: 'Convocação',
     aprimoramentos: [
       {
         addPm: 1,
@@ -666,7 +666,7 @@ spellsCircle1 = {
     alcance: 'Longo',
     area: 'Esfera com 9m de raio',
     duracao: '1 dia',
-    school: 'Evoc',
+    school: 'Evocação',
     aprimoramentos: [
       {
         addPm: 1,
@@ -690,7 +690,7 @@ spellsCircle1 = {
     area: 'quadrado com 9m de lado',
     duracao: 'Cena',
     resistencia: 'Reflexos anula',
-    school: 'Trans',
+    school: 'Transmutação',
     aprimoramentos: [
       {
         addPm: 0,
@@ -717,7 +717,7 @@ spellsCircle1 = {
     alcance: 'Curto',
     alvo: 'Elemento escolhido',
     duracao: 'Instantânea',
-    school: 'Conv',
+    school: 'Convocação',
     aprimoramentos: [
       {
         addPm: 1,
@@ -784,7 +784,7 @@ spellsCircle1 = {
     alcance: 'Toque',
     alvo: '1 criatura',
     duracao: 'Instantânea',
-    school: 'Evoc',
+    school: 'Evocação',
     aprimoramentos: [
       {
         addPm: 0,
@@ -820,7 +820,7 @@ spellsCircle1 = {
     alvo: '1 critura ou objeto mundano pequeno',
     duracao: 'Instantânea',
     resistencia: 'Fortitude parcial ou Reflexos anula',
-    school: 'Evoc',
+    school: 'Evocação',
     aprimoramentos: [
       {
         addPm: 2,
@@ -855,7 +855,7 @@ spellsCircle1 = {
     alcance: 'Pessoal',
     alvo: 'Esfera de 9m de raio',
     duracao: 'Instantânea',
-    school: 'Adiv',
+    school: 'Advinhação',
     aprimoramentos: [
       {
         addPm: 0,
@@ -915,7 +915,7 @@ spellsCircle1 = {
     alvo: '1 humanoide',
     duracao: 'Cena',
     resistencia: 'Vontade anula',
-    school: 'Encan',
+    school: 'Encantamento',
     aprimoramentos: [
       {
         addPm: 2,
@@ -938,7 +938,7 @@ spellsCircle1 = {
     alcance: 'Curto',
     alvo: '1 criatura',
     duracao: '1 turno',
-    school: 'Abjur',
+    school: 'Abjuração',
     aprimoramentos: [
       {
         addPm: 1,
@@ -970,7 +970,7 @@ spellsCircle1 = {
     alvo: '1 objeto',
     duracao: 'Cena',
     resistencia: 'Vontade anula',
-    school: 'Necro',
+    school: 'Necromancia',
     aprimoramentos: [
       {
         addPm: 1,
@@ -1001,7 +1001,7 @@ spellsCircle1 = {
     alcance: '6m',
     area: 'Cone',
     duracao: 'Instantânea',
-    school: 'Evoc',
+    school: 'Evocação',
     aprimoramentos: [
       {
         addPm: 0,
@@ -1025,7 +1025,7 @@ spellsCircle1 = {
     alvo: 'Criaturas escolhidas de ND 2 ou menor',
     duracao: '1d4 rodadas',
     resistencia: 'Vontade anula',
-    school: 'Encan',
+    school: 'Encantamento',
     aprimoramentos: [
       {
         addPm: 0,
@@ -1088,7 +1088,7 @@ spellsCircle1 = {
     alvo: '1 criatura',
     duracao: 'Instantânea',
     resistencia: 'Fortitude reduz à metade',
-    school: 'Necro',
+    school: 'Necromancia',
     aprimoramentos: [
       {
         addPm: 1,
@@ -1148,7 +1148,7 @@ spellsCircle1 = {
     alvo: '1 objeto',
     duracao: 'Cena',
     resistencia: 'Vontade anula',
-    school: 'Evoc',
+    school: 'Evocação',
     aprimoramentos: [
       {
         addPm: 1,
@@ -1179,7 +1179,7 @@ spellsCircle1 = {
     alcance: 'Curto',
     area: 'Nuvem com 6m de raio e altura',
     duracao: 'Cena',
-    school: 'Conv',
+    school: 'Convocação',
     aprimoramentos: [
       {
         addPm: 1,
@@ -1214,7 +1214,7 @@ spellsCircle1 = {
     alcance: 'Curto',
     alvo: '1 criatura',
     duracao: 'Cena',
-    school: 'Adiv',
+    school: 'Advinhação',
     aprimoramentos: [
       {
         addPm: 0,
@@ -1238,7 +1238,7 @@ spellsCircle1 = {
     alvo: 'Criaturas escolhidas',
     duracao: 'Cena',
     resistencia: 'Nenhuma',
-    school: 'Necro',
+    school: 'Necromancia',
     aprimoramentos: [
       {
         addPm: 2,
@@ -1253,7 +1253,7 @@ spellsCircle1 = {
     alcance: 'Toque',
     alvo: '1 criatura',
     duracao: 'Cena',
-    school: 'Trans',
+    school: 'Transmutação',
     aprimoramentos: [
       {
         addPm: 1,
@@ -1280,7 +1280,7 @@ spellsCircle1 = {
     alcance: 'Longo',
     area: 'Esfera com 9m de raio',
     duracao: '1 dia',
-    school: 'Necro',
+    school: 'Necromancia',
     aprimoramentos: [
       {
         addPm: 1,
@@ -1303,7 +1303,7 @@ spellsCircle1 = {
     alcance: 'Toque',
     alvo: '1 criatura',
     duracao: 'Cena',
-    school: 'Abjur',
+    school: 'Abjuração',
     aprimoramentos: [
       {
         addPm: 2,
@@ -1330,7 +1330,7 @@ spellsCircle1 = {
     alcance: 'Curto',
     alvo: '1 criatura ou objeto com até 200kg',
     duracao: 'Até chegar ao solo ou cena, o que vier primeiro',
-    school: 'Trans',
+    school: 'Transmutação',
     aprimoramentos: [
       {
         addPm: 0,
@@ -1350,7 +1350,7 @@ spellsCircle1 = {
     alvo: '1 criatura',
     duracao: 'Cena',
     resistencia: 'Fortitude parcial',
-    school: 'Necro',
+    school: 'Necromancia',
     aprimoramentos: [
       {
         addPm: 0,
@@ -1373,7 +1373,7 @@ spellsCircle1 = {
     alcance: 'Toque',
     alvo: '1 criatura',
     duracao: 'Cena',
-    school: 'Abjur',
+    school: 'Abjuração',
     aprimoramentos: [
       {
         addPm: 2,
@@ -1405,7 +1405,7 @@ spellsCircle1 = {
     alvo: '1 criatura',
     duracao: 'Cena',
     resistencia: 'Vontade anula',
-    school: 'Abjur',
+    school: 'Abjuração',
     aprimoramentos: [
       {
         addPm: 1,
@@ -1424,7 +1424,7 @@ spellsCircle1 = {
     alcance: 'Médio',
     alvo: 'Até 2 criaturas',
     duracao: 'Instantânea',
-    school: 'Evoc',
+    school: 'Evocação',
     aprimoramentos: [
       {
         addPm: 2,
@@ -1452,7 +1452,7 @@ spellsCircle1 = {
     alvo: '1 criatura de ND 2 ou menor',
     duracao: 'Cena',
     resistencia: 'Vontade parcial',
-    school: 'Encan',
+    school: 'Encantamento',
     aprimoramentos: [
       {
         addPm: 2,
@@ -1483,7 +1483,7 @@ spellsCircle1 = {
     alcance: 'Toque',
     alvo: '1 criatura',
     duracao: '1 dia',
-    school: 'Abjur',
+    school: 'Abjuração',
     aprimoramentos: [
       {
         addPm: 5,
@@ -1499,7 +1499,7 @@ spellsCircle1 = {
     area: 'Cubo com 6m de lado',
     duracao: 'Cena',
     resistencia: 'Reflexos anula',
-    school: 'Conv',
+    school: 'Convocação',
     aprimoramentos: [
       {
         addPm: 1,
@@ -1523,7 +1523,7 @@ spellsCircle1 = {
     alvo: '1 criatura',
     duracao: 'Instantânea',
     resistencia: 'Fortitude reduz à metade',
-    school: 'Evoc',
+    school: 'Evocação',
     aprimoramentos: [
       {
         addPm: 1,
@@ -1546,7 +1546,7 @@ spellsCircle1 = {
     alcance: 'Toque',
     alvo: '1 objeto Grande ou menor',
     duracao: 'Permanente',
-    school: 'Abjur',
+    school: 'Abjuração',
     aprimoramentos: [
       {
         addPm: 0,
@@ -1574,7 +1574,7 @@ spellsCircle1 = {
     alvo: '1 animal ou humanoide',
     duracao: 'Cena',
     resistencia: 'Vontade parcial',
-    school: 'Encan',
+    school: 'Encantamento',
     aprimoramentos: [
       {
         addPm: 1,
@@ -1601,7 +1601,7 @@ spellsCircle1 = {
     alcance: 'Toque',
     alvo: 'Matéria-prima, como madeeira, rochas, ossos',
     duracao: 'Cena',
-    school: 'Trans',
+    school: 'Transmutação',
     aprimoramentos: [
       {
         addPm: 0,
@@ -1636,7 +1636,7 @@ spellsCircle1 = {
     alcance: 'Toque',
     alvo: 'Você',
     duracao: 'Cena',
-    school: 'Adiv',
+    school: 'Advinhação',
     aprimoramentos: [
       {
         addPm: 1,
@@ -1659,7 +1659,7 @@ spellsCircle1 = {
     alcance: 'Pessoal',
     alvo: 'Você',
     duracao: 'Instantânea',
-    school: 'Necro',
+    school: 'Necromancia',
     aprimoramentos: [
       {
         addPm: 2,
@@ -1681,7 +1681,7 @@ spellsCircle2 = {
     alcance: 'Pessoal',
     alvo: 'Você',
     duracao: 'Instantânea',
-    school: 'Adiv',
+    school: 'Advinhação',
     aprimoramentos: [
       {
         addPm: 3,
@@ -1709,7 +1709,7 @@ spellsCircle2 = {
     alvo: '1 humanoide',
     duracao: 'Cena',
     resistencia: 'Vontade anula',
-    school: 'Encan',
+    school: 'Encantamento',
   },
   [spellsCircle2Names.campoDeForca]: {
     spellCircle: spellsCircles.c2,
@@ -1719,7 +1719,7 @@ spellsCircle2 = {
     alvo: 'Você',
     duracao: 'Cena',
     resistencia: '',
-    school: 'Abjur',
+    school: 'Abjuração',
     aprimoramentos: [
       {
         addPm: 1,
@@ -1747,7 +1747,7 @@ spellsCircle2 = {
     alvo: '1 criatura ou 1 objeto mágico ou esfera com 3m de raio',
     duracao: 'Instantânea',
     resistencia: '',
-    school: 'Abjur',
+    school: 'Abjuração',
     aprimoramentos: [
       {
         addPm: 12,
@@ -1763,7 +1763,7 @@ spellsCircle2 = {
     alvo: 'Domo com 6m de raio',
     duracao: '1 dia',
     resistencia: '',
-    school: 'Abjur',
+    school: 'Abjuração',
     aprimoramentos: [
       {
         addPm: 1,
@@ -1791,7 +1791,7 @@ spellsCircle2 = {
     alvo: '1 objeto ou passagem de até 6m de largura',
     duracao: 'Permanente ou até descarregar',
     resistencia: 'Veja o texto',
-    school: 'Abjur',
+    school: 'Abjuração',
     aprimoramentos: [
       {
         addPm: 1,
@@ -1819,7 +1819,7 @@ spellsCircle2 = {
     alvo: '2 criaturas voluntárias',
     duracao: '1 dia',
     resistencia: '',
-    school: 'Adiv',
+    school: 'Advinhação',
     aprimoramentos: [
       {
         addPm: 2,
@@ -1839,7 +1839,7 @@ spellsCircle2 = {
     alvo: 'Círculo com 90m de raio',
     duracao: 'Cena',
     resistencia: '',
-    school: 'Adiv',
+    school: 'Advinhação',
     aprimoramentos: [
       {
         addPm: 0,
@@ -1859,7 +1859,7 @@ spellsCircle2 = {
     alvo: 'Superfície ou objeto plano',
     duracao: 'Cena',
     resistencia: '',
-    school: 'Adiv',
+    school: 'Advinhação',
     aprimoramentos: [
       {
         addPm: 3,
@@ -1875,7 +1875,7 @@ spellsCircle2 = {
     alvo: '1 criatura',
     duracao: 'Cena',
     resistencia: 'Reflexos anula',
-    school: 'Conv',
+    school: 'Convocação',
     aprimoramentos: [
       {
         addPm: 2,
@@ -1899,7 +1899,7 @@ spellsCircle2 = {
     alvo: '',
     duracao: '1 dia',
     resistencia: '',
-    school: 'Conv',
+    school: 'Convocação',
     aprimoramentos: [
       {
         addPm: 1,
@@ -1927,7 +1927,7 @@ spellsCircle2 = {
     alvo: 'Você',
     duracao: 'Instantânea',
     resistencia: '',
-    school: 'Conv',
+    school: 'Convocação',
     aprimoramentos: [
       {
         addPm: 1,
@@ -1955,7 +1955,7 @@ spellsCircle2 = {
     alvo: 'Criaturas Conjuradas',
     duracao: '1 cena',
     resistencia: '',
-    school: 'Conv',
+    school: 'Convocação',
     aprimoramentos: [
       {
         addPm: 2,
@@ -1975,7 +1975,7 @@ spellsCircle2 = {
     alvo: 'Cone',
     duracao: 'Cena',
     resistencia: 'Vontade Parcial',
-    school: 'Encan',
+    school: 'Encantamento',
     aprimoramentos: [
       {
         addPm: 2,
@@ -1999,7 +1999,7 @@ spellsCircle2 = {
     alvo: '1 criatura',
     duracao: 'Cena',
     resistencia: 'Vontade Anula',
-    school: 'Encan',
+    school: 'Encantamento',
     aprimoramentos: [
       {
         addPm: 3,
@@ -2019,7 +2019,7 @@ spellsCircle2 = {
     alvo: 'Esfera com 6m de raio',
     duracao: 'Instantânea',
     resistencia: 'Reflexos reduz à metade',
-    school: 'Evoc',
+    school: 'Evocação',
     aprimoramentos: [
       {
         addPm: 2,
@@ -2043,7 +2043,7 @@ spellsCircle2 = {
     alvo: '1 criatura ou objeto',
     duracao: 'Instantânea',
     resistencia: 'Reflexos Parcial',
-    school: 'Evoc',
+    school: 'Evocação',
     aprimoramentos: [
       {
         addPm: 1,
@@ -2067,7 +2067,7 @@ spellsCircle2 = {
     alvo: 'Linha',
     duracao: 'Instantânea',
     resistencia: 'Reflexos reduz à metade',
-    school: 'Evoc',
+    school: 'Evocação',
     aprimoramentos: [
       {
         addPm: 1,
@@ -2087,7 +2087,7 @@ spellsCircle2 = {
     alvo: 'Cone',
     duracao: 'Instantânea',
     resistencia: 'Fortitude parcial',
-    school: 'Evoc',
+    school: 'Evocação',
     aprimoramentos: [
       {
         addPm: 2,
@@ -2195,7 +2195,7 @@ spellsCircle2 = {
     alvo: '6 mortos-vivos',
     duracao: 'Sustentada',
     resistencia: '',
-    school: 'Necro',
+    school: 'Necromancia',
     aprimoramentos: [
       {
         addPm: 2,
@@ -2219,7 +2219,7 @@ spellsCircle2 = {
     alvo: '1 criatura',
     duracao: 'Instantânea',
     resistencia: 'Fortitude reduz à metade',
-    school: 'Necro',
+    school: 'Necromancia',
     aprimoramentos: [
       {
         addPm: 1,
@@ -2239,7 +2239,7 @@ spellsCircle2 = {
     alvo: '1 criatura',
     duracao: 'Instantânea',
     resistencia: 'Fortitude reduz à metade',
-    school: 'Necro',
+    school: 'Necromancia',
     aprimoramentos: [
       {
         addPm: 1,
@@ -2263,7 +2263,7 @@ spellsCircle2 = {
     alvo: '1 objeto',
     duracao: '1 dia',
     resistencia: '',
-    school: 'Trans',
+    school: 'Transmutação',
     aprimoramentos: [
       {
         addPm: 1,
@@ -2291,7 +2291,7 @@ spellsCircle2 = {
     alvo: 'Você',
     duracao: 'Cena',
     resistencia: '',
-    school: 'Trans',
+    school: 'Transmutação',
     aprimoramentos: [
       {
         addPm: 1,
@@ -2331,7 +2331,7 @@ spellsCircle2 = {
     alvo: '1 criatura',
     duracao: 'Cena',
     resistencia: '',
-    school: 'Trans',
+    school: 'Transmutação',
     aprimoramentos: [
       {
         addPm: 7,
@@ -2351,7 +2351,7 @@ spellsCircle2 = {
     alvo: 'Cubo com 9m de lado',
     duracao: '1 dia',
     resistencia: 'Vontade Parcial',
-    school: 'Abjur',
+    school: 'Abjuração',
     aprimoramentos: [
       {
         addPm: 1,
@@ -2375,7 +2375,7 @@ spellsCircle2 = {
     alvo: '',
     duracao: '',
     resistencia: '',
-    school: 'Abjur',
+    school: 'Abjuração',
     aprimoramentos: [
       {
         addPm: 12,
@@ -2391,7 +2391,7 @@ spellsCircle2 = {
     alvo: '1 traje, armadura ou escudo',
     duracao: '1 dia',
     resistencia: '',
-    school: 'Abjur',
+    school: 'Abjuração',
     aprimoramentos: [
       {
         addPm: 3,
@@ -2415,7 +2415,7 @@ spellsCircle2 = {
     alvo: 'Até 5 criaturas',
     duracao: 'Cena',
     resistencia: '',
-    school: 'Adiv',
+    school: 'Advinhação',
     aprimoramentos: [
       {
         addPm: 1,
@@ -2435,7 +2435,7 @@ spellsCircle2 = {
     alvo: '',
     duracao: 'Cena',
     resistencia: '',
-    school: 'Adiv',
+    school: 'Advinhação',
     aprimoramentos: [
       {
         addPm: 1,
@@ -2463,7 +2463,7 @@ spellsCircle2 = {
     alvo: '1 criatura',
     duracao: 'Cena',
     resistencia: '',
-    school: 'Adiv',
+    school: 'Advinhação',
     aprimoramentos: [
       {
         addPm: 3,
@@ -2487,7 +2487,7 @@ spellsCircle2 = {
     alvo: 'Você',
     duracao: 'Cena',
     resistencia: '',
-    school: 'Adiv',
+    school: 'Advinhação',
     aprimoramentos: [
       {
         addPm: 1,
@@ -2507,7 +2507,7 @@ spellsCircle2 = {
     alvo: '1 enxame Médio (quadrado de 1,5m)',
     duracao: 'Sustentada',
     resistencia: 'Fortitude Reduz à Metade',
-    school: 'Conv',
+    school: 'Convocação',
     aprimoramentos: [
       {
         addPm: 2,
@@ -2535,7 +2535,7 @@ spellsCircle2 = {
     alvo: '1 criatura',
     duracao: 'Instantânea',
     resistencia: 'Fortitude reduz à metade',
-    school: 'Conv',
+    school: 'Convocação',
     aprimoramentos: [
       {
         addPm: 1,
@@ -2563,7 +2563,7 @@ spellsCircle2 = {
     alvo: '1 animal prestativo',
     duracao: '1 dia',
     resistencia: '',
-    school: 'Encan',
+    school: 'Encantamento',
     aprimoramentos: [
       {
         addPm: 1,
@@ -2587,7 +2587,7 @@ spellsCircle2 = {
     alvo: 'Todas as criaturas (veja texto)',
     duracao: 'Sustentada',
     resistencia: '',
-    school: 'Encan',
+    school: 'Encantamento',
     aprimoramentos: [
       {
         addPm: 2,
@@ -2615,7 +2615,7 @@ spellsCircle2 = {
     alvo: 'Ver texto',
     duracao: 'Cena',
     resistencia: '',
-    school: 'Evoc',
+    school: 'Evocação',
     aprimoramentos: [
       {
         addPm: 1,
@@ -2639,7 +2639,7 @@ spellsCircle2 = {
     alvo: '1 criatura',
     duracao: 'Instantânea',
     resistencia: '',
-    school: 'Evoc',
+    school: 'Evocação',
     aprimoramentos: [
       {
         addPm: 2,
@@ -2667,7 +2667,7 @@ spellsCircle2 = {
     alvo: 'Linha',
     duracao: 'Instantânea',
     resistencia: 'Reflexos (veja o texto)',
-    school: 'Evoc',
+    school: 'Evocação',
     aprimoramentos: [
       {
         addPm: 0,
@@ -2695,7 +2695,7 @@ spellsCircle2 = {
     alvo: 'Cilindro com 9m de raio',
     duracao: 'Cena',
     resistencia: '',
-    school: 'Evoc',
+    school: 'Evocação',
     aprimoramentos: [
       {
         addPm: 1,
@@ -2747,7 +2747,7 @@ spellsCircle2 = {
     alvo: 'Nuvem com 6m de raio',
     duracao: 'Instantânea',
     resistencia: '',
-    school: 'Necro',
+    school: 'Necromancia',
     aprimoramentos: [
       {
         addPm: 0,
@@ -2771,7 +2771,7 @@ spellsCircle2 = {
     alvo: '1 criatura',
     duracao: 'Sustentada',
     resistencia: 'Fortitude anula',
-    school: 'Necro',
+    school: 'Necromancia',
     aprimoramentos: [
       {
         addPm: 3,
@@ -2791,7 +2791,7 @@ spellsCircle2 = {
     alvo: '1 objeto de madeira grande ou menor',
     duracao: 'Cena',
     resistencia: '',
-    school: 'Trans',
+    school: 'Transmutação',
     aprimoramentos: [
       {
         addPm: 1,
@@ -2819,7 +2819,7 @@ spellsCircle2 = {
     alvo: '1 criatura',
     duracao: 'Cena',
     resistencia: '',
-    school: 'Trans',
+    school: 'Transmutação',
     aprimoramentos: [
       {
         addPm: 3,
@@ -2846,7 +2846,7 @@ spellsCircle3 = {
     alvo: '1 criatura ou objeto',
     duracao: 'Cena',
     resistencia: '',
-    school: 'Abjur',
+    school: 'Abjuração',
     aprimoramentos: [
       {
         addPm: 2,
@@ -2878,7 +2878,7 @@ spellsCircle3 = {
     alvo: '1 criatura ou objeto',
     duracao: '1 dia',
     resistencia: '',
-    school: 'Abjur',
+    school: 'Abjuração',
     aprimoramentos: [
       {
         addPm: 4,
@@ -2898,7 +2898,7 @@ spellsCircle3 = {
     alvo: 'Você',
     duracao: 'Sustentada',
     resistencia: '',
-    school: 'Abjur',
+    school: 'Abjuração',
     aprimoramentos: [
       {
         addPm: 4,
@@ -2918,7 +2918,7 @@ spellsCircle3 = {
     alvo: 'Você',
     duracao: '1 dia',
     resistencia: '',
-    school: 'Adiv',
+    school: 'Advinhação',
     aprimoramentos: [
       {
         addPm: 2,
@@ -2938,7 +2938,7 @@ spellsCircle3 = {
     alvo: '1 criatura, objeto ou local',
     duracao: 'Sustentada',
     resistencia: '',
-    school: 'Adiv',
+    school: 'Advinhação',
     aprimoramentos: [
       {
         addPm: 4,
@@ -2954,7 +2954,7 @@ spellsCircle3 = {
     alvo: '1 criatura',
     duracao: 'Sustentada',
     resistencia: 'Vontade anula',
-    school: 'Adiv',
+    school: 'Advinhação',
   },
   [spellsCircle3Names.convocacaoInstantenea]: {
     spellCircle: spellsCircles.c3,
@@ -2964,7 +2964,7 @@ spellsCircle3 = {
     alvo: '1 objeto de até 5kg',
     duracao: 'Instantânea',
     resistencia: '',
-    school: 'Conv',
+    school: 'Convocação',
     aprimoramentos: [
       {
         addPm: 1,
@@ -2992,7 +2992,7 @@ spellsCircle3 = {
     alvo: 'Quadrado de 3m',
     duracao: 'Sustentada',
     resistencia: 'Reflexos reduz à metade',
-    school: 'Conv',
+    school: 'Convocação',
     aprimoramentos: [
       {
         addPm: 1,
@@ -3028,7 +3028,7 @@ spellsCircle3 = {
     alvo: 'Até 5 criaturas voluntárias',
     duracao: 'Instantânea',
     resistencia: '',
-    school: 'Conv',
+    school: 'Convocação',
     aprimoramentos: [
       {
         addPm: 2,
@@ -3052,7 +3052,7 @@ spellsCircle3 = {
     alvo: '1 humanoide ou animal',
     duracao: 'Cena',
     resistencia: 'Vontade Parcial',
-    school: 'Encan',
+    school: 'Encantamento',
     aprimoramentos: [
       {
         addPm: 1,
@@ -3076,7 +3076,7 @@ spellsCircle3 = {
     alvo: '1 criatura',
     duracao: 'Cena',
     resistencia: 'Vontade Parcial',
-    school: 'Encan',
+    school: 'Encantamento',
     aprimoramentos: [
       {
         addPm: 4,
@@ -3092,7 +3092,7 @@ spellsCircle3 = {
     alvo: 'Quadrado de 6m de lado',
     duracao: 'Instantânea',
     resistencia: 'Reflexos parcial',
-    school: 'Evoc',
+    school: 'Evocação',
     aprimoramentos: [
       {
         addPm: 3,
@@ -3112,7 +3112,7 @@ spellsCircle3 = {
     alvo: '1 criatura',
     duracao: 'Instantânea',
     resistencia: 'Reflexos Parcial',
-    school: 'Evoc',
+    school: 'Evocação',
     aprimoramentos: [
       {
         addPm: 3,
@@ -3132,7 +3132,7 @@ spellsCircle3 = {
     alvo: '',
     duracao: 'Cena',
     resistencia: 'Veja o texto',
-    school: 'Evoc',
+    school: 'Evocação',
     aprimoramentos: [
       {
         addPm: 2,
@@ -3208,7 +3208,7 @@ spellsCircle3 = {
     alvo: '1 criatura',
     duracao: 'Sustentada',
     resistencia: 'Fortitude reduz à metade',
-    school: 'Necro',
+    school: 'Necromancia',
     aprimoramentos: [
       {
         addPm: 2,
@@ -3228,7 +3228,7 @@ spellsCircle3 = {
     alvo: 'Círculo com 6m de raio',
     duracao: 'Cena',
     resistencia: '',
-    school: 'Necro',
+    school: 'Necromancia',
     aprimoramentos: [
       {
         addPm: 2,
@@ -3248,7 +3248,7 @@ spellsCircle3 = {
     alvo: 'Você',
     duracao: 'Cena',
     resistencia: '',
-    school: 'Trans',
+    school: 'Transmutação',
     aprimoramentos: [
       {
         addPm: 1,
@@ -3280,7 +3280,7 @@ spellsCircle3 = {
     alvo: 'Veja o texto',
     duracao: 'Sustentada ou Intantânea',
     resistencia: '',
-    school: 'Trans',
+    school: 'Transmutação',
     aprimoramentos: [
       {
         addPm: 3,
@@ -3296,7 +3296,7 @@ spellsCircle3 = {
     alvo: 'Você',
     duracao: 'Sustentada',
     resistencia: '',
-    school: 'Trans',
+    school: 'Transmutação',
     aprimoramentos: [
       {
         addPm: 2,
@@ -3316,7 +3316,7 @@ spellsCircle3 = {
     alvo: 'Você',
     duracao: 'Cena',
     resistencia: '',
-    school: 'Trans',
+    school: 'Transmutação',
     aprimoramentos: [
       {
         addPm: 1,
@@ -3340,7 +3340,7 @@ spellsCircle3 = {
     alvo: '1 criatura',
     duracao: 'Instantânea',
     resistencia: 'Vontade Parcial',
-    school: 'Abjur',
+    school: 'Abjuração',
     aprimoramentos: [
       {
         addPm: 1,
@@ -3356,7 +3356,7 @@ spellsCircle3 = {
     alvo: '1 criatura',
     duracao: 'Cena',
     resistencia: '',
-    school: 'Abjur',
+    school: 'Abjuração',
     aprimoramentos: [
       {
         addPm: 4,
@@ -3380,7 +3380,7 @@ spellsCircle3 = {
     alvo: 'Você',
     duracao: '1 dia',
     resistencia: '',
-    school: 'Adiv',
+    school: 'Advinhação',
     aprimoramentos: [
       {
         addPm: 1,
@@ -3408,7 +3408,7 @@ spellsCircle3 = {
     alvo: '',
     duracao: 'Cena ou até descarregar',
     resistencia: '',
-    school: 'Conv',
+    school: 'Convocação',
     aprimoramentos: [
       {
         addPm: 4,
@@ -3428,7 +3428,7 @@ spellsCircle3 = {
     alvo: 'Você',
     duracao: 'Cena',
     resistencia: '',
-    school: 'Conv',
+    school: 'Convocação',
     aprimoramentos: [
       {
         addPm: 2,
@@ -3444,7 +3444,7 @@ spellsCircle3 = {
     alvo: '1 animal ou planta',
     duracao: '1 dia',
     resistencia: '',
-    school: 'Encan',
+    school: 'Encantamento',
     aprimoramentos: [
       {
         addPm: 4,
@@ -3464,7 +3464,7 @@ spellsCircle3 = {
     alvo: '1 criatura',
     duracao: 'Cena',
     resistencia: '',
-    school: 'Encan',
+    school: 'Encantamento',
     aprimoramentos: [
       {
         addPm: 4,
@@ -3480,7 +3480,7 @@ spellsCircle3 = {
     alvo: '1 criatura',
     duracao: '1 semana ou até descarregar',
     resistencia: 'Vontade anula (veja texto)',
-    school: 'Encan',
+    school: 'Encantamento',
     aprimoramentos: [
       {
         addPm: 2,
@@ -3500,7 +3500,7 @@ spellsCircle3 = {
     alvo: 'Cilindo com 3m de raio e 30km de altura',
     duracao: 'Instantânea',
     resistencia: '',
-    school: 'Evoc',
+    school: 'Evocação',
     aprimoramentos: [
       {
         addPm: 1,
@@ -3520,7 +3520,7 @@ spellsCircle3 = {
     alvo: 'Esfera de 6m de raio',
     duracao: 'Instantânea',
     resistencia: '',
-    school: 'Evoc',
+    school: 'Evocação',
     aprimoramentos: [
       {
         addPm: 2,
@@ -3548,7 +3548,7 @@ spellsCircle3 = {
     alvo: 'Cone de 9m',
     duracao: 'Instantânea',
     resistencia: '',
-    school: 'Evoc',
+    school: 'Evocação',
     aprimoramentos: [
       {
         addPm: 2,
@@ -3572,7 +3572,7 @@ spellsCircle3 = {
     alvo: 'Área de 6m de raio',
     duracao: 'Ver texto',
     resistencia: '',
-    school: 'Necro',
+    school: 'Necromancia',
     aprimoramentos: [
       {
         addPm: 2,
@@ -3596,7 +3596,7 @@ spellsCircle3 = {
     alvo: 'Nuvem com 6m de raio',
     duracao: 'Cena',
     resistencia: 'Fortitude',
-    school: 'Necro',
+    school: 'Necromancia',
     aprimoramentos: [
       {
         addPm: 2,
@@ -3612,7 +3612,7 @@ spellsCircle3 = {
     alvo: '1 cadáver',
     duracao: 'Instantânea',
     resistencia: '',
-    school: 'Necro',
+    school: 'Necromancia',
     aprimoramentos: [
       {
         addPm: 3,
@@ -3636,7 +3636,7 @@ spellsCircle3 = {
     alvo: 'Esfera com 30m de raio',
     duracao: 'Cena',
     resistencia: 'Ver texto',
-    school: 'Trans',
+    school: 'Transmutação',
     aprimoramentos: [
       {
         addPm: 2,
@@ -3652,7 +3652,7 @@ spellsCircle3 = {
     alvo: '9 cubos com 1,5 metros de lado',
     duracao: 'Instantânea',
     resistencia: 'Ver texto',
-    school: 'Trans',
+    school: 'Transmutação',
     aprimoramentos: [
       {
         addPm: 1,
@@ -3672,7 +3672,7 @@ spellsCircle3 = {
     alvo: 'Você',
     duracao: 'Sustentada',
     resistencia: '',
-    school: 'Trans',
+    school: 'Transmutação',
     aprimoramentos: [
       {
         addPm: 2,
@@ -3699,7 +3699,7 @@ spellsCircle4 = {
     alvo: 'Você',
     duracao: 'Sustentada',
     resistencia: '',
-    school: 'Abjur',
+    school: 'Abjuração',
   },
   [spellsCircle4Names.libertacao]: {
     spellCircle: spellsCircles.c4,
@@ -3709,7 +3709,7 @@ spellsCircle4 = {
     alvo: '1 criatura',
     duracao: 'Cena',
     resistencia: '',
-    school: 'Abjur',
+    school: 'Abjuração',
     aprimoramentos: [
       {
         addPm: 2,
@@ -3741,7 +3741,7 @@ spellsCircle4 = {
     alvo: '1 criatura viva',
     duracao: 'Veja o texto',
     resistencia: '',
-    school: 'Adiv',
+    school: 'Advinhação',
     aprimoramentos: [
       {
         addPm: 2,
@@ -3761,7 +3761,7 @@ spellsCircle4 = {
     alvo: 'Você',
     duracao: 'Cena',
     resistencia: '',
-    school: 'Adiv',
+    school: 'Advinhação',
     aprimoramentos: [
       {
         addPm: 1,
@@ -3789,7 +3789,7 @@ spellsCircle4 = {
     alvo: '',
     duracao: 'Sustentada',
     resistencia: '',
-    school: 'Conv',
+    school: 'Convocação',
     aprimoramentos: [
       {
         addPm: 5,
@@ -3809,7 +3809,7 @@ spellsCircle4 = {
     alvo: '',
     duracao: 'Sustentada',
     resistencia: '',
-    school: 'Conv',
+    school: 'Convocação',
     aprimoramentos: [
       {
         addPm: 3,
@@ -3825,7 +3825,7 @@ spellsCircle4 = {
     alvo: 'Pessoal',
     duracao: 'Instantânea',
     resistencia: '',
-    school: 'Conv',
+    school: 'Convocação',
     aprimoramentos: [
       {
         addPm: 2,
@@ -3841,7 +3841,7 @@ spellsCircle4 = {
     alvo: '1 criatura',
     duracao: 'Instantânea',
     resistencia: 'Vontade anula',
-    school: 'Encan',
+    school: 'Encantamento',
     aprimoramentos: [
       {
         addPm: 2,
@@ -3861,7 +3861,7 @@ spellsCircle4 = {
     alvo: '1 criatura',
     duracao: 'Sustentada',
     resistencia: 'Fortitude Anula',
-    school: 'Encan',
+    school: 'Encantamento',
   },
   [spellsCircle4Names.raioPolar]: {
     spellCircle: spellsCircles.c4,
@@ -3871,7 +3871,7 @@ spellsCircle4 = {
     alvo: '1 criatura',
     duracao: 'Instantânea',
     resistencia: 'Fortitude Parcial',
-    school: 'Evoc',
+    school: 'Evocação',
     aprimoramentos: [
       {
         addPm: 3,
@@ -3891,7 +3891,7 @@ spellsCircle4 = {
     alvo: '',
     duracao: 'Sustentada',
     resistencia: 'Reflexos reduz à metade',
-    school: 'Evoc',
+    school: 'Evocação',
     aprimoramentos: [
       {
         addPm: 4,
@@ -3907,7 +3907,7 @@ spellsCircle4 = {
     alvo: 'Cone',
     duracao: 'Instantânea',
     resistencia: 'Fortitude parcial',
-    school: 'Evoc',
+    school: 'Evocação',
     aprimoramentos: [
       {
         addPm: 2,
@@ -3953,7 +3953,7 @@ spellsCircle4 = {
     alvo: '1 criatura',
     duracao: 'Cena, até ser descarregada',
     resistencia: 'Vontade parcial, Fortitude Parcial',
-    school: 'Necro',
+    school: 'Necromancia',
   },
   [spellsCircle4Names.muralhaDeOssos]: {
     spellCircle: spellsCircles.c4,
@@ -3963,7 +3963,7 @@ spellsCircle4 = {
     alvo: '',
     duracao: 'Cena',
     resistencia: '',
-    school: 'Necro',
+    school: 'Necromancia',
     aprimoramentos: [
       {
         addPm: 2,
@@ -3983,7 +3983,7 @@ spellsCircle4 = {
     alvo: 'Até 8 objetos Minúsculos ou Pequenos, 4 objetos Médios, 2 objetos Grandes ou 1 objeto Enorme',
     duracao: 'Cena',
     resistencia: '',
-    school: 'Trans',
+    school: 'Transmutação',
     aprimoramentos: [
       {
         addPm: 5,
@@ -3999,7 +3999,7 @@ spellsCircle4 = {
     alvo: 'Cubo de 12m de lado',
     duracao: 'Sustentada',
     resistencia: '',
-    school: 'Trans',
+    school: 'Transmutação',
   },
   [spellsCircle4Names.desintegrar]: {
     spellCircle: spellsCircles.c4,
@@ -4009,7 +4009,7 @@ spellsCircle4 = {
     alvo: '1 criatura ou objeto',
     duracao: 'Instantânea',
     resistencia: 'Fortitude Parcial',
-    school: 'Trans',
+    school: 'Transmutação',
     aprimoramentos: [
       {
         addPm: 4,
@@ -4025,7 +4025,7 @@ spellsCircle4 = {
     alvo: 'Você',
     duracao: 'Sustentada',
     resistencia: '',
-    school: 'Trans',
+    school: 'Transmutação',
     aprimoramentos: [
       {
         addPm: 5,
@@ -4041,7 +4041,7 @@ spellsCircle4 = {
     alvo: 'Você',
     duracao: 'Cena',
     resistencia: '',
-    school: 'Abjur',
+    school: 'Abjuração',
     aprimoramentos: [
       {
         addPm: 1,
@@ -4065,7 +4065,7 @@ spellsCircle4 = {
     alvo: 'Você',
     duracao: 'Cena',
     resistencia: '',
-    school: 'Adiv',
+    school: 'Advinhação',
     aprimoramentos: [
       {
         addPm: 3,
@@ -4085,7 +4085,7 @@ spellsCircle4 = {
     alvo: '',
     duracao: 'Cena ou até ser descarregado',
     resistencia: '',
-    school: 'Conv',
+    school: 'Convocação',
   },
   [spellsCircle4Names.concederMilagre]: {
     spellCircle: spellsCircles.c4,
@@ -4095,7 +4095,7 @@ spellsCircle4 = {
     alvo: '1 criatura',
     duracao: 'Até ser descarregada',
     resistencia: '',
-    school: 'Encan',
+    school: 'Encantamento',
     aprimoramentos: [
       {
         addPm: 4,
@@ -4111,7 +4111,7 @@ spellsCircle4 = {
     alvo: 'Círculo de 3m de raio',
     duracao: '5 rodadas',
     resistencia: '',
-    school: 'Evoc',
+    school: 'Evocação',
     aprimoramentos: [
       {
         addPm: 2,
@@ -4127,7 +4127,7 @@ spellsCircle4 = {
     alvo: 'Esfera com 6m de raio',
     duracao: 'Instantânea',
     resistencia: 'Reflexos Parcial',
-    school: 'Evoc',
+    school: 'Evocação',
     aprimoramentos: [
       {
         addPm: 2,
@@ -4151,7 +4151,7 @@ spellsCircle4 = {
     alvo: 'Você',
     duracao: 'Sustentada',
     resistencia: '',
-    school: 'Evoc',
+    school: 'Evocação',
   },
   [spellsCircle4Names.terremoto]: {
     spellCircle: spellsCircles.c4,
@@ -4161,7 +4161,7 @@ spellsCircle4 = {
     alvo: 'Dispersão com 30m de raio',
     duracao: '1 rodada',
     resistencia: 'Veja o texto',
-    school: 'Evoc',
+    school: 'Evocação',
   },
   [spellsCircle4Names.ligacaoSombria]: {
     spellCircle: spellsCircles.c4,
@@ -4171,7 +4171,7 @@ spellsCircle4 = {
     alvo: '1 criatura',
     duracao: '1 dia',
     resistencia: 'Fortitude Anula',
-    school: 'Necro',
+    school: 'Necromancia',
     aprimoramentos: [
       {
         addPm: 5,
@@ -4187,7 +4187,7 @@ spellsCircle4 = {
     alvo: 'Círculo com 2km de raio',
     duracao: '4d12 horas',
     resistencia: '',
-    school: 'Trans',
+    school: 'Transmutação',
     aprimoramentos: [
       {
         addPm: 1,
@@ -4206,7 +4206,7 @@ spellsCircle5 = {
     alvo: 'Emanação de 9m de raio',
     duracao: 'Cena',
     resistencia: 'Vontade Parcial',
-    school: 'Abjur',
+    school: 'Abjuração',
     aprimoramentos: [
       {
         addPm: 2,
@@ -4222,7 +4222,7 @@ spellsCircle5 = {
     alvo: 'Você',
     duracao: 'Cena',
     resistencia: '',
-    school: 'Abjur',
+    school: 'Abjuração',
     aprimoramentos: [
       {
         addPm: 5,
@@ -4238,7 +4238,7 @@ spellsCircle5 = {
     alvo: '1 criatura',
     duracao: 'Instantânea',
     resistencia: 'Vontade Parcial',
-    school: 'Abjur',
+    school: 'Abjuração',
     aprimoramentos: [
       {
         addPm: 2,
@@ -4258,7 +4258,7 @@ spellsCircle5 = {
     alvo: 'Local ou criatura conhecidos',
     duracao: 'Sustentada',
     resistencia: '',
-    school: 'Adiv',
+    school: 'Advinhação',
     aprimoramentos: [
       {
         addPm: 10,
@@ -4274,7 +4274,7 @@ spellsCircle5 = {
     alvo: '',
     duracao: '3 rodadas',
     resistencia: 'Fortitude Parcial',
-    school: 'Conv',
+    school: 'Convocação',
     aprimoramentos: [
       {
         addPm: 5,
@@ -4294,7 +4294,7 @@ spellsCircle5 = {
     alvo: 'Veja o texto',
     duracao: 'Veja o texto',
     resistencia: 'Veja o texto',
-    school: 'Conv',
+    school: 'Convocação',
   },
   [spellsCircle5Names.palavraPrimordial]: {
     spellCircle: spellsCircles.c5,
@@ -4304,7 +4304,7 @@ spellsCircle5 = {
     alvo: '1 criatura com menos níveis do que você',
     duracao: 'Instantânea',
     resistencia: 'Vontade Parcial',
-    school: 'Encan',
+    school: 'Encantamento',
   },
   [spellsCircle5Names.furiaDoPanteao]: {
     spellCircle: spellsCircles.c5,
@@ -4314,7 +4314,7 @@ spellsCircle5 = {
     alvo: 'Nuvem de tempestade com 90m de lado',
     duracao: 'Sustentada',
     resistencia: '',
-    school: 'Evoc',
+    school: 'Evocação',
   },
   [spellsCircle5Names.segundaChance]: {
     spellCircle: spellsCircles.c5,
@@ -4324,7 +4324,7 @@ spellsCircle5 = {
     alvo: '1 criatura',
     duracao: 'Instantânea',
     resistencia: '',
-    school: 'Evoc',
+    school: 'Evocação',
     aprimoramentos: [
       {
         addPm: 1,
@@ -4348,7 +4348,7 @@ spellsCircle5 = {
     alvo: '1 criatura',
     duracao: 'Cena',
     resistencia: '',
-    school: 'Necro',
+    school: 'Necromancia',
   },
   [spellsCircle5Names.roubarAAlma]: {
     spellCircle: spellsCircles.c5,
@@ -4358,7 +4358,7 @@ spellsCircle5 = {
     alvo: '1 criatura',
     duracao: 'Permanente',
     resistencia: 'Vontade Parcial',
-    school: 'Necro',
+    school: 'Necromancia',
     aprimoramentos: [
       {
         addPm: 5,
@@ -4378,7 +4378,7 @@ spellsCircle5 = {
     alvo: '1 criatura',
     duracao: 'Instantânea',
     resistencia: 'Fortitude Parcial',
-    school: 'Necro',
+    school: 'Necromancia',
     aprimoramentos: [
       {
         addPm: 2,
@@ -4398,7 +4398,7 @@ spellsCircle5 = {
     alvo: '1 criatura',
     duracao: 'Permanente',
     resistencia: 'Vontade anula',
-    school: 'Abjur',
+    school: 'Abjuração',
   },
   [spellsCircle5Names.engenhoDeMana]: {
     spellCircle: spellsCircles.c5,
@@ -4408,7 +4408,7 @@ spellsCircle5 = {
     alvo: 'Disco de Energia com 1,5m',
     duracao: 'Sustentada',
     resistencia: '',
-    school: 'Abjur',
+    school: 'Abjuração',
     aprimoramentos: [
       {
         addPm: 1,
@@ -4428,7 +4428,7 @@ spellsCircle5 = {
     alvo: '',
     duracao: '',
     resistencia: '',
-    school: 'Abjur',
+    school: 'Abjuração',
     aprimoramentos: [
       {
         addPm: 5,
@@ -4444,7 +4444,7 @@ spellsCircle5 = {
     alvo: 'Você',
     duracao: 'Instantânea',
     resistencia: '',
-    school: 'Adiv',
+    school: 'Advinhação',
   },
   [spellsCircle5Names.projetarCosciencia]: {
     spellCircle: spellsCircles.c5,
@@ -4454,7 +4454,7 @@ spellsCircle5 = {
     alvo: '',
     duracao: '',
     resistencia: '',
-    school: 'Adiv',
+    school: 'Advinhação',
     aprimoramentos: [
       {
         addPm: 10,
@@ -4470,7 +4470,7 @@ spellsCircle5 = {
     alvo: '',
     duracao: '',
     resistencia: '',
-    school: 'Conv',
+    school: 'Convocação',
     aprimoramentos: [
       {
         addPm: 5,
@@ -4490,7 +4490,7 @@ spellsCircle5 = {
     alvo: 'Explosão com 9m de raio',
     duracao: 'Instantânea',
     resistencia: 'Reflexos reduz à metade',
-    school: 'Conv',
+    school: 'Convocação',
     aprimoramentos: [
       {
         addPm: 2,
@@ -4510,7 +4510,7 @@ spellsCircle5 = {
     alvo: '',
     duracao: '1 dia',
     resistencia: '',
-    school: 'Conv',
+    school: 'Convocação',
     aprimoramentos: [
       {
         addPm: 2,
@@ -4530,7 +4530,7 @@ spellsCircle5 = {
     alvo: 'Até 10 criaturas na área',
     duracao: 'Sustentada',
     resistencia: 'Vontade Parcial',
-    school: 'Encan',
+    school: 'Encantamento',
     aprimoramentos: [
       {
         addPm: 1,
@@ -4546,7 +4546,7 @@ spellsCircle5 = {
     alvo: '',
     duracao: '',
     resistencia: '',
-    school: 'Encan',
+    school: 'Encantamento',
   },
   [spellsCircle5Names.possessao]: {
     spellCircle: spellsCircles.c5,
@@ -4556,7 +4556,7 @@ spellsCircle5 = {
     alvo: '1 criatura',
     duracao: '1 dia',
     resistencia: 'Vontade anula',
-    school: 'Encan',
+    school: 'Encantamento',
     aprimoramentos: [
       {
         addPm: 5,
@@ -4580,7 +4580,7 @@ spellsCircle5 = {
     alvo: '4 esferas elementais',
     duracao: 'Instantânea',
     resistencia: 'Reflexos parcial',
-    school: 'Evoc',
+    school: 'Evocação',
     aprimoramentos: [
       {
         addPm: 5,
@@ -4600,7 +4600,7 @@ spellsCircle5 = {
     alvo: 'Explosão de 15m de raio',
     duracao: '',
     resistencia: 'Fortitude Parcial',
-    school: 'Evoc',
+    school: 'Evocação',
     aprimoramentos: [
       {
         addPm: 1,
@@ -4620,7 +4620,7 @@ spellsCircle5 = {
     alvo: 'Cone de 30m',
     duracao: 'Instantânea',
     resistencia: 'Reflexos reduz à metade',
-    school: 'Evoc',
+    school: 'Evocação',
     aprimoramentos: [
       {
         addPm: 1,
@@ -4662,7 +4662,7 @@ spellsCircle5 = {
     alvo: '',
     duracao: '',
     resistencia: '',
-    school: 'Necro',
+    school: 'Necromancia',
     aprimoramentos: [
       {
         addPm: 5,
@@ -4682,7 +4682,7 @@ spellsCircle5 = {
     alvo: '',
     duracao: '',
     resistencia: '',
-    school: 'Necro',
+    school: 'Necromancia',
     aprimoramentos: [
       {
         addPm: 2,
@@ -4702,7 +4702,7 @@ spellsCircle5 = {
     alvo: 'Veja o texto',
     duracao: 'Veja o texto',
     resistencia: '',
-    school: 'Trans',
+    school: 'Transmutação',
   },
   [spellsCircle5Names.desejo]: {
     spellCircle: spellsCircles.c5,
@@ -4712,7 +4712,7 @@ spellsCircle5 = {
     alvo: 'Veja o texto',
     duracao: 'Veja o texto',
     resistencia: 'Veja o texto',
-    school: 'Trans',
+    school: 'Transmutação',
   },
 };
 
