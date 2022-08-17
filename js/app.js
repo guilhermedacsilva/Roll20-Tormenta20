@@ -11,9 +11,28 @@ function prepararLinkPoder(nTd, sData, oData, iRow, iCol) {
   });
 }
 
+function prepararLinkMagia(nTd, sData, oData, iRow, iCol) {
+  $(nTd).html(`<span class="nome-click">${oData.nome}</span>`);
+  nTd.addEventListener("click", async () => {
+    let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+  
+    chrome.scripting.executeScript({
+      target: { tabId: tab.id },
+      function: fichaInserirMagia,
+      args: [oData],
+    });
+  });
+}
+
+function cortarTexto(nTd, sData, oData, iRow, iCol) {
+  if (oData.descricao.length > 150) {
+    $(nTd).html(oData.descricao.substring(0,150)+'...');
+  }
+}
+
 $(document).ready(function () {
   //gerarArquivoMagias(); return;
-  $('#tabelaPoderes').DataTable({
+  var tabelaPoderes = $('#tabelaPoderes').DataTable({
     data: dbPoderes,
     columns: [
         { title: 'Tipo', data: 1, orderData: [0,1] },
@@ -27,11 +46,8 @@ $(document).ready(function () {
     ],
   });
   
-  $('#tabelaMagias').DataTable({
+  var tabelaMagias = $('#tabelaMagias').DataTable({
     data: dbMagias,
-
-    PAREI NA PÁGINA 183. CONTINUAR A PASSAR AS DESCRIÇÕES DAS MAGIAS
-
     columns: [
         { title: 'C', data: 'circulo', orderData: [0,1,2] },
         { title: 'Escola', data: 'escola', orderData: [1,0,2] },
@@ -39,9 +55,12 @@ $(document).ready(function () {
           title: 'Nome',
           data: 'nome',
           orderData: 2,
-          //fnCreatedCell: prepararLinkPoder
+          fnCreatedCell: prepararLinkMagia
         },
-        { title: 'Descrição', data: 'descricao', orderData: 3 },
+        { title: 'Descrição',
+        data: 'descricao',
+        orderData: 3,
+        fnCreatedCell: cortarTexto },
     ],
   });
 
@@ -108,6 +127,9 @@ function fichaInserirPoder(poder, colunaDireita) {
 
 }
 
+function fichaInserirMagia(magia) {
+  
+}
 
 
 /*
