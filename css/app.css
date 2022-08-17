@@ -2,8 +2,11 @@ body {
     width: 770px;
     padding: 0 15px;
 }
-.coluna300 {
+.coluna-200 {
     width: 200px;
+}
+.coluna-400 {
+    width: 400px;
 }
 .nome-click {
     cursor: pointer;
