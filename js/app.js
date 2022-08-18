@@ -87,14 +87,29 @@ function gerarArquivoMagias() {
   $('body').html(html);
 }
 
-function fichaInserirPoder(poder, colunaDireita) {
-  console.log('fichaInserirPoder()');
-  console.log(colunaDireita);
+function getFichaAtiva() {
   let fichasAbertas = document.querySelectorAll('div[role="dialog"]');
 
   if (fichasAbertas.length == 0) {
     alert("Nenhuma ficha encontrada.");
-    return;
+    return null;
+  }
+  
+  let fichaAtual = Array.from(fichasAbertas)
+           .map(a => [a,parseFloat(window.getComputedStyle(a).zIndex)] )
+           .filter(a => !isNaN(a[1]))
+           .sort((a,b) => a[1]-b[1])
+           .pop()[0];
+
+  return fichaAtual.querySelector('iframe').contentWindow.document.body;
+}
+
+function fichaInserirPoder(poder, colunaDireita) {
+  let fichasAbertas = document.querySelectorAll('div[role="dialog"]');
+
+  if (fichasAbertas.length == 0) {
+    alert("Nenhuma ficha encontrada.");
+    return null;
   }
   
   let fichaAtual = Array.from(fichasAbertas)
@@ -104,6 +119,7 @@ function fichaInserirPoder(poder, colunaDireita) {
            .pop()[0];
 
   var fichaConteudo = fichaAtual.querySelector('iframe').contentWindow.document.body;
+
   let poderes = fichaConteudo.querySelectorAll('[class="sheet-container-reapeater"]');
   let htmlName = 'ability';
   if (colunaDireita) {
@@ -128,6 +144,34 @@ function fichaInserirPoder(poder, colunaDireita) {
 }
 
 function fichaInserirMagia(magia) {
+  let fichasAbertas = document.querySelectorAll('div[role="dialog"]');
+
+  if (fichasAbertas.length == 0) {
+    alert("Nenhuma ficha encontrada.");
+    return null;
+  }
+  
+  let fichaAtual = Array.from(fichasAbertas)
+           .map(a => [a,parseFloat(window.getComputedStyle(a).zIndex)] )
+           .filter(a => !isNaN(a[1]))
+           .sort((a,b) => a[1]-b[1])
+           .pop()[0];
+
+  var fichaConteudo = fichaAtual.querySelector('iframe').contentWindow.document.body;
+
+  let fieldset1 = fichaConteudo.querySelector('[class="repeating_spells1"]');
+  let buttonAdd1 = fieldset1.nextElementSibling.nextElementSibling.getElementsByClassName('btn repcontrol_add');
+  console.log(buttonAdd1);
+  return;
+  let htmlName = 'ability';
+  if (colunaDireita) {
+    poderes = poderes[1];
+    htmlName = 'power';
+  } else {
+    poderes = poderes[0];
+  }
+  
+  poderes.querySelector('[class="btn repcontrol_add"]').click();
   
 }
 
