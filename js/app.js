@@ -174,9 +174,10 @@ function fichaInserirMagia(magia) {
   novoItem.querySelector('[name="attr_spellduracao"]').value = magia.duracao;
   novoItem.querySelector('[name="attr_spellexecucao"]').value = magia.execucao;
   novoItem.querySelector('[name="attr_spelldescription"]').value = magia.descricao.replaceAll('<br>', '\n');
-  //novoItem.querySelector('[name="attr_spellresistencia"]').value = magia.resistencia;
-  console.log(magia.descricao.replaceAll('<br>', '\n'));
-
+  if ('resistencia' in magia) {
+    novoItem.querySelector('[name="attr_spellresistencia"]').value = magia.resistencia;
+  }
+  
   setTimeout(function(){
     let inputs = [
       "attr_namespell",
@@ -185,7 +186,8 @@ function fichaInserirMagia(magia) {
       "attr_spelltipo",
       "attr_spellduracao",
       "attr_spellexecucao",
-      "attr_spelldescription"
+      "attr_spelldescription",
+      "attr_spellresistencia"
     ];
     inputs.forEach(inputName => {
       novoItem.querySelector(`[name="${inputName}"]`).dispatchEvent(new Event('blur'));
