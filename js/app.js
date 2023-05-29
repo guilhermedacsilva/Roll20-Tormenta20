@@ -1,3 +1,4 @@
+
 function prepararLinkPoder(nTd, sData, oData, iRow, iCol) {
   $(nTd).html(`<span class="nome-click">${oData[2]}</span>`);
   nTd.addEventListener("click", async () => {
@@ -160,20 +161,40 @@ function fichaInserirMagia(magia) {
   var fichaConteudo = fichaAtual.querySelector('iframe').contentWindow.document.body;
 
   let fieldset1 = fichaConteudo.querySelector('[class="repeating_spells1"]');
-  let buttonAdd1 = fieldset1.nextElementSibling.nextElementSibling.getElementsByClassName('btn repcontrol_add');
-  console.log(buttonAdd1);
-  return;
-  let htmlName = 'ability';
-  if (colunaDireita) {
-    poderes = poderes[1];
-    htmlName = 'power';
-  } else {
-    poderes = poderes[0];
-  }
+  let buttonAdd1 = fieldset1.nextElementSibling.nextElementSibling.querySelector('[class="btn repcontrol_add"]');
   
-  poderes.querySelector('[class="btn repcontrol_add"]').click();
+  buttonAdd1.click();
+  let repContainers = fieldset1.nextElementSibling.getElementsByClassName('repitem');
+  let novoItem = repContainers[repContainers.length-1];
+
+  novoItem.querySelector('[name="attr_namespell"]').value = magia.nome;
+  novoItem.querySelector('[name="attr_spellalcance"]').value = magia.alcance;
+  novoItem.querySelector('[name="attr_spellalvoarea"]').value = magia.alvo;
+  novoItem.querySelector('[name="attr_spelltipo"]').value = magia.escola;
+  novoItem.querySelector('[name="attr_spellduracao"]').value = magia.duracao;
+  novoItem.querySelector('[name="attr_spellexecucao"]').value = magia.execucao;
+  novoItem.querySelector('[name="attr_spelldescription"]').value = magia.descricao.replaceAll('<br>', '\n');
+  //novoItem.querySelector('[name="attr_spellresistencia"]').value = magia.resistencia;
+  console.log(magia.descricao.replaceAll('<br>', '\n'));
+
+  setTimeout(function(){
+    let inputs = [
+      "attr_namespell",
+      "attr_spellalcance",
+      "attr_spellalvoarea",
+      "attr_spelltipo",
+      "attr_spellduracao",
+      "attr_spellexecucao",
+      "attr_spelldescription"
+    ];
+    inputs.forEach(inputName => {
+      novoItem.querySelector(`[name="${inputName}"]`).dispatchEvent(new Event('blur'));
+    });
+  }, 10);
   
 }
+
+
 
 
 /*
