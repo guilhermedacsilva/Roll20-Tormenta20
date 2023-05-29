@@ -307,7 +307,8 @@ dbMagias = [{
     circulo: 1,
     escola: "Convocação",
     execucao: "padrão",
-    alcance: "curto" alvo: "criaturas escolhidas",
+    alcance: "curto",
+    alvo: "criaturas escolhidas",
     duracao: "1 dia",
     descricao: "Você invoca espíritos da natureza, pedindo que eles abram seu caminho. As criaturas afetadas recebem deslocamento +3m e ignoram penalidades por terreno difícil em terrenos naturais.<br>Truque: muda o alcance para pessoal e o alvo para você. Em vez do normal, você recebe +5 em testes de Sobrevivência para se orientar.<br>+1 PM: além do normal, a CD para rastrear os alvos em terreno natural aumenta em +10.<br>+2 PM: aumenta o bônus de deslocamento em +3m."
 }, {
@@ -765,7 +766,8 @@ dbMagias = [{
     escola: "Abjuração",
     execucao: "padrão",
     alcance: "médio",
-    alvo: "1 criatura ou 1 objeto mágico ou esfera com 3m de raio",; duracao: "instantânea",
+    alvo: "1 criatura ou 1 objeto mágico ou esfera com 3m de raio",
+    duracao: "instantânea",
     descricao: "Você dissipa outras magias que estejam ativas, como se sua duração tivesse acabado. Note que efeitos de magias instantâneas não podem ser dissipados(não se pode dissipar uma Bola de Fogo ou Relâmpago depois que já causaram dano...). Se lançar essa magia em uma criatura ou área, faça um teste de Misticismo; você dissipa as magias com CD igual ou menor que o resultado do teste. Se lançada contra um item mágico, o transforma em um item mundano por 1d6 rodadas(Vontade anula). + 12 PM: muda a área para esfera com 9m de raio. Em vez do normal, cria um efeito de disjunção. Todas as magias na área são automaticamente dissipadas e todos os itens mágicos na área, exceto aqueles que você estiver carregando, viram itens mundanos por uma cena(com direito a um teste de Vontade para evitar esse efeito). Requer 5º círculo."
 }, {
     nome: "Duplicata Ilusória",
@@ -1848,8 +1850,8 @@ dbMagias = [{
     alcance: "médio",
     alvo: "veja texto",
     duracao: "sustentada ou instantânea (veja texto)",
-    descricao: "Você move objetos ou criaturas se concentrando. Ao lançar a magia, escolha uma das opções a seguir. Força Contínua: você move uma criatura Média ou menor, ou objeto de até 10 espaços, a até 6m por rodada. Uma criatura pode anular o efeito sobre ela, ou sobre um objeto que possua, passando num teste de Vontade. O alvo pode ser movido em qualquer direção dentro do alcance. Ele cai no chão se sair do alcance ou a magia terminar. duracao: "sustentada",
-descricao: "Empurrão Violento: nesta versão a energia mágica é expelida de uma única vez e arremessa até 10 objetos(no máximo 10 espaços). Os objetos devem estar a até 3m uns dos outros e podem ser arremessados até o alcance da magia. Objetos arremessados podem atingir criaturas em seu caminho, causando de 1 ponto de dano de impacto por espaço(objetos macios, sem pontas ou sem fio) até 1d6 pontos de dano por espaço(objetos duros, pontudos ou afiados). Criaturas atingidas têm direito a um teste de Reflexos para reduzir o dano à metade. Criaturas Médias ou menores podem ser arremessadas, mas têm direito a um teste de Vontade para evitar o efeito(em si mesmas ou em objetos que estejam segurando). Uma criatura arremessada contra uma superfície sólida sofre 1d6 pontos de dano de impacto para cada 3m que “voou” no deslocamento(incluindo outras criaturas; nesse caso, ambas sofrem o dano). Duração: instantânea. + 3 PM: aumenta o tamanho máximo da criatura em uma categoria(para Grande, Enorme e Colossal) ou dobra a quantidade de espaços do objeto." }, {
+    descricao: "Você move objetos ou criaturas se concentrando. Ao lançar a magia, escolha uma das opções a seguir.<br>Força Contínua: você move uma criatura Média ou menor, ou objeto de até 10 espaços, a até 6m por rodada. Uma criatura pode anular o efeito sobre ela, ou sobre um objeto que possua, passando num teste de Vontade. O alvo pode ser movido em qualquer direção dentro do alcance. Ele cai no chão se sair do alcance ou a magia terminar. Duração: sustentada<br>Empurrão Violento: nesta versão a energia mágica é expelida de uma única vez e arremessa até 10 objetos(no máximo 10 espaços). Os objetos devem estar a até 3m uns dos outros e podem ser arremessados até o alcance da magia. Objetos arremessados podem atingir criaturas em seu caminho, causando de 1 ponto de dano de impacto por espaço(objetos macios, sem pontas ou sem fio) até 1d6 pontos de dano por espaço(objetos duros, pontudos ou afiados). Criaturas atingidas têm direito a um teste de Reflexos para reduzir o dano à metade. Criaturas Médias ou menores podem ser arremessadas, mas têm direito a um teste de Vontade para evitar o efeito(em si mesmas ou em objetos que estejam segurando). Uma criatura arremessada contra uma superfície sólida sofre 1d6 pontos de dano de impacto para cada 3m que \"voou\" no deslocamento(incluindo outras criaturas; nesse caso, ambas sofrem o dano). Duração: instantânea.<br>+ 3 PM: aumenta o tamanho máximo da criatura em uma categoria(para Grande, Enorme e Colossal) ou dobra a quantidade de espaços do objeto."
+}, {
     nome: "Teletransporte",
     tipo: "Arcana",
     circulo: 3,
