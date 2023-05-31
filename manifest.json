@@ -22,6 +22,7 @@
       "resources": [
         "third-party/*",
         "js/*",
+        "css/*",
         "data/*"
       ],
       "matches": [

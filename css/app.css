@@ -1,17 +1,9 @@
-body {
-    width: 770px;
-    padding: 0 15px;
+.charsheet .sheet-main .repcontrol>.btn.repcontrol_add {
+    display: inline-block !important;
 }
-.coluna-200 {
-    width: 200px;
-}
-.coluna-400 {
-    width: 400px;
-}
-.nome-click {
-    cursor: pointer;
-    text-decoration: underline;
-}
-.margin-bottom-10 {
-    margin-bottom: 10px;
+
+.charsheet .sheet-main .repcontrol>.btn.repcontrol_more {
+    color: white;
+    font-size: 10px;
+    margin-left: -5px !important;
 }
