@@ -1,4 +1,3 @@
-dbPoderes =
 [
     ["Anão","Conhecimento das Rochas","Você recebe visão no escuro e +2 em testes de Percepção e Sobrevivência realizados no subterrâneo."],
     ["Anão","Devagar e Sempre","Seu deslocamento é 6m (em vez de 9m). Porém, seu deslocamento não é reduzido por uso de armadura ou excesso de carga."],
@@ -41,7 +40,30 @@ dbPoderes =
     ["Osteon","Memória Póstuma","Você se torna treinado em uma perícia (não precisa ser da sua classe) ou recebe um poder geral a sua escolha. Como alternativa, você pode ser um osteon de outra raça humanoide que não humano. Neste caso, você ganha uma habilidade dessa raça a sua escolha. Se a raça era de tamanho diferente de Médio, você também possui sua categoria de tamanho."],
     ["Osteon","Natureza Esquelética","Você é uma criatura do tipo morto-vivo. Recebe visão no escuro e imunidade a efeitos de cansaço, metabólicos, de trevas e de veneno. Além disso, não precisa respirar, alimentar-se ou dormir. Por fim, efeitos mágicos de cura de luz causam dano a você e você não se beneficia de itens da categoria alimentação, mas dano de trevas recupera seus PV."],
     ["Osteon","Preço da Não Vida","Você precisa passar oito horas sob a luz de estrelas ou no subterrâneo. Se fizer isso, recupera PV e PM por descanso em condições normais (osteon não são afetados por condições boas ou ruins de descanso). Caso contrário, sofre os efeitos de fome."],
-    /* REVISEI DAQUI PRA CIMA. NÃO REVISEI HUMANO */
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
     ["Sereia/Tritão","Canção dos Mares","Você pode lançar duas das magias a seguir: Amedrontar, Comando, Despedaçar, Enfeitiçar, Hipnotismo ou Sono (atributo-chave Carisma). Caso aprenda novamente uma dessas magias, seu custo diminui em –1 PM."],
     ["Sereia/Tritão","Mestre do Tridente","Para você, o tridente é uma arma simples. Além disso, você recebe +2 em rolagens de dano com azagaias, lanças e tridentes."],
     ["Sereia/Tritão","Transformação Anfíbia","Você pode respirar debaixo d’água e possui uma cauda que fornece deslocamento de natação 12m. Quando fora d’água, sua cauda desaparece e dá lugar a pernas (deslocamento 9m). Se permanecer mais de um dia sem contato com água, você não recupera PM com descanso até voltar para a água (ou, pelo menos, tomar um bom banho!)."],
@@ -621,9 +643,5 @@ dbPoderes =
     ["Poder concedido","Visão nas Trevas","Tenebra - Você enxerga perfeitamente no escuro, incluindo em magias de escuridão."],
     ["Poder concedido","Voz da Civilização","Tanna-Toh - Você está sempre sob efeito de Compreensão."],
     ["Poder concedido","Voz da Natureza","Allihanna - Você pode falar com animais (como o efeito da magia Voz Divina) e aprende e pode lançar Acalmar Animal, mas só contra animais."],
-    ["Poder concedido","Voz dos Monstros","Megalokk - Você conhece os idiomas de todos os monstros inteligentes (criaturas do tipo monstro com Int 3 ou mais) e pode se comunicar livremente com monstros não inteligentes (Int 1 ou 2), como se estivesse sob efeito da magia Voz Divina."],
-];
-
-dbPoderes = dbPoderes.map( (e, i) => [i, e[0], e[1], e[2]] );
-
-//chrome.storage.local.set( {poderes: dbPoderes} );
+    ["Poder concedido","Voz dos Monstros","Megalokk - Você conhece os idiomas de todos os monstros inteligentes (criaturas do tipo monstro com Int 3 ou mais) e pode se comunicar livremente com monstros não inteligentes (Int 1 ou 2), como se estivesse sob efeito da magia Voz Divina."]
+]
