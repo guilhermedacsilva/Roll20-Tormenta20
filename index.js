@@ -1,55 +1,58 @@
 'use strict'
 
-const T20 = {
-    utils: null,
-    habilities: null,
-    spells: null
+function loadCssOnRoll20(path) {
+    let element = document.createElement('link')
+    element.href = chrome.runtime.getURL(path)
+    element.rel = 'stylesheet'
+    element.type = 'text/css'
+    let node = (document.head || document.documentElement)
+    node.appendChild(element)
 }
 
-window.addEventListener('message', async ({ data }) => {
-    if (data.type === 't20-scripts-loaded') {
-        // checks if roll20 editor is loaded, then load my modules
-        await checkTimeout(() => $('#editor').length)
-        Object.entries(T20.modules).forEach(([key, module]) => {
-            module.onLoad($('body'))
-            console.log(`T20 - ${key} onLoad()...`)
+function loadJsOnRoll20(path) {
+    let element = document.createElement('script')
+    element.src = chrome.runtime.getURL(path)
+    element.type = 'text/javascript'
+    let node = (document.head || document.documentElement)
+    node.appendChild(element)
+}
+
+function loadData(path) {
+    fetch(chrome.runtime.getURL(path))
+        .then(response => response.json())
+        .then(json => {
+            const name = path.split('/').pop().split('.')[0]
+            window.postMessage({ type: 't20-loaded-json', name, json }, '*')
         })
-    }
-
-    if (data.type === 't20-book-loaded') {
-        T20.books[data.book] = data.json
-    }
-
-    if (data.type === 'loaded') {
-        const characterId = data.characterId
-        const iframe = $(`iframe[name="iframe_${characterId}"]`).contents()
-        Object.entries(T20.modules).map(async ([key, module]) => {
-            await checkTimeout(() => iframe.find('.sheet-logo-tormenta').length)
-            console.log(`T20 - ${key} onSheet()...`)
-            module.onSheet(iframe, characterId)
-        })
-    }
-})
-
-
+}
 
 $(document).ready(function () {
 
-    /*
-    loadJs('modules/_api.js')
-    loadJs('modules/_utils.js')
-    loadJs('modules/attacks-and-equipments.js')
-    loadJs('modules/builder.js')
-    loadJs('modules/handouts.js')
-    loadJs('modules/macros.js')
-    //  loadJs('modules/meet.js')
-    loadJs('modules/powers-and-abilities.js')
-    loadJs('modules/spells.js')
-    loadJs('modules/threats.js')
-    //  loadJs('modules/tokens.js')
-    //  loadJs('modules/tracker.js')
+    console.log('Roll20-T20 init')
 
-    //loadCss('sheet.css')
+    loadJsOnRoll20('js/utils.js')
+    loadJsOnRoll20('js/app.js')
+    loadJsOnRoll20('js/listeners.js')
+    loadJsOnRoll20('js/habilities.js')
+
+    loadData('data/spells.json')
+    loadData('data/habilities.json')
+
+    /*
+    loadJsOnRoll20('modules/_api.js')
+    loadJsOnRoll20('modules/_utils.js')
+    loadJsOnRoll20('modules/attacks-and-equipments.js')
+    loadJsOnRoll20('modules/builder.js')
+    loadJsOnRoll20('modules/handouts.js')
+    loadJsOnRoll20('modules/macros.js')
+    //  loadJsOnRoll20('modules/meet.js')
+    loadJsOnRoll20('modules/powers-and-abilities.js')
+    loadJsOnRoll20('modules/spells.js')
+    loadJsOnRoll20('modules/threats.js')
+    //  loadJsOnRoll20('modules/tokens.js')
+    //  loadJsOnRoll20('modules/tracker.js')
+
+    //loadCssOnRoll20('sheet.css')
 
     loadData('data/equipments.json')
     loadData('data/powers.json')
@@ -59,7 +62,7 @@ $(document).ready(function () {
     setTimeout(() => window.postMessage({ type: 't20-scripts-loaded' }, '*'), 100)
 
     // load tormenta20 book rules
-    loadJs('tormenta20_book.js')
+    loadJsOnRoll20('tormenta20_book.js')
 
     fetch(chrome.runtime.getURL('data/rules.json'))
         .then((response) => response.json())
