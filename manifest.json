@@ -1,23 +1,37 @@
 {
-  "name": "Getting Started Example",
-  "description": "Build an Extension!",
+  "name": "T20++",
+  "description": "T20++",
   "version": "1.0",
   "manifest_version": 3,
   "permissions": ["storage", "activeTab", "scripting"],
-  "action": {
-    "default_popup": "popup.html",
-    "default_icon": {
-      "16": "/images/get_started16.png",
-      "32": "/images/get_started32.png",
-      "48": "/images/get_started48.png",
-      "128": "/images/get_started128.png"
+  "content_scripts": [
+    {
+      "matches": [
+        "https://app.roll20.net/editor*"
+      ],
+      "js": [
+        "third-party/jquery-3.6.0.min.js",
+        "third-party/jquery-ui-1.12.1.min.js",
+        "index.js"
+      ],
+      "run_at": "document_start"
     }
-  },
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "js/*",
+        "data/*"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
   "icons": {
     "16": "/images/get_started16.png",
     "32": "/images/get_started32.png",
     "48": "/images/get_started48.png",
     "128": "/images/get_started128.png"
-  },
-  "options_page": "options.html"
+  }
 }
