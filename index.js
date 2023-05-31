@@ -1,48 +1,54 @@
 'use strict'
 
-function loadCssOrJs(path) {
-    let element
-    if (path.endsWith('.css')) {
-        element = document.createElement('link')
-        element.href = chrome.runtime.getURL(path)
-        element.rel = 'stylesheet'
-        element.type = 'text/css'
-    } else {
-        element = document.createElement('script')
-        element.src = chrome.runtime.getURL(path)
-        element.type = 'text/javascript'
-    }
-    let node = (document.head || document.documentElement)
-    node.appendChild(element)
+const T20 = {
+    utils: null,
+    habilities: null,
+    spells: null
 }
 
-function loadData(path) {
-    fetch(chrome.runtime.getURL(path))
-        .then(response => response.json())
-        .then(json => {
-            const book = path.split('/').pop().split('.')[0]
-            window.postMessage({ type: 't20-book-loaded', book, json }, '*')
+window.addEventListener('message', async ({ data }) => {
+    if (data.type === 't20-scripts-loaded') {
+        await checkTimeout(() => $('#editor').length)
+        Object.entries(T20.modules).forEach(([key, module]) => {
+            module.onLoad($('body'))
+            console.log(`T20 - ${key} onLoad()...`)
         })
-}
+    }
 
-loadCssOrJs('bootstrap.js')
+    if (data.type === 't20-book-loaded') {
+        T20.books[data.book] = data.json
+    }
+
+    if (data.type === 'loaded') {
+        const characterId = data.characterId
+        const iframe = $(`iframe[name="iframe_${characterId}"]`).contents()
+        Object.entries(T20.modules).map(async ([key, module]) => {
+            await checkTimeout(() => iframe.find('.sheet-logo-tormenta').length)
+            console.log(`T20 - ${key} onSheet()...`)
+            module.onSheet(iframe, characterId)
+        })
+    }
+})
+
+
 
 $(document).ready(function () {
 
-    loadCssOrJs('modules/_api.js')
-    loadCssOrJs('modules/_utils.js')
-    loadCssOrJs('modules/attacks-and-equipments.js')
-    loadCssOrJs('modules/builder.js')
-    loadCssOrJs('modules/handouts.js')
-    loadCssOrJs('modules/macros.js')
-    //  loadCssOrJs('modules/meet.js')
-    loadCssOrJs('modules/powers-and-abilities.js')
-    loadCssOrJs('modules/spells.js')
-    loadCssOrJs('modules/threats.js')
-    //  loadCssOrJs('modules/tokens.js')
-    //  loadCssOrJs('modules/tracker.js')
+    /*
+    loadJs('modules/_api.js')
+    loadJs('modules/_utils.js')
+    loadJs('modules/attacks-and-equipments.js')
+    loadJs('modules/builder.js')
+    loadJs('modules/handouts.js')
+    loadJs('modules/macros.js')
+    //  loadJs('modules/meet.js')
+    loadJs('modules/powers-and-abilities.js')
+    loadJs('modules/spells.js')
+    loadJs('modules/threats.js')
+    //  loadJs('modules/tokens.js')
+    //  loadJs('modules/tracker.js')
 
-    loadCssOrJs('sheet.css')
+    //loadCss('sheet.css')
 
     loadData('data/equipments.json')
     loadData('data/powers.json')
@@ -52,7 +58,7 @@ $(document).ready(function () {
     setTimeout(() => window.postMessage({ type: 't20-scripts-loaded' }, '*'), 100)
 
     // load tormenta20 book rules
-    loadCssOrJs('tormenta20_book.js')
+    loadJs('tormenta20_book.js')
 
     fetch(chrome.runtime.getURL('data/rules.json'))
         .then((response) => response.json())
@@ -70,4 +76,5 @@ $(document).ready(function () {
 
         }
     })
+    */
 })
