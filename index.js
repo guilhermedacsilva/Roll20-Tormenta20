@@ -38,10 +38,13 @@ $(document).ready(function () {
     loadJsOnRoll20('app.js')
     loadJsOnRoll20('utils.js')
     loadJsOnRoll20('listeners.js')
-    loadJsOnRoll20('habilities.js')
+    loadJsOnRoll20('datatables.min.js')
 
     loadData('spells.json')
     loadData('habilities.json')
+
+    loadCssOnRoll20('bootstrap.min.css')
+    loadCssOnRoll20('app.css')
 
     $(window).on('message', ({ originalEvent: { data } }) => {
         if (data.type === 'loaded') {

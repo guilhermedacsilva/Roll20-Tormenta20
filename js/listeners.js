@@ -4,7 +4,7 @@ window.addEventListener('message', async ({ data }) => {
     if (data.type === 't20-loaded-json') {
         T20.db[data.name] = data.json
     
-    } else if (data.type === 'loaded') {
+    } else if (data.type === 'loaded' && data.characterId) {
         // when user opens a character sheet
         const characterId = data.characterId
         const $iframe = $(`iframe[name="iframe_${characterId}"]`).contents()

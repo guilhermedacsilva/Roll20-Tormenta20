@@ -6,6 +6,19 @@ const T20 = {
     utils: null
 }
 
+T20.modules.habilities = {
+    initSheet: ($iframe, characterId) => {
+        const div = $iframe.find('.sheet-powers-and-abilities')
+        const click = function () {
+            const button = $(this)
+            T20.utils.showDialogHabilities(characterId)
+        }
+        div.find('.repcontrol_add:eq(0)')
+            .after($('<button rel="abilities" class="btn repcontrol_more">T20</button>').click(click))
+        div.find('.repcontrol_add:eq(1)')
+            .after($('<button rel="powers" class="btn repcontrol_more">T20</button>').click(click))
+    }
+}
 
 T20.utils = {
     /*
@@ -23,17 +36,47 @@ T20.utils = {
     },
     */
     showDialogHabilities(characterId) {
-        const input = $('<input type="text" name="value" value="" placeholder="Digite para buscar...">')
-        const dialog = $(`<div class="" title="Habilidades"><form>`)
-        const form = dialog.find('form').append(input)
-            .append('<input type="submit" tabindex="-1" style="position:absolute; top:-1000px">')
+        const dialog = $(`
+        <div class="roll20-t20-conteudo">
+          <div class="row">
+            <form>
+              Inserir na ficha:
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="poderColuna" id="poderColunaE" checked>
+                <label class="form-check-label" for="poderColunaE">
+                  Coluna da esquerda
+                </label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input roll20-t20-input-radio" type="radio" name="poderColuna" id="poderColunaD">
+                <label class="form-check-label" for="poderColunaD">
+                  Coluna da direita
+                </label>
+              </div>
+            </form>
+          </div>
+          <hr>
+          <table id="tabelaPoderes" class="table table-sm">
+            <thead>
+              <tr>
+                <th>Tipo</th>
+                <th class="coluna-200">Nome</th>
+                <th>Descrição</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>`)
         dialog.dialog({
             autoOpen: true,
+            height: 500,
+            width: 900,
             close: () => dialog.remove()
         })
         const modal = dialog.closest('.ui-dialog')
         const titleBar = modal.find('.ui-dialog-titlebar')
         const content = modal.find('.ui-dialog-content')
+        /*
         if (extraOptions.padding) {
             content.css({ padding: extraOptions.padding })
         }
@@ -58,8 +101,9 @@ T20.utils = {
             dialog.dialog('close')
         })
         setTimeout(() => {
-            form.find(':input:eq(0)').focus()
+            content.find(':input:eq(0)').focus()
         }, 1500)
+        */
         return dialog
     },
     showSelectDialog(title, options, callback) {
