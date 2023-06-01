@@ -35,8 +35,8 @@ $(document).ready(function () {
 
     console.log('Roll20-T20 init')
 
-    loadJsOnRoll20('utils.js')
     loadJsOnRoll20('app.js')
+    loadJsOnRoll20('utils.js')
     loadJsOnRoll20('listeners.js')
     loadJsOnRoll20('habilities.js')
 
