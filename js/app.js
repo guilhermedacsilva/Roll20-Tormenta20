@@ -42,7 +42,7 @@ T20.utils = {
             <form>
               Inserir na ficha:
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="poderColuna" id="poderColunaE" checked>
+                <input class="form-check-input roll20-t20-input-radio" type="radio" name="poderColuna" id="poderColunaE" checked>
                 <label class="form-check-label" for="poderColunaE">
                   Coluna da esquerda
                 </label>
@@ -56,7 +56,7 @@ T20.utils = {
             </form>
           </div>
           <hr>
-          <table id="tabelaPoderes" class="table table-sm">
+          <table id="roll20-t20-table-habilities" class="table table-sm">
             <thead>
               <tr>
                 <th>Tipo</th>
@@ -76,6 +76,19 @@ T20.utils = {
         const modal = dialog.closest('.ui-dialog')
         const titleBar = modal.find('.ui-dialog-titlebar')
         const content = modal.find('.ui-dialog-content')
+        const tableHabilities = content.find('#roll20-t20-table-habilities').DataTable({
+            data: T20.db.habilities,
+            columns: [
+                { title: 'Tipo', data: 1, orderData: [0, 1] },
+                {
+                    title: 'Nome',
+                    data: 2,
+                    orderData: 1,
+                    //fnCreatedCell: prepararLinkPoder
+                },
+                { title: 'Descrição', data: 3, orderData: 2 },
+            ],
+        })
         /*
         if (extraOptions.padding) {
             content.css({ padding: extraOptions.padding })
