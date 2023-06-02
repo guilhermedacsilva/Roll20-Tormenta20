@@ -103,7 +103,6 @@ T20.utils = {
                 "attr_spellresistencia"
             ]
             inputs.forEach(inputName => {
-                //novoItem.find(`[name="${inputName}"]`).dispatchEvent(new Event('blur'))
                 $novoItem.find(`[name="${inputName}"]`)[0].dispatchEvent(new Event('blur'))
             })
         }, 10)
