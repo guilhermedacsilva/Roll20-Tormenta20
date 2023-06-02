@@ -43,7 +43,7 @@ T20.utils = {
     },
 
     prepararLinkMagia(nTd, sData, oData, iRow, iCol, $iframe) {
-        $(nTd).html(`<span class="nome-click">${oData[2]}</span>`)
+        $(nTd).html(`<span class="nome-click">${oData.nome}</span>`)
         nTd.addEventListener("click", () => {
             T20.utils.fichaInserirMagia(oData, $iframe)
         })
@@ -76,9 +76,9 @@ T20.utils = {
     },
 
     fichaInserirMagia(magia, $iframe) {
-        let $spellGroup = $iframe.find('.repeating_spells' + magia.circulo).parent()
+        const $spellGroup = $iframe.find('.repeating_spells' + magia.circulo).parent()
         $spellGroup.find('.repcontrol_add').click()
-        let $novoItem = $spellGroup.find('.repitem').last()
+        const $novoItem = $spellGroup.find('.repitem').last()
 
         $novoItem.find('[name="attr_namespell"]').val(magia.nome)
         $novoItem.find('[name="attr_spellalcance"]').val(magia.alcance)
@@ -91,8 +91,8 @@ T20.utils = {
             $novoItem.find('[name="attr_spellresistencia"]').val(magia.resistencia)
         }
 
-        setTimeout(function () {
-            let inputs = [
+        setTimeout(() => {
+            const inputs = [
                 "attr_namespell",
                 "attr_spellalcance",
                 "attr_spellalvoarea",
@@ -104,7 +104,7 @@ T20.utils = {
             ]
             inputs.forEach(inputName => {
                 //novoItem.find(`[name="${inputName}"]`).dispatchEvent(new Event('blur'))
-                novoItem.find(`[name="${inputName}"]`).trigger('blur')
+                $novoItem.find(`[name="${inputName}"]`)[0].dispatchEvent(new Event('blur'))
             })
         }, 10)
 

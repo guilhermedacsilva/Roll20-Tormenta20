@@ -5,6 +5,8 @@ window.addEventListener('message', async ({ data }) => {
         if (data.name == 'habilities') {
             let habilities = data.json.map( (e, i) => [i, e[0], e[1], e[2]] );
             T20.db[data.name] = habilities
+        } else {
+            T20.db[data.name] = data.json
         }
     
     } else if (data.type === 'loaded' && data.characterId) {
