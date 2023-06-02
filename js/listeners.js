@@ -13,7 +13,7 @@ window.addEventListener('message', async ({ data }) => {
         const $iframe = $(`iframe[name="iframe_${characterId}"]`).contents()
         Object.entries(T20.modules).map(async ([key, module]) => {
             await checkTimeout(() => $iframe.find('.sheet-logo-tormenta').length)
-            module.initSheet($iframe, characterId)
+            module.initSheet($iframe)
         })
     }
 

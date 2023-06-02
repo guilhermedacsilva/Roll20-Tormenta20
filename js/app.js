@@ -3,15 +3,14 @@
 const T20 = {
     db: {},
     modules: {},
-    utils: null
+    utils: null,
 }
 
 T20.modules.habilities = {
     initSheet: ($iframe, characterId) => {
         const div = $iframe.find('.sheet-powers-and-abilities')
         const click = function () {
-            const button = $(this)
-            T20.utils.showDialogHabilities(characterId)
+            T20.utils.showDialogHabilities($iframe, characterId)
         }
         div.find('.repcontrol_add:eq(0)')
             .after($('<button rel="abilities" class="btn repcontrol_more">T20</button>').click(click))
@@ -35,7 +34,40 @@ T20.utils = {
         return [...T20.d20.engine.mousePos]
     },
     */
-    showDialogHabilities(characterId) {
+    prepararLinkPoder(nTd, sData, oData, iRow, iCol, $iframe) {
+        $(nTd).html(`<span class="nome-click">${oData[2]}</span>`);
+        nTd.addEventListener("click", () => {
+            T20.utils.fichaInserirPoder(oData[0], $iframe)
+        });
+    },
+
+    fichaInserirPoder(habilityIndex, $iframe) {
+        let poder = T20.db.habilities[habilityIndex]
+        let colunaDireita = $('#poderColunaD').prop("checked")
+
+        let poderes = $iframe.find('[class="sheet-container-reapeater"]');
+        let htmlName = 'ability';
+        if (colunaDireita) {
+            poderes = poderes[1];
+            htmlName = 'power';
+        } else {
+            poderes = poderes[0];
+        }
+
+        poderes.querySelector('[class="btn repcontrol_add"]').click();
+        let itens = poderes.querySelectorAll('[class="repitem"]');
+        var novoItem = itens[itens.length - 1];
+
+        novoItem.querySelector(`[name="attr_name${htmlName}"]`).value = poder[2];
+        novoItem.querySelector(`[name="attr_${htmlName}description"]`).value = poder[3];
+
+        setTimeout(function () {
+            novoItem.querySelector(`[name="attr_name${htmlName}"]`).dispatchEvent(new Event('blur'));
+            novoItem.querySelector(`[name="attr_${htmlName}description"]`).dispatchEvent(new Event('blur'));
+        }, 10);
+    },
+
+    showDialogHabilities($iframe) {
         const dialog = $(`
         <div class="roll20-t20-conteudo">
           <div class="row">
@@ -60,7 +92,7 @@ T20.utils = {
             <thead>
               <tr>
                 <th>Tipo</th>
-                <th class="coluna-200">Nome</th>
+                <th>Nome</th>
                 <th>Descrição</th>
               </tr>
             </thead>
@@ -68,6 +100,7 @@ T20.utils = {
           </table>
         </div>`)
         dialog.dialog({
+            title: 'Listagem de habilidades e poderes',
             autoOpen: true,
             height: 500,
             width: 900,
@@ -84,10 +117,23 @@ T20.utils = {
                     title: 'Nome',
                     data: 2,
                     orderData: 1,
-                    //fnCreatedCell: prepararLinkPoder
+                    fnCreatedCell: (nTd, sData, oData, iRow, iCol) => {
+                        T20.utils.prepararLinkPoder(nTd, sData, oData, iRow, iCol, $iframe)
+                    }
                 },
                 { title: 'Descrição', data: 3, orderData: 2 },
             ],
+            language: {
+                search: 'Pesquisar',
+                lengthMenu: 'Mostrar _MENU_ itens',
+                info: 'Exibindo do _START_ ao _END_ de um total de _TOTAL_ itens',
+                paginate: {
+                    first: 'Primeira',
+                    last: 'Última',
+                    next: 'Próxima',
+                    previous: 'Anterior'
+                },
+            },
         })
         /*
         if (extraOptions.padding) {

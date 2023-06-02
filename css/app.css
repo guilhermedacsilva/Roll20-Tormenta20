@@ -16,3 +16,8 @@
     width: 1em!important;
     height: 1em!important;
 }
+
+.nome-click {
+    cursor: pointer;
+    text-decoration: underline;
+}
