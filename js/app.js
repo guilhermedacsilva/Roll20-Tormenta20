@@ -36,9 +36,9 @@ T20.utils = {
     },
 
     prepararLinkPoder(nTd, sData, oData, iRow, iCol, $iframe) {
-        $(nTd).html(`<span class="nome-click">${oData[2]}</span>`)
+        $(nTd).html(`<span class="nome-click">${oData[1]}</span>`)
         nTd.addEventListener("click", () => {
-            T20.utils.fichaInserirPoder(oData[0], $iframe)
+            T20.utils.fichaInserirPoder(oData, $iframe)
         })
     },
 
@@ -49,8 +49,7 @@ T20.utils = {
         })
     },
 
-    fichaInserirPoder(habilityIndex, $iframe) {
-        let poder = T20.db.habilities[habilityIndex]
+    fichaInserirPoder(hability, $iframe) {
         let colunaDireita = $('#poderColunaD').prop("checked")
 
         let poderes = $iframe.find('[class="sheet-container-reapeater"]')
@@ -66,8 +65,8 @@ T20.utils = {
         let itens = poderes.querySelectorAll('[class="repitem"]')
         var novoItem = itens[itens.length - 1]
 
-        novoItem.querySelector(`[name="attr_name${htmlName}"]`).value = poder[2]
-        novoItem.querySelector(`[name="attr_${htmlName}description"]`).value = poder[3]
+        novoItem.querySelector(`[name="attr_name${htmlName}"]`).value = hability[1]
+        novoItem.querySelector(`[name="attr_${htmlName}description"]`).value = hability[2]
 
         setTimeout(function () {
             novoItem.querySelector(`[name="attr_name${htmlName}"]`).dispatchEvent(new Event('blur'))
@@ -153,17 +152,19 @@ T20.utils = {
         const content = modal.find('.ui-dialog-content')
         content.find('#roll20-t20-table-habilities').DataTable({
             data: T20.db.habilities,
+            dom: 'rtip',
+            pageLength: 50,
             columns: [
-                { title: 'Tipo', data: 1, orderData: [0, 1] },
+                { title: 'Tipo', data: 0, orderData: [0, 1] },
                 {
                     title: 'Nome',
-                    data: 2,
-                    orderData: 1,
+                    data: 1,
+                    orderData: [1, 0],
                     fnCreatedCell: (nTd, sData, oData, iRow, iCol) => {
                         T20.utils.prepararLinkPoder(nTd, sData, oData, iRow, iCol, $iframe)
                     }
                 },
-                { title: 'Descrição', data: 3, orderData: 2 },
+                { title: 'Descrição', data: 2, orderData: 2 },
             ],
             language: {
                 search: 'Pesquisar',
