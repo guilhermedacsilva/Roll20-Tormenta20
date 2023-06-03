@@ -43,7 +43,6 @@ $(document).ready(function () {
     loadData('spells.json')
     loadData('habilities.json')
 
-    loadCssOnRoll20('bootstrap.min.css')
     loadCssOnRoll20('datatables.min.css')
     loadCssOnRoll20('app.css')
 
