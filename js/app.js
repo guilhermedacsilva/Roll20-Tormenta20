@@ -197,7 +197,7 @@ T20.utils = {
               </tbody>
               <tfoot>
                 <tr>
-                    <th><select style="width:40px">
+                    <th><select style="width:40px;margin-bottom: 0">
                         <option value="">--</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -205,7 +205,7 @@ T20.utils = {
                         <option value="4">4</option>
                         <option value="5">5</option>
                     </select></th>
-                    <th><select style="width:60px">
+                    <th><select style="width:60px;margin-bottom: 0">
                         <option value="">--</option>
                         <option value="Arcana">Arcanas</option>
                         <option value="Divina">Divinas</option>
@@ -227,7 +227,7 @@ T20.utils = {
         const modal = dialog.closest('.ui-dialog')
         const content = modal.find('.ui-dialog-content')
         const table = content.find('#roll20-t20-table-spells').DataTable({
-            dom: 'lrtip',
+            dom: 'rtip',
             pageLength: 50,
             data: T20.db.spells,
             columns: [
