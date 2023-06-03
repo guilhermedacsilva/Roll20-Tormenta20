@@ -228,6 +228,7 @@ T20.utils = {
         const content = modal.find('.ui-dialog-content')
         const table = content.find('#roll20-t20-table-spells').DataTable({
             dom: 'lrtip',
+            pageLength: 50,
             data: T20.db.spells,
             columns: [
                 { title: 'C', data: 'circulo', orderData: [0, 2, 1, 3] },
