@@ -187,13 +187,34 @@ T20.utils = {
               <thead>
                 <tr>
                   <th>C</th>
+                  <th>Tipo</th>
                   <th>Escola</th>
                   <th>Nome</th>
-                  <th class="coluna-400">Resumo</th>
+                  <th class="coluna-400">Descrição</th>
                 </tr>
               </thead>
               <tbody>
               </tbody>
+              <tfoot>
+                <tr>
+                    <th><select style="width:40px">
+                        <option value="">--</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select></th>
+                    <th><select style="width:60px">
+                        <option value="">--</option>
+                        <option value="Arcana">Arcanas</option>
+                        <option value="Divina">Divinas</option>
+                    </select></th>
+                    <th><input style="width:85px"></th>
+                    <th><input style="width:85px"></th>
+                    <th><input style="width:100%"></th>
+                </tr>
+              </tfoot>
             </table>
         </div>`)
         dialog.dialog({
@@ -205,15 +226,17 @@ T20.utils = {
         })
         const modal = dialog.closest('.ui-dialog')
         const content = modal.find('.ui-dialog-content')
-        content.find('#roll20-t20-table-spells').DataTable({
+        const table = content.find('#roll20-t20-table-spells').DataTable({
+            dom: 'lrtip',
             data: T20.db.spells,
             columns: [
-                { title: 'C', data: 'circulo', orderData: [0, 1, 2] },
-                { title: 'Escola', data: 'escola', orderData: [1, 0, 2] },
+                { title: 'C', data: 'circulo', orderData: [0, 2, 1, 3] },
+                { title: 'Tipo', data: 'tipo', orderData: [1, 0, 2, 3] },
+                { title: 'Escola', data: 'escola', orderData: [2, 0, 1, 3] },
                 {
                     title: 'Nome',
                     data: 'nome',
-                    orderData: 2,
+                    orderData: 3,
                     fnCreatedCell: (nTd, sData, oData, iRow, iCol) => {
                         T20.utils.prepararLinkMagia(nTd, sData, oData, iRow, iCol, $iframe)
                     }
@@ -221,7 +244,7 @@ T20.utils = {
                 {
                     title: 'Descrição',
                     data: 'descricao',
-                    orderData: 3,
+                    orderData: 4,
                     fnCreatedCell: T20.utils.cortarTexto
                 },
             ],
@@ -236,6 +259,34 @@ T20.utils = {
                     previous: 'Anterior'
                 },
             },
+            initComplete: function () {
+                this.api()
+                    .columns()
+                    .every(function () {
+                        var column = this;
+                        $('input', this.footer()).on('keyup change clear', function () {
+                            if (column.search() !== this.value) {
+                                column.search(this.value).draw();
+                            }
+                        })
+                        $('select', this.footer()).on('change', function () {
+                            let val = $.fn.dataTable.util.escapeRegex($(this).val());
+                            if (val == 'Arcana' || val == 'Divina') {
+                                val += '|Universal'
+                            }
+                            column.search(val, true, false).draw()
+                        })
+                    })
+                $('#roll20-t20-table-spells tfoot tr').appendTo('#roll20-t20-table-spells thead')
+            },
         })
+        /*
+        table.columns().every(function () {
+            const that = this;
+            $('input', this.header()).on('keyup change clear', function () {
+                that.search(this.value).draw();
+            });
+        })
+        */
     },
 }

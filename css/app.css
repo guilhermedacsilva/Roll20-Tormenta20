@@ -22,3 +22,8 @@
     cursor: pointer;
     text-decoration: underline;
 }
+
+.sheet-spellbox .sheet-descricao {
+    text-align: justify;
+    hyphens: auto;
+}
