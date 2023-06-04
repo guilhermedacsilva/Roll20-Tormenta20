@@ -125,7 +125,7 @@ T20.utils = {
           <hr>
           <table id="roll20-t20-table-habilities" class="table table-sm">
             <thead>
-              <tr>
+              <tr class="roll20-t20-dialog-columns">
                 <th>Tipo</th>
                 <th>Nome</th>
                 <th>Descrição</th>
@@ -209,7 +209,10 @@ T20.utils = {
                 { title: 'Descrição', data: 2, orderData: 2 },
             ],
             language: {
+                zeroRecords: "Nenhum item encontrado",
                 info: 'Exibindo do _START_ ao _END_ de um total de _TOTAL_ itens',
+                infoEmpty: "Nenhum item encontrado",
+                infoFiltered: "(filtrado de um total de _MAX_ itens)",
                 paginate: {
                     first: 'Primeira',
                     last: 'Última',
@@ -243,12 +246,12 @@ T20.utils = {
         <div class="roll20-t20-dialog-conteudo">
             <table id="roll20-t20-table-spells" class="table table-sm">
               <thead>
-                <tr>
+                <tr class="roll20-t20-dialog-columns">
                   <th>C</th>
                   <th>Tipo</th>
                   <th>Escola</th>
                   <th>Nome</th>
-                  <th class="coluna-400">Descrição</th>
+                  <th>Descrição</th>
                 </tr>
               </thead>
               <tbody>
@@ -309,7 +312,10 @@ T20.utils = {
                 },
             ],
             language: {
+                zeroRecords: "Nenhum item encontrado",
                 info: 'Exibindo do _START_ ao _END_ de um total de _TOTAL_ itens',
+                infoEmpty: "Nenhum item encontrado",
+                infoFiltered: "(filtrado de um total de _MAX_ itens)",
                 paginate: {
                     first: 'Primeira',
                     last: 'Última',
