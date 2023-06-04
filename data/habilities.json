@@ -2105,47 +2105,47 @@
   [
     "Paladino",
     "Julgamento Divino: Arrependimento",
-    "Você pode gastar 2 PM para marcar um inimigo em alcance curto. Na próxima vez que esse inimigo acertar um ataque em você ou em um de seus aliados, deve fazer um teste de Vontade (CD Car). Se falhar, fica atordoado no próximo turno dele (apenas uma vez por cena)."
+    "Você pode gastar 2 PM para marcar um inimigo em alcance curto. Na próxima vez que esse inimigo acertar um ataque em você ou em um de seus aliados, deve fazer um teste de Vontade (CD Car). Se falhar, fica atordoado no próximo turno dele (apenas uma vez por cena).<br>• Proferir um julgamento gasta uma ação de movimento, a menos que a descrição diga o contrário.<br>• Julgamentos que não têm um efeito instantâneo duram até o fim da cena.<br>• Uma mesma criatura pode ser alvo de vários julgamentos diferentes, mas efeitos do mesmo julgamento não se acumulam."
   ],
   [
     "Paladino",
     "Julgamento Divino: Autoridade",
-    "Você pode gastar 1 PM para comandar uma criatura em alcance curto. Faça um teste de Diplomacia oposto pelo teste de Vontade do alvo. Se você vencer, ele obedece a um comando simples, como “pare” ou “largue a arma” (apenas uma vez por cena). Mental."
+    "Você pode gastar 1 PM para comandar uma criatura em alcance curto. Faça um teste de Diplomacia oposto pelo teste de Vontade do alvo. Se você vencer, ele obedece a um comando simples, como “pare” ou “largue a arma” (apenas uma vez por cena). Mental.<br>• Proferir um julgamento gasta uma ação de movimento, a menos que a descrição diga o contrário.<br>• Julgamentos que não têm um efeito instantâneo duram até o fim da cena.<br>• Uma mesma criatura pode ser alvo de vários julgamentos diferentes, mas efeitos do mesmo julgamento não se acumulam."
   ],
   [
     "Paladino",
     "Julgamento Divino: Coragem",
-    "Você pode gastar 2 PM para inspirar coragem em uma criatura em alcance curto, incluindo você mesmo. A criatura fica imune a efeitos de medo e recebe +2 em testes de ataque contra o inimigo com maior ND na cena."
+    "Você pode gastar 2 PM para inspirar coragem em uma criatura em alcance curto, incluindo você mesmo. A criatura fica imune a efeitos de medo e recebe +2 em testes de ataque contra o inimigo com maior ND na cena.<br>• Proferir um julgamento gasta uma ação de movimento, a menos que a descrição diga o contrário.<br>• Julgamentos que não têm um efeito instantâneo duram até o fim da cena.<br>• Uma mesma criatura pode ser alvo de vários julgamentos diferentes, mas efeitos do mesmo julgamento não se acumulam."
   ],
   [
     "Paladino",
     "Julgamento Divino: Iluminação",
-    "Você pode marcar um inimigo em alcance curto. Quando acerta um ataque corpo a corpo nesse inimigo, você recebe 2 PM temporários. Você só pode proferir este julgamento uma vez por cena."
+    "Você pode marcar um inimigo em alcance curto. Quando acerta um ataque corpo a corpo nesse inimigo, você recebe 2 PM temporários. Você só pode proferir este julgamento uma vez por cena.<br>• Proferir um julgamento gasta uma ação de movimento, a menos que a descrição diga o contrário.<br>• Julgamentos que não têm um efeito instantâneo duram até o fim da cena.<br>• Uma mesma criatura pode ser alvo de vários julgamentos diferentes, mas efeitos do mesmo julgamento não se acumulam."
   ],
   [
     "Paladino",
     "Julgamento Divino: Justiça",
-    "Você pode gastar 2 PM para marcar um inimigo em alcance curto. A próxima vez que esse inimigo causar dano em você ou em um de seus aliados, deve fazer um teste de Vontade (CD Car). Se falhar, sofre dano de luz igual à metade do dano que causou."
+    "Você pode gastar 2 PM para marcar um inimigo em alcance curto. A próxima vez que esse inimigo causar dano em você ou em um de seus aliados, deve fazer um teste de Vontade (CD Car). Se falhar, sofre dano de luz igual à metade do dano que causou.<br>• Proferir um julgamento gasta uma ação de movimento, a menos que a descrição diga o contrário.<br>• Julgamentos que não têm um efeito instantâneo duram até o fim da cena.<br>• Uma mesma criatura pode ser alvo de vários julgamentos diferentes, mas efeitos do mesmo julgamento não se acumulam."
   ],
   [
     "Paladino",
     "Julgamento Divino: Libertação",
-    "Você pode gastar 5 PM para cancelar uma condição negativa qualquer (como abalado, paralisado etc.) que esteja afetando uma criatura em alcance curto."
+    "Você pode gastar 5 PM para cancelar uma condição negativa qualquer (como abalado, paralisado etc.) que esteja afetando uma criatura em alcance curto.<br>• Proferir um julgamento gasta uma ação de movimento, a menos que a descrição diga o contrário.<br>• Julgamentos que não têm um efeito instantâneo duram até o fim da cena.<br>• Uma mesma criatura pode ser alvo de vários julgamentos diferentes, mas efeitos do mesmo julgamento não se acumulam."
   ],
   [
     "Paladino",
     "Julgamento Divino: Salvação",
-    "Você pode gastar 2 PM para marcar um inimigo em alcance curto. Até o fim da cena, quando você acerta um ataque corpo a corpo nesse inimigo, recupera 5 pontos de vida."
+    "Você pode gastar 2 PM para marcar um inimigo em alcance curto. Até o fim da cena, quando você acerta um ataque corpo a corpo nesse inimigo, recupera 5 pontos de vida.<br>• Proferir um julgamento gasta uma ação de movimento, a menos que a descrição diga o contrário.<br>• Julgamentos que não têm um efeito instantâneo duram até o fim da cena.<br>• Uma mesma criatura pode ser alvo de vários julgamentos diferentes, mas efeitos do mesmo julgamento não se acumulam."
   ],
   [
     "Paladino",
     "Julgamento Divino: Vindicação",
-    "Você pode gastar 2 PM para marcar um inimigo que tenha causado dano a você ou a seus aliados na cena. Você recebe +1 em testes de ataque e +1d8 em rolagens de dano contra o inimigo escolhido, mas sofre –5 em testes de ataque contra quaisquer outros alvos. No 5º nível, e a cada cinco níveis seguintes, você pode pagar +1 PM para aumentar o bônus de ataque em +1 e o bônus de dano em +1d8. O efeito termina caso o alvo fique inconsciente."
+    "Você pode gastar 2 PM para marcar um inimigo que tenha causado dano a você ou a seus aliados na cena. Você recebe +1 em testes de ataque e +1d8 em rolagens de dano contra o inimigo escolhido, mas sofre –5 em testes de ataque contra quaisquer outros alvos. No 5º nível, e a cada cinco níveis seguintes, você pode pagar +1 PM para aumentar o bônus de ataque em +1 e o bônus de dano em +1d8. O efeito termina caso o alvo fique inconsciente.<br>• Proferir um julgamento gasta uma ação de movimento, a menos que a descrição diga o contrário.<br>• Julgamentos que não têm um efeito instantâneo duram até o fim da cena.<br>• Uma mesma criatura pode ser alvo de vários julgamentos diferentes, mas efeitos do mesmo julgamento não se acumulam."
   ],
   [
     "Paladino",
     "Julgamento Divino: Zelo",
-    "Você pode gastar 1 PM para marcar um alvo em alcance longo. Pelo restante da cena, sempre que se mover na direção desse alvo, você se move com o dobro de seu deslocamento."
+    "Você pode gastar 1 PM para marcar um alvo em alcance longo. Pelo restante da cena, sempre que se mover na direção desse alvo, você se move com o dobro de seu deslocamento.<br>• Proferir um julgamento gasta uma ação de movimento, a menos que a descrição diga o contrário.<br>• Julgamentos que não têm um efeito instantâneo duram até o fim da cena.<br>• Uma mesma criatura pode ser alvo de vários julgamentos diferentes, mas efeitos do mesmo julgamento não se acumulam."
   ],
   [
     "Paladino",
