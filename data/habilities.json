@@ -324,7 +324,7 @@
   [
     "Arcanista",
     "Familiar",
-    "Você possui um animal de estimação mágico. Veja o quadro para detalhes."
+    "Você possui um animal de estimação mágico. Um familiar é uma criatura mágica. Em ermos de jogo, é um parceiro especial om o qual você pode se comunicar elepaticamente em alcance longo. Ele bedece a suas ordens, mas ainda está imitado ao que uma criatura de sua spécie pode fazer. Se ele morrer, você ica atordoado por uma rodada. Você pode nvocar um novo familiar com um ritual ue exige um dia e T$ 100 em ingredientes.<br>• Borboleta. A CD dos testes de ontade para resistir a suas magias umenta em +1.<br>• Cobra. A CD dos testes de Fortitude ara resistir a suas magias aumenta em +1.<br>• Coruja. Quando lança uma magia com lcance de toque, você pode pagar 1 PM para umentar seu alcance para curto.<br>• Corvo. Quando faz um teste de isticismo ou Vontade, você pode pagar 1 M para rolar dois dados e usar o melhor esultado.<br>• Falcão. Você não pode ser surpreendido  nunca fica desprevenido.<br>• Gato. Você recebe visão no escuro e +2 m Furtividade.<br>• Lagarto. A CD dos testes de Reflexos ara resistir a suas magias aumenta em +1.<br>• Morcego. Você adquire percepção às egas em alcance curto.<br>• Rato. Você pode usar seu atributo-chave m Fortitude, no lugar de Constituição.<br>• Sapo. Você soma seu atributo-chave ao eu total de pontos de vida (cumulativo)."
   ],
   [
     "Arcanista",
@@ -391,7 +391,21 @@
     "Alta Arcana",
     "No 20º nível, seu domínio das artes arcanas é total. O custo em PM de suas magias arcanas é reduzido à metade (após aplicar aprimoramentos e quaisquer outros efeitos que reduzam custo)."
   ],
-
+  [
+    "Arcanista",
+    "Linhagem Dracônica",
+    "Um de seus antepassados foi um majestoso dragão. Escolha um tipo de dano entre ácido, eletricidade, fogo ou frio.<br>• Básica. Você soma seu Carisma em seus pontos de vida iniciais e recebe redução de dano 5 ao tipo escolhido.<br>• Aprimorada. Suas magias do tipo escolhido custam –1 PM e causam +1 ponto de dano por dado.<br>• Superior. Você passa a somar o dobro do seu Carisma em seus pontos de vida iniciais e se torna imune a dano do tipo escolhido. Além disso, sempre que reduz um ou mais inimigos a 0 PV ou menos com uma magia do tipo escolhido, você recebe uma quantidade de PM temporários igual ao círculo da magia."
+  ],
+  [
+    "Arcanista",
+    "Linhagem Feérica",
+    "Seu sangue foi tocado pelas fadas.<br>• Básica. Você se torna treinado em Enganação e aprende uma magia de 1º círculo de encantamento ou ilusão, arcana ou divina, a sua escolha.<br>• Aprimorada. A CD para resistir a suas magias de encantamento e ilusão aumenta em +2 e suas magias dessas escolas custam –1 PM.<br>• Superior. Você recebe +2 em Carisma. Se uma criatura passar no teste de resistência contra uma magia de encantamento ou ilusão lançada por você, você fica alquebrado até o final da cena."
+  ],
+  [
+    "Arcanista",
+    "Linhagem Rubra",
+    "Seu sangue foi corrompido pela Tormenta.<br>• Básica. Você recebe um poder da Tormenta. Além disso, pode perder outro atributo em vez de Carisma por poderes da Tormenta.<br>• Aprimorada. Escolha uma magia para cada poder da Tormenta que você possui. Essas magias custam –1 PM. Sempre que recebe um novo poder da Tormenta, você pode escolher uma nova magia. Esta herança conta como um poder da Tormenta (exceto para perda de Carisma).<br>• Superior. Você recebe +4 PM para cada poder da Tormenta que tiver. Esta herança conta como um poder da Tormenta (exceto para perda de Carisma)."
+  ],
   [
     "Bárbaro",
     "Fúria",
@@ -2718,12 +2732,12 @@
   [
     "Concedido",
     "Aura de Medo",
-    "Kally. Você pode gastar 2 PM para gerar uma aura de medo de 9m de raio e duração até o fim da cena. Todos os inimigos que entrem na aura devem fazer um teste de Vontade (CD Car) ou ficam abalados até o fim da cena. Uma criatura que passe no teste de Vontade fica imune a esta habilidade por um dia. e"
+    "Kally. Você pode gastar 2 PM para gerar uma aura de medo de 9m de raio e duração até o fim da cena. Todos os inimigos que entrem na aura devem fazer um teste de Vontade (CD Car) ou ficam abalados até o fim da cena. Uma criatura que passe no teste de Vontade fica imune a esta habilidade por um dia."
   ],
   [
     "Concedido",
     "Aura de Paz",
-    "Marah. Você pode gastar 2 PM para gerar uma aura de paz com alcance curto e duração de uma cena. Qualquer inimigo dentro da aura que tente fazer uma ação hostil contra você deve fazer um teste de Vontade (CD Car). Se falhar, perderá sua ação. Se passar, fica imune a esta habilidade por um dia. e"
+    "Marah. Você pode gastar 2 PM para gerar uma aura de paz com alcance curto e duração de uma cena. Qualquer inimigo dentro da aura que tente fazer uma ação hostil contra você deve fazer um teste de Vontade (CD Car). Se falhar, perderá sua ação. Se passar, fica imune a esta habilidade por um dia."
   ],
   [
     "Concedido",
@@ -2738,7 +2752,7 @@
   [
     "Concedido",
     "Carícia Sombria",
-    "Tenebra. Você pode gastar 1 PM e uma ação padrão para cobrir sua mão com energia negativa e tocar uma criatura em alcance corpo a corpo. A criatura sofre 2d6 pontos de dano de trevas (Fortitude CD Sab reduz à metade) e você recupera PV iguais à metade do dano causado. Você pode aprender Toque Vampírico como uma magia divina. Se fizer isso, o custo dela diminui em –1 PM. e"
+    "Tenebra. Você pode gastar 1 PM e uma ação padrão para cobrir sua mão com energia negativa e tocar uma criatura em alcance corpo a corpo. A criatura sofre 2d6 pontos de dano de trevas (Fortitude CD Sab reduz à metade) e você recupera PV iguais à metade do dano causado. Você pode aprender Toque Vampírico como uma magia divina. Se fizer isso, o custo dela diminui em –1 PM."
   ],
   [
     "Concedido",
@@ -2758,7 +2772,7 @@
   [
     "Concedido",
     "Conjurar Arma",
-    "Arsenal. Você pode gastar 1 PM para invocar uma arma corpo a corpo ou de arremesso com a qual seja proficiente. A arma surge em sua mão, fornece +1 em testes de ataque e rolagens de dano, é considerada mágica e dura pela cena. Você não pode criar armas de disparo, mas pode criar 20 munições. e"
+    "Arsenal. Você pode gastar 1 PM para invocar uma arma corpo a corpo ou de arremesso com a qual seja proficiente. A arma surge em sua mão, fornece +1 em testes de ataque e rolagens de dano, é considerada mágica e dura pela cena. Você não pode criar armas de disparo, mas pode criar 20 munições."
   ],
   [
     "Concedido",
@@ -2778,7 +2792,7 @@
   [
     "Concedido",
     "Dedo Verde",
-    "Allihanna. Você aprende e pode lançar Controlar Plantas. Caso aprenda novamente essa magia, seu custo diminui em –1 PM. e"
+    "Allihanna. Você aprende e pode lançar Controlar Plantas. Caso aprenda novamente essa magia, seu custo diminui em –1 PM."
   ],
   [
     "Concedido",
@@ -2793,7 +2807,7 @@
   [
     "Concedido",
     "Dom da Imortalidade",
-    "Thyatis. Você é imortal. Sempre que morre, não importando o motivo, volta à vida após 3d6 dias. Apenas paladinos podem escolher este poder. Um personagem pode ter Dom da Imortalidade ou Dom da Ressurreição, mas não ambos. e"
+    "Thyatis. Você é imortal. Sempre que morre, não importando o motivo, volta à vida após 3d6 dias. Apenas paladinos podem escolher este poder. Um personagem pode ter Dom da Imortalidade ou Dom da Ressurreição, mas não ambos."
   ],
   [
     "Concedido",
@@ -2803,7 +2817,7 @@
   [
     "Concedido",
     "Dom da Ressurreição",
-    "Thyatis. Você pode gastar uma ação completa e todos os PM que possui (mínimo 1 PM) para tocar o corpo de uma criatura morta há menos de um ano e ressuscitá- la. A criatura volta à vida com 1 PV e 0 PM, e perde 1 ponto de Constituição permanentemente. Este poder só pode ser usado uma vez em cada criatura. Apenas clérigos podem escolher este poder. Um personagem pode ter Dom da Imortalidade ou Dom da Ressurreição, mas não ambos. e"
+    "Thyatis. Você pode gastar uma ação completa e todos os PM que possui (mínimo 1 PM) para tocar o corpo de uma criatura morta há menos de um ano e ressuscitá- la. A criatura volta à vida com 1 PV e 0 PM, e perde 1 ponto de Constituição permanentemente. Este poder só pode ser usado uma vez em cada criatura. Apenas clérigos podem escolher este poder. Um personagem pode ter Dom da Imortalidade ou Dom da Ressurreição, mas não ambos."
   ],
   [
     "Concedido",
@@ -2818,17 +2832,17 @@
   [
     "Concedido",
     "Escudo Mágico",
-    "Wynna. Quando lança uma magia, você recebe um bônus na Defesa igual ao círculo da magia lançada até o início do seu próximo turno. e"
+    "Wynna. Quando lança uma magia, você recebe um bônus na Defesa igual ao círculo da magia lançada até o início do seu próximo turno."
   ],
   [
     "Concedido",
     "Espada Justiceira",
-    "Khalmyr. Você pode gastar 1 PM para encantar sua espada (ou outra arma corpo a corpo de corte que esteja empunhando). Ela tem seu dano aumentado em um passo até o fim da cena. e"
+    "Khalmyr. Você pode gastar 1 PM para encantar sua espada (ou outra arma corpo a corpo de corte que esteja empunhando). Ela tem seu dano aumentado em um passo até o fim da cena."
   ],
   [
     "Concedido",
     "Espada Solar",
-    "Azgher. Você pode gastar 1 PM para fazer uma arma corpo a corpo de corte que esteja empunhando causar +1d6 de dano por fogo até o fim da cena. e"
+    "Azgher. Você pode gastar 1 PM para fazer uma arma corpo a corpo de corte que esteja empunhando causar +1d6 de dano por fogo até o fim da cena."
   ],
   [
     "Concedido",
@@ -2853,7 +2867,7 @@
   [
     "Concedido",
     "Forma de Macaco",
-    "Hyninn. Você pode gastar uma ação completa e 2 PM para se transformar em um macaco. Você adquire tamanho Minúsculo (o que fornece +5 em Furtividade e –5 em testes de manobra) e recebe deslocamento de escalar 9m. Seu equipamento desaparece (e você perde seus benefícios) até você voltar ao normal, mas suas outras estatísticas não são alteradas. A transformação dura indefinidamente, mas termina caso você faça um ataque, lance uma magia ou sofra dano. e"
+    "Hyninn. Você pode gastar uma ação completa e 2 PM para se transformar em um macaco. Você adquire tamanho Minúsculo (o que fornece +5 em Furtividade e –5 em testes de manobra) e recebe deslocamento de escalar 9m. Seu equipamento desaparece (e você perde seus benefícios) até você voltar ao normal, mas suas outras estatísticas não são alteradas. A transformação dura indefinidamente, mas termina caso você faça um ataque, lance uma magia ou sofra dano."
   ],
   [
     "Concedido",
@@ -2863,7 +2877,7 @@
   [
     "Concedido",
     "Fúria Divina",
-    "Thwor. Você pode gastar 2 PM para invocar uma fúria selvagem, tornando-se temível em combate. Até o fim da cena, você recebe +2 em testes de ataque e rolagens de dano corpo a corpo, mas não pode executar nenhuma ação que exija paciência ou concentração (como usar a perícia Furtividade ou lançar magias). Se usar este poder em conjunto com a habilidade Fúria, ela também dura uma cena (e não termina se você não atacar ou for alvo de uma ação hostil). e"
+    "Thwor. Você pode gastar 2 PM para invocar uma fúria selvagem, tornando-se temível em combate. Até o fim da cena, você recebe +2 em testes de ataque e rolagens de dano corpo a corpo, mas não pode executar nenhuma ação que exija paciência ou concentração (como usar a perícia Furtividade ou lançar magias). Se usar este poder em conjunto com a habilidade Fúria, ela também dura uma cena (e não termina se você não atacar ou for alvo de uma ação hostil)."
   ],
   [
     "Concedido",
@@ -2873,7 +2887,7 @@
   [
     "Concedido",
     "Habitante do Deserto",
-    "Azgher. Você recebe redução de fogo 10 e pode pagar 1 PM para criar água pura e potável suficiente para um odre (ou outro recipiente pequeno). e"
+    "Azgher. Você recebe redução de fogo 10 e pode pagar 1 PM para criar água pura e potável suficiente para um odre (ou outro recipiente pequeno)."
   ],
   [
     "Concedido",
@@ -2888,12 +2902,12 @@
   [
     "Concedido",
     "Liberdade Divina",
-    "Valkaria. Você pode gastar 2 PM para receber imunidade a efeitos de movimento por uma rodada. e"
+    "Valkaria. Você pode gastar 2 PM para receber imunidade a efeitos de movimento por uma rodada."
   ],
   [
     "Concedido",
     "Manto da Penumbra",
-    "Tenebra. Você aprende e pode lançar Escuridão. Caso aprenda novamente essa magia, seu custo diminui em –1 PM. e"
+    "Tenebra. Você aprende e pode lançar Escuridão. Caso aprenda novamente essa magia, seu custo diminui em –1 PM."
   ],
   [
     "Concedido",
@@ -2908,17 +2922,17 @@
   [
     "Concedido",
     "Mestre dos Mares",
-    "Oceano. Você pode falar com animais aquáticos (como o efeito da magia Voz Divina) e aprende e pode lançar Acalmar Animal, mas só contra criaturas aquáticas. Caso aprenda novamente essa magia, seu custo diminui em –1 PM. e"
+    "Oceano. Você pode falar com animais aquáticos (como o efeito da magia Voz Divina) e aprende e pode lançar Acalmar Animal, mas só contra criaturas aquáticas. Caso aprenda novamente essa magia, seu custo diminui em –1 PM."
   ],
   [
     "Concedido",
     "Olhar Amedrontador",
-    "Megalokk, Thwor. Você aprende e pode lançar Amedrontar. Caso aprenda novamente essa magia, seu custo diminui em –1 PM. e"
+    "Megalokk, Thwor. Você aprende e pode lançar Amedrontar. Caso aprenda novamente essa magia, seu custo diminui em –1 PM."
   ],
   [
     "Concedido",
     "Palavras de Bondade",
-    "Marah. Você aprende e pode lançar Enfeitiçar. Caso aprenda novamente essa magia, seu custo diminui em –1 PM. e"
+    "Marah. Você aprende e pode lançar Enfeitiçar. Caso aprenda novamente essa magia, seu custo diminui em –1 PM."
   ],
   [
     "Concedido",
@@ -2933,12 +2947,12 @@
   [
     "Concedido",
     "Poder Oculto",
-    "Nimb. Você pode gastar uma ação de movimento e 2 PM para invocar a força, a rapidez ou o vigor dos loucos. Role 1d6 para receber +2 em Força (1 ou 2), Destreza (3 ou 4) ou Constituição (5 ou 6) até o fim da cena. Você pode usar este poder várias vezes, mas bônus no mesmo atributo não são cumulativos. e"
+    "Nimb. Você pode gastar uma ação de movimento e 2 PM para invocar a força, a rapidez ou o vigor dos loucos. Role 1d6 para receber +2 em Força (1 ou 2), Destreza (3 ou 4) ou Constituição (5 ou 6) até o fim da cena. Você pode usar este poder várias vezes, mas bônus no mesmo atributo não são cumulativos."
   ],
   [
     "Concedido",
     "Presas Primordiais",
-    "Kallyadranoch, Megalokk. Você pode gastar 1 PM para transformar seus dentes em presas afiadas até o fim da cena. Você recebe uma arma natural de mordida (dano 1d6, crítico x2, perfuração). Uma vez por rodada, quando usa a ação agredir com outra arma, você pode gastar 1 PM para fazer um ataque corpo a corpo extra com a mordida. Se já possuir outro ataque natural de mordida, em vez disso, o dano desse ataque aumenta em dois passos. e"
+    "Kallyadranoch, Megalokk. Você pode gastar 1 PM para transformar seus dentes em presas afiadas até o fim da cena. Você recebe uma arma natural de mordida (dano 1d6, crítico x2, perfuração). Uma vez por rodada, quando usa a ação agredir com outra arma, você pode gastar 1 PM para fazer um ataque corpo a corpo extra com a mordida. Se já possuir outro ataque natural de mordida, em vez disso, o dano desse ataque aumenta em dois passos."
   ],
   [
     "Concedido",
@@ -2958,7 +2972,7 @@
   [
     "Concedido",
     "Sangue de Ferro",
-    "Arsenal. Você pode pagar 3 PM para receber +2 em rolagens de dano e redução de dano 5 até o fim da cena. e"
+    "Arsenal. Você pode pagar 3 PM para receber +2 em rolagens de dano e redução de dano 5 até o fim da cena."
   ],
   [
     "Concedido",
@@ -2973,7 +2987,7 @@
   [
     "Concedido",
     "Sopro do Mar",
-    "Oceano. Você pode gastar uma ação padrão e 1 PM para soprar vento marinho em um cone de 6m. Criaturas na área sofrem 2d6 pontos de dano de frio (Reflexos CD Sab reduz à metade). Você pode aprender Sopro das Uivantes como uma magia divina. Se fizer isso, o custo dela diminui em –1 PM. e"
+    "Oceano. Você pode gastar uma ação padrão e 1 PM para soprar vento marinho em um cone de 6m. Criaturas na área sofrem 2d6 pontos de dano de frio (Reflexos CD Sab reduz à metade). Você pode aprender Sopro das Uivantes como uma magia divina. Se fizer isso, o custo dela diminui em –1 PM."
   ],
   [
     "Concedido",
@@ -2998,7 +3012,7 @@
   [
     "Concedido",
     "Transmissão da Loucura",
-    "Nimb. Você pode lançar Sussurros Insanos (CD Car). Caso aprenda novamente essa magia, seu custo diminui em –1 PM. e"
+    "Nimb. Você pode lançar Sussurros Insanos (CD Car). Caso aprenda novamente essa magia, seu custo diminui em –1 PM."
   ],
   [
     "Concedido",
@@ -3018,17 +3032,17 @@
   [
     "Concedido",
     "Voz da Civilização",
-    "Tanna-Toh. Você está sempre sob efeito de Compreensão. e"
+    "Tanna-Toh. Você está sempre sob efeito de Compreensão."
   ],
   [
     "Concedido",
     "Voz da Natureza",
-    "Allihanna. Você pode falar com animais (como o efeito da magia Voz Divina) e aprende e pode lançar Acalmar Animal, mas só contra animais. Caso aprenda novamente essa magia, seu custo diminui em –1 PM. e"
+    "Allihanna. Você pode falar com animais (como o efeito da magia Voz Divina) e aprende e pode lançar Acalmar Animal, mas só contra animais. Caso aprenda novamente essa magia, seu custo diminui em –1 PM."
   ],
   [
     "Concedido",
     "Voz dos Monstros",
-    "Megalokk. Você conhece os idiomas de todos os monstros inteligentes e pode se comunicar livremente com monstros não inteligentes (Int –4 ou menor), como se estivesse sob efeito da magia Voz Divina. e"
+    "Megalokk. Você conhece os idiomas de todos os monstros inteligentes e pode se comunicar livremente com monstros não inteligentes (Int –4 ou menor), como se estivesse sob efeito da magia Voz Divina."
   ],
   [
     "Concedido",
@@ -3073,7 +3087,7 @@
   [
     "Tormenta",
     "Cuspir Enxame",
-    "Você pode gastar uma ação completa e 2 PM para criar um enxame de insetos rubros em um ponto a sua escolha em alcance curto e com duração sustentada. O enxame tem tamanho Médio e pode passar pelo espaço de outras criaturas. Uma vez por rodada, você pode gastar uma ação de movimento para mover o enxame 9m. No final do seu turno, o enxame causa 2d6 pontos de dano de ácido a qualquer criatura no espaço que ele estiver ocupando. Para cada dois outros poderes da Tormenta que possui, você pode gastar +1 PM quando usa este poder para aumentar o dano do enxame em +1d6. e"
+    "Você pode gastar uma ação completa e 2 PM para criar um enxame de insetos rubros em um ponto a sua escolha em alcance curto e com duração sustentada. O enxame tem tamanho Médio e pode passar pelo espaço de outras criaturas. Uma vez por rodada, você pode gastar uma ação de movimento para mover o enxame 9m. No final do seu turno, o enxame causa 2d6 pontos de dano de ácido a qualquer criatura no espaço que ele estiver ocupando. Para cada dois outros poderes da Tormenta que possui, você pode gastar +1 PM quando usa este poder para aumentar o dano do enxame em +1d6."
   ],
   [
     "Tormenta",
@@ -3098,7 +3112,7 @@
   [
     "Tormenta",
     "Larva Explosiva",
-    "Se uma criatura que tenha sofrido dano de sua mordida nesta cena for reduzida a 0 ou menos PV, ela explode em chuva cáustica, morrendo e causando 4d4 pontos de dano de ácido em criaturas adjacentes. Para cada dois outros poderes da Tormenta que você possui, o dano aumenta em +2d4. Você é imune a esse dano. Pré-requisito: Dentes Afiados. e"
+    "Se uma criatura que tenha sofrido dano de sua mordida nesta cena for reduzida a 0 ou menos PV, ela explode em chuva cáustica, morrendo e causando 4d4 pontos de dano de ácido em criaturas adjacentes. Para cada dois outros poderes da Tormenta que você possui, o dano aumenta em +2d4. Você é imune a esse dano. Pré-requisito: Dentes Afiados."
   ],
   [
     "Tormenta",
@@ -3123,7 +3137,7 @@
   [
     "Tormenta",
     "Mente Aberrante",
-    "Você recebe resistência a efeitos mentais +1. Além disso, sempre que precisa fazer um teste de Vontade para resistir a uma habilidade, a criatura que usou essa habilidade sofre 1d6 pontos de dano psíquico. Para cada dois outros poderes da Tormenta que você possui o bônus em testes de resistência aumenta em +1 e o dano aumenta em +1d6. e"
+    "Você recebe resistência a efeitos mentais +1. Além disso, sempre que precisa fazer um teste de Vontade para resistir a uma habilidade, a criatura que usou essa habilidade sofre 1d6 pontos de dano psíquico. Para cada dois outros poderes da Tormenta que você possui o bônus em testes de resistência aumenta em +1 e o dano aumenta em +1d6."
   ],
   [
     "Tormenta",

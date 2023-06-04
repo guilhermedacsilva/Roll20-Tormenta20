@@ -2,11 +2,6 @@ COLOCAR RESTRIÇÕES DOS DEUSES
 
 DELETAR O FINAL . e" DOS PODERES
 
-Linhagens do Feiticeiro
-
-Familiares
-
-aumento de atributo: no filtro, mostrar para todas as classes
 
 animais totêmicos do barbaro
 
@@ -37,3 +32,4 @@ julgamentos divinos
 
 virtudes paladinescas
 
+ARRUMAR ORDENAÇÃO COM ACENTUAÇÃO NA TABELA Âncora e Área
