@@ -187,12 +187,10 @@ T20.utils = {
             autoOpen: true,
             height: 500,
             width: 900,
-            classes: {
-                "ui-dialog-titlebar": "roll20-t20-dialog-titlebar"
-            },
             close: () => dialog.remove()
         })
         const modal = dialog.closest('.ui-dialog')
+        modal.find('.ui-dialog-title').addClass('roll20-t20-dialog-titlebar')
         const content = modal.find('.ui-dialog-content')
         content.find('#roll20-t20-table-habilities').DataTable({
             data: T20.db.habilities,
