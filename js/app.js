@@ -170,6 +170,9 @@ T20.utils = {
                       <option value="Paladino">Paladino</option>
                       <option value="">--</option>
                       <option value="Origem">Origem</option>
+                      <option value="Combate">Combate</option>
+                      <option value="Destino">Destino</option>
+                      <option value="Magia">Magia</option>
                   </select></th>
                   <th><input style="width:100px"></th>
                   <th><input style="width:100%"></th>
