@@ -111,24 +111,17 @@ T20.utils = {
 
     showDialogHabilities($iframe) {
         const dialog = $(`
-        <div class="roll20-t20-conteudo">
-          <div class="row">
-            <form>
-              Inserir na ficha:
-              <div class="form-check form-check-inline">
-                <input class="form-check-input roll20-t20-input-radio" type="radio" name="poderColuna" id="poderColunaE" checked>
-                <label class="form-check-label" for="poderColunaE">
-                  Coluna da esquerda
-                </label>
+        <div class="roll20-t20-dialog-conteudo">
+            <form class="roll20-t20-dialog-form">
+              <div>
+                <input class="roll20-t20-dialog-radio" type="radio" name="roll20-t20-dialog-coluna" id="poderColunaE" checked>
+                <label class="roll20-t20-dialog-label" for="poderColunaE">Inserir na coluna da esquerda</label>
               </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input roll20-t20-input-radio" type="radio" name="poderColuna" id="poderColunaD">
-                <label class="form-check-label" for="poderColunaD">
-                  Coluna da direita
-                </label>
+              <div>
+                <input class="roll20-t20-dialog-radio" type="radio" name="roll20-t20-dialog-coluna" id="poderColunaD">
+                <label class="roll20-t20-dialog-label" for="poderColunaD">Inserir na coluna da direita</label>
               </div>
             </form>
-          </div>
           <hr>
           <table id="roll20-t20-table-habilities" class="table table-sm">
             <thead>
@@ -139,6 +132,49 @@ T20.utils = {
               </tr>
             </thead>
             <tbody></tbody>
+            <tfoot>
+              <tr>
+                  <th><select style="width:100px;margin-bottom: 0">
+                      <option value="">--</option>
+                      <option value="Humano">Humano</option>
+                      <option value="Anão">Anão</option>
+                      <option value="Dahllan">Dahllan</option>
+                      <option value="Elfo">Elfo</option>
+                      <option value="Goblin">Goblin</option>
+                      <option value="Lefou">Lefou</option>
+                      <option value="Minotauro">Minotauro</option>
+                      <option value="Qareen">Qareen</option>
+                      <option value="Hynne">Hynne</option>
+                      <option value="Golem">Golem</option>
+                      <option value="Kliren">Kliren</option>
+                      <option value="Medusa">Medusa</option>
+                      <option value="Osteon">Osteon</option>
+                      <option value="Sereia">Sereia</option>
+                      <option value="Sílfide">Sílfide</option>
+                      <option value="Suraggel">Suraggel</option>
+                      <option value="Trog">Trog</option>
+                      <option value="">--</option>
+                      <option value="Arcanista">Arcanista</option>
+                      <option value="Bárbaro">Bárbaro</option>
+                      <option value="Bardo">Bardo</option>
+                      <option value="Bucaneiro">Bucaneiro</option>
+                      <option value="Caçador">Caçador</option>
+                      <option value="Cavaleiro">Cavaleiro</option>
+                      <option value="Clérigo">Clérigo</option>
+                      <option value="Druida">Druida</option>
+                      <option value="Guerreiro">Guerreiro</option>
+                      <option value="Inventor">Inventor</option>
+                      <option value="Ladino">Ladino</option>
+                      <option value="Lutador">Lutador</option>
+                      <option value="Nobre">Nobre</option>
+                      <option value="Paladino">Paladino</option>
+                      <option value="">--</option>
+                      <option value="1">1</option>
+                  </select></th>
+                  <th><input style="width:100px"></th>
+                  <th><input style="width:100%"></th>
+              </tr>
+            </tfoot>
           </table>
         </div>`)
         dialog.dialog({
@@ -167,8 +203,6 @@ T20.utils = {
                 { title: 'Descrição', data: 2, orderData: 2 },
             ],
             language: {
-                search: 'Pesquisar',
-                lengthMenu: 'Mostrar _MENU_ itens',
                 info: 'Exibindo do _START_ ao _END_ de um total de _TOTAL_ itens',
                 paginate: {
                     first: 'Primeira',
@@ -177,13 +211,30 @@ T20.utils = {
                     previous: 'Anterior'
                 },
             },
+            initComplete: function () {
+                this.api()
+                    .columns()
+                    .every(function () {
+                        var column = this;
+                        $('input', this.footer()).on('keyup change clear', function () {
+                            if (column.search() !== this.value) {
+                                column.search(this.value).draw();
+                            }
+                        })
+                        $('select', this.footer()).on('change', function () {
+                            const val = $(this).val();
+                            column.search(val).draw()
+                        })
+                    })
+                $('#roll20-t20-table-habilities tfoot tr').appendTo('#roll20-t20-table-habilities thead')
+            },
         })
     },
 
 
     showDialogSpells($iframe) {
         const dialog = $(`
-        <div class="roll20-t20-conteudo">
+        <div class="roll20-t20-dialog-conteudo">
             <table id="roll20-t20-table-spells" class="table table-sm">
               <thead>
                 <tr>
@@ -251,8 +302,6 @@ T20.utils = {
                 },
             ],
             language: {
-                search: 'Pesquisar',
-                lengthMenu: 'Mostrar _MENU_ itens',
                 info: 'Exibindo do _START_ ao _END_ de um total de _TOTAL_ itens',
                 paginate: {
                     first: 'Primeira',

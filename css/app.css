@@ -1,3 +1,8 @@
+.sheet-spellbox .sheet-descricao {
+    text-align: justify;
+    hyphens: auto;
+}
+
 .charsheet .sheet-main .repcontrol>.btn.repcontrol_add {
     display: inline-block !important;
 }
@@ -9,21 +14,32 @@
     background-color: #6c0b0b;
 }
 
-.roll20-t20-conteudo {
+.roll20-t20-dialog-conteudo {
     font-size: 16px;
 }
 
-.roll20-t20-input-radio {
-    width: 1em!important;
-    height: 1em!important;
+.roll20-t20-dialog-form {
+    display: flex;
+    gap: 15px
+}
+
+.roll20-t20-dialog-radio {
+    display: none;
+}
+
+.roll20-t20-dialog-radio:checked+label {
+    background-color: rgb(0 142 255);
+    color: white;
+}
+
+.roll20-t20-dialog-label {
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(209 209 209);
 }
 
 .nome-click {
     cursor: pointer;
     text-decoration: underline;
-}
-
-.sheet-spellbox .sheet-descricao {
-    text-align: justify;
-    hyphens: auto;
 }
