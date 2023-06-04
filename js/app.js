@@ -4,7 +4,32 @@ const T20 = {
     db: {},
     modules: {},
     utils: null,
+    d20: null,
+    api: null
 }
+
+function setInterceptor(prop, callback) {
+    Object.defineProperty(window, prop, {
+        enumerable: true,
+        configurable: true,
+        set: newValue => {
+            delete window[prop]
+            const intercept = callback && callback(newValue)
+            window[prop] = intercept || newValue
+        }
+    })
+}
+
+setInterceptor('d20ext', val => {
+    console.log('T20 - D20 API ENV SET TO DEVELOPMENT')
+    return { ...val, environment: 'development' }
+})
+
+setInterceptor('debug_d20', val => {
+    console.log('T20 - D20 API FULLY INITIALIZED')
+    val.environment = 'production'
+    return T20.d20 = val
+})
 
 T20.modules.habilities = {
     initSheet: ($iframe) => {
@@ -29,6 +54,19 @@ T20.modules.spells = {
 }
 
 T20.utils = {
+    closeContextMenu () {
+      T20.d20.token_editor.closeContextMenu()
+    },
+    getCurrentPage () {
+      return T20.d20.Campaign.activePage()
+    },
+    getCurrentLayer () {
+      return window.currentEditingLayer
+    },
+    getCanvasMousePos () {
+      return [...T20.d20.engine.mousePos]
+    },
+
     cortarTexto(nTd, sData, oData, iRow, iCol) {
         if (oData.descricao.length > 150) {
             $(nTd).html(oData.descricao.substring(0, 150) + '...')
@@ -344,13 +382,5 @@ T20.utils = {
                 $('#roll20-t20-table-spells tfoot tr').appendTo('#roll20-t20-table-spells thead')
             },
         })
-        /*
-        table.columns().every(function () {
-            const that = this;
-            $('input', this.header()).on('keyup change clear', function () {
-                that.search(this.value).draw();
-            });
-        })
-        */
     },
 }

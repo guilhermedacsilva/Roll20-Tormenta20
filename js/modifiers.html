@@ -1,0 +1,269 @@
+<div class="sheet-modifiers-container">
+    <div class="sheet-inside">
+        <div class="sheet-container-negative-corner">
+            <div class="sheet-inside-negative-corner">
+
+                <div class="sheet-modifiersgrid">
+                    <div></div>
+                    <div class="sheet-grid-title" data-i18n="nome_do_ataque">Nome do Ataque</div>
+                    <div class="sheet-small-title" data-i18n="bonus_ataque">Bônus de Ataque</div>
+                    <div class="sheet-small-title" data-i18n="dano">Dano</div>
+                    <div class="sheet-small-title" data-i18n="dano_extra">Dano Extra</div>
+                    <div class="sheet-small-title" data-i18n="dado_extra">Dados Extra</div>
+                    <div class="sheet-small-title" data-i18n="critico">Crítico</div>
+                </div>
+
+                <fieldset class="repeating_modifiers" style="display: none;">
+                    <div class="sheet-modifiersgrid">
+                        <button type="roll" name="roll_attack" class="sheet-buttonrollataque sheet-dado-simples btn ui-draggable" value="&amp;{template:t20-attack}{{character=@{character_name}}}{{attackname=@{nomeataque}}}{{attackroll=[[1d20cs>@{margemcriticoataque}+[[@{ataquepericia}]]+@{bonusataque}+@{ataquetemp}]]}} {{damageroll=[[@{danoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}+@{danotemp}+@{rolltemp}]]}} {{criticaldamageroll=[[@{danocriticoataque}+@{dadoextraataque}+@{modatributodano}+@{danoextraataque}]]}}{{typeofdamage=@{ataquetipodedano}}}{{description=@{ataquedescricao}}}">T</button>
+                        <input name="attr_nomeataque" type="text" spellcheck="false" class="sheet-" value>
+                        <input name="attr_bonusataque" type="text" spellcheck="false" class="sheet-" value="0">
+                        <input name="attr_danoataque" type="text" spellcheck="false" class="sheet-" value="0">
+                        <input name="attr_danoextraataque" type="text" spellcheck="false" class="sheet-" value="0">
+                        <input name="attr_dadoextraataque" type="text" spellcheck="false" class="sheet-" value="0">
+                        <div class="sheet-containercritico">
+                            <input name="attr_margemcriticoataque" type="text" spellcheck="false" class="sheet-margem" value="20">
+                            <span class="sheet-divisor"><b>/</b>x</span>
+                            <input name="attr_multiplicadorcriticoataque" type="text" spellcheck="false" class="sheet-multiplicador" value="2">
+                        </div>
+                        <input type="hidden" name="attr_danocriticoataque" value="0" readonly="1">
+
+                        <div class="sheet-moreinfo">
+                            <input type="checkbox" class="sheet-hiddencheckbox">
+                            <span class="sheet-hiddencheckboxcover"></span>
+                            <div class="sheet-containermoreinfo">
+
+                                <div class="sheet-inputtextbellow sheet-descricao">
+                                    <input name="attr_ataquedescricao" type="text" spellcheck="false" value>
+                                    <span class="sheet-title" data-i18n="descricao_macros">Descrição / Macros</span>
+                                </div>
+                                <div class="sheet-inputtextbellow sheet-pericialuta">
+                                    <select name="attr_ataquepericia">
+                                        <option value="@{atuacaototal}+@{condicaomodataquecc}+@{condicaomodataque}">Atuação</option>
+                                        <option value="@{lutatotal}+@{condicaomodataquecc}+@{condicaomodataque}" selected>Luta</option>
+                                        <option value="@{pontariatotal}+@{condicaomodataquedis}+@{condicaomodataque}">Pontaria</option>
+                                    </select>
+                                    <span class="sheet-title" data-i18n="pericia_utilizada">Perícia utilizada</span>
+                                </div>
+                                <div class="sheet-inputtextbellow sheet-tipodano">
+                                    <input name="attr_ataquetipodedano" type="text" spellcheck="false" value>
+                                    <span class="sheet-title" data-i18n="tipo_de_dano">Tipo de Dano</span>
+                                </div>
+                                <div class="sheet-inputtextbellow sheet-alcance">
+                                    <input name="attr_ataquealcance" type="text" spellcheck="false" value>
+                                    <span class="sheet-title" data-i18n="alcance">Alcance</span>
+                                </div>
+
+                                <div class="sheet-inputtextbellow">
+                                    <select name="attr_modatributodano">
+                                        <option value="0" selected>Nenhum</option>
+                                        <option value="@{for_mod}" data-i18n="forca">Força</option>
+                                        <option value="@{des_mod}" data-i18n="destreza">Destreza</option>
+                                        <option value="@{con_mod}" data-i18n="constituicao">Constituição</option>
+                                        <option value="@{int_mod}" data-i18n="inteligencia">Inteligência</option>
+                                        <option value="@{sab_mod}" data-i18n="sabedoria">Sabedoria</option>
+                                        <option value="@{car_mod}" data-i18n="carisma">Carisma</option>
+                                    </select>
+                                    <span class="sheet-title" data-i18n="atributo_no_dano">Atributo no Dano</span>
+                                </div>
+
+                                <div class="sheet-inputtextbellow">
+                                    <select name="attr_tipocritico">
+                                        <option value selected>Nenhum</option>
+                                        <option value="dilacerante" data-i18n="dilacerante">Dilacerante</option>
+                                        <option value="lancinante" data-i18n="lancinante">Lancinante</option>
+                                    </select>
+                                    <span class="sheet-title" data-i18n="tipo_critico">Crítico</span>
+                                </div>
+
+                                <div class="sheet-inputtextbellow sheet-ataque_rolagens sheet-tiporolagemum">
+                                    <button type="roll" name="roll_failure" class="sheet-buttonrollataque sheet-buttonrollerro sheet-dado btn ui-draggable" value="&amp;{template:t20-error-chance}{{character=@{character_name}}}{{errorroll=[[1d100]]}}" style="margin: auto">KK</button>
+                                    <span class="sheet-title" data-i18n="chanceDeErro">Chance de Erro</span>
+                                </div>
+                                <div class="sheet-inputtextbellow sheet-ataque_rolagens sheet-tiporolagemdois">
+                                    <button type="roll" name="roll_attack_best" class="sheet-buttonrollataque sheet-dado btn ui-draggable" value="&amp;{template:t20-attack}{{character=@{character_name}}}{{attackname=@{nomeataque}}}{{attackroll=[[2d20kh1cs>@{margemcriticoataque}+[[@{ataquepericia}]]+@{bonusataque}+@{ataquetemp}]]}} {{damageroll=[[@{danoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}+@{danotemp}+@{rolltemp}]]}} {{criticaldamageroll=[[@{danocriticoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}]]}}{{typeofdamage=@{ataquetipodedano}}}{{description=@{ataquedescricao}}}" style="margin: auto">TT</button>
+                                    <span class="sheet-title" data-i18n="melhorDado">Melhor Dado</span>
+                                </div>
+                                <div class="sheet-inputtextbellow sheet-ataque_rolagens sheet-tiporolagemtres">
+                                    <button type="roll" name="roll_attack_worst" class="sheet-buttonrollataque sheet-dado btn ui-draggable" value="&amp;{template:t20-attack}{{character=@{character_name}}}{{attackname=@{nomeataque}}}{{attackroll=[[2d20kl1cs>@{margemcriticoataque}+[[@{ataquepericia}]]+@{bonusataque}+@{ataquetemp}]]}} {{damageroll=[[@{danoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}+@{danotemp}+@{rolltemp}]]}} {{criticaldamageroll=[[@{danocriticoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}]]}}{{typeofdamage=@{ataquetipodedano}}}{{description=@{ataquedescricao}}}" style="margin: auto">tt</button>
+                                    <span class="sheet-title" data-i18n="piorDado">Pior Dado</span>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </fieldset><div class="repcontainer" data-groupname="repeating_modifiers"><div class="repitem" data-reprowid="-NWK2D42JLLg8FFb-b0-"><div class="itemcontrol"><button class="btn btn-danger pictos repcontrol_del">#</button><a class="btn repcontrol_move">≡</a></div>
+                        <div class="sheet-modifiersgrid">
+                            <button type="roll" name="roll_attack" class="sheet-buttonrollataque sheet-dado-simples btn ui-draggable" value="&amp;{template:t20-attack}{{character=@{character_name}}}{{attackname=@{nomeataque}}}{{attackroll=[[1d20cs>@{margemcriticoataque}+[[@{ataquepericia}]]+@{bonusataque}+@{ataquetemp}]]}} {{damageroll=[[@{danoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}+@{danotemp}+@{rolltemp}]]}} {{criticaldamageroll=[[@{danocriticoataque}+@{dadoextraataque}+@{modatributodano}+@{danoextraataque}]]}}{{typeofdamage=@{ataquetipodedano}}}{{description=@{ataquedescricao}}}">T</button>
+                            <input name="attr_nomeataque" type="text" spellcheck="false" class="sheet-" value>
+                            <input name="attr_bonusataque" type="text" spellcheck="false" class="sheet-" value="0">
+                            <input name="attr_danoataque" type="text" spellcheck="false" class="sheet-" value="0">
+                            <input name="attr_danoextraataque" type="text" spellcheck="false" class="sheet-" value="0">
+                            <input name="attr_dadoextraataque" type="text" spellcheck="false" class="sheet-" value="0">
+                            <div class="sheet-containercritico">
+                                <input name="attr_margemcriticoataque" type="text" spellcheck="false" class="sheet-margem" value="20">
+                                <span class="sheet-divisor"><b>/</b>x</span>
+                                <input name="attr_multiplicadorcriticoataque" type="text" spellcheck="false" class="sheet-multiplicador" value="2">
+                            </div>
+                            <input type="hidden" name="attr_danocriticoataque" value="0 + 0 + 0 + 0" readonly="1">
+
+                            <div class="sheet-moreinfo">
+                                <input type="checkbox" class="sheet-hiddencheckbox">
+                                <span class="sheet-hiddencheckboxcover"></span>
+                                <div class="sheet-containermoreinfo">
+
+                                    <div class="sheet-inputtextbellow sheet-descricao">
+                                        <input name="attr_ataquedescricao" type="text" spellcheck="false" value>
+                                        <span class="sheet-title" data-i18n="descricao_macros">Descrição / Macros</span>
+                                    </div>
+                                    <div class="sheet-inputtextbellow sheet-pericialuta">
+                                        <select name="attr_ataquepericia">
+                                            <option value="@{atuacaototal}+@{condicaomodataquecc}+@{condicaomodataque}">Atuação</option>
+                                            <option value="@{lutatotal}+@{condicaomodataquecc}+@{condicaomodataque}" selected>Luta</option>
+                                            <option value="@{pontariatotal}+@{condicaomodataquedis}+@{condicaomodataque}">Pontaria</option>
+                                        </select>
+                                        <span class="sheet-title" data-i18n="pericia_utilizada">Perícia utilizada</span>
+                                    </div>
+                                    <div class="sheet-inputtextbellow sheet-tipodano">
+                                        <input name="attr_ataquetipodedano" type="text" spellcheck="false" value>
+                                        <span class="sheet-title" data-i18n="tipo_de_dano">Tipo de Dano</span>
+                                    </div>
+                                    <div class="sheet-inputtextbellow sheet-alcance">
+                                        <input name="attr_ataquealcance" type="text" spellcheck="false" value>
+                                        <span class="sheet-title" data-i18n="alcance">Alcance</span>
+                                    </div>
+
+                                    <div class="sheet-inputtextbellow">
+                                        <select name="attr_modatributodano">
+                                            <option value="0" selected>Nenhum</option>
+                                            <option value="@{for_mod}" data-i18n="forca">Força</option>
+                                            <option value="@{des_mod}" data-i18n="destreza">Destreza</option>
+                                            <option value="@{con_mod}" data-i18n="constituicao">Constituição</option>
+                                            <option value="@{int_mod}" data-i18n="inteligencia">Inteligência</option>
+                                            <option value="@{sab_mod}" data-i18n="sabedoria">Sabedoria</option>
+                                            <option value="@{car_mod}" data-i18n="carisma">Carisma</option>
+                                        </select>
+                                        <span class="sheet-title" data-i18n="atributo_no_dano">Atributo no Dano</span>
+                                    </div>
+
+                                    <div class="sheet-inputtextbellow">
+                                        <select name="attr_tipocritico">
+                                            <option value selected>Nenhum</option>
+                                            <option value="dilacerante" data-i18n="dilacerante">Dilacerante</option>
+                                            <option value="lancinante" data-i18n="lancinante">Lancinante</option>
+                                        </select>
+                                        <span class="sheet-title" data-i18n="tipo_critico">Crítico</span>
+                                    </div>
+
+                                    <div class="sheet-inputtextbellow sheet-ataque_rolagens sheet-tiporolagemum">
+                                        <button type="roll" name="roll_failure" class="sheet-buttonrollataque sheet-buttonrollerro sheet-dado btn ui-draggable" value="&amp;{template:t20-error-chance}{{character=@{character_name}}}{{errorroll=[[1d100]]}}" style="margin: auto">KK</button>
+                                        <span class="sheet-title" data-i18n="chanceDeErro">Chance de Erro</span>
+                                    </div>
+                                    <div class="sheet-inputtextbellow sheet-ataque_rolagens sheet-tiporolagemdois">
+                                        <button type="roll" name="roll_attack_best" class="sheet-buttonrollataque sheet-dado btn ui-draggable" value="&amp;{template:t20-attack}{{character=@{character_name}}}{{attackname=@{nomeataque}}}{{attackroll=[[2d20kh1cs>@{margemcriticoataque}+[[@{ataquepericia}]]+@{bonusataque}+@{ataquetemp}]]}} {{damageroll=[[@{danoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}+@{danotemp}+@{rolltemp}]]}} {{criticaldamageroll=[[@{danocriticoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}]]}}{{typeofdamage=@{ataquetipodedano}}}{{description=@{ataquedescricao}}}" style="margin: auto">TT</button>
+                                        <span class="sheet-title" data-i18n="melhorDado">Melhor Dado</span>
+                                    </div>
+                                    <div class="sheet-inputtextbellow sheet-ataque_rolagens sheet-tiporolagemtres">
+                                        <button type="roll" name="roll_attack_worst" class="sheet-buttonrollataque sheet-dado btn ui-draggable" value="&amp;{template:t20-attack}{{character=@{character_name}}}{{attackname=@{nomeataque}}}{{attackroll=[[2d20kl1cs>@{margemcriticoataque}+[[@{ataquepericia}]]+@{bonusataque}+@{ataquetemp}]]}} {{damageroll=[[@{danoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}+@{danotemp}+@{rolltemp}]]}} {{criticaldamageroll=[[@{danocriticoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}]]}}{{typeofdamage=@{ataquetipodedano}}}{{description=@{ataquedescricao}}}" style="margin: auto">tt</button>
+                                        <span class="sheet-title" data-i18n="piorDado">Pior Dado</span>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div><div class="repitem" data-reprowid="-NWQDrG7vdylZVxITlrn"><div class="itemcontrol"><button class="btn btn-danger pictos repcontrol_del">#</button><a class="btn repcontrol_move">≡</a></div>
+                        <div class="sheet-modifiersgrid">
+                            <button type="roll" name="roll_attack" class="sheet-buttonrollataque sheet-dado-simples btn ui-draggable" value="&amp;{template:t20-attack}{{character=@{character_name}}}{{attackname=@{nomeataque}}}{{attackroll=[[1d20cs>@{margemcriticoataque}+[[@{ataquepericia}]]+@{bonusataque}+@{ataquetemp}]]}} {{damageroll=[[@{danoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}+@{danotemp}+@{rolltemp}]]}} {{criticaldamageroll=[[@{danocriticoataque}+@{dadoextraataque}+@{modatributodano}+@{danoextraataque}]]}}{{typeofdamage=@{ataquetipodedano}}}{{description=@{ataquedescricao}}}">T</button>
+                            <input name="attr_nomeataque" type="text" spellcheck="false" class="sheet-" value>
+                            <input name="attr_bonusataque" type="text" spellcheck="false" class="sheet-" value="0">
+                            <input name="attr_danoataque" type="text" spellcheck="false" class="sheet-" value="0">
+                            <input name="attr_danoextraataque" type="text" spellcheck="false" class="sheet-" value="0">
+                            <input name="attr_dadoextraataque" type="text" spellcheck="false" class="sheet-" value="0">
+                            <div class="sheet-containercritico">
+                                <input name="attr_margemcriticoataque" type="text" spellcheck="false" class="sheet-margem" value="20">
+                                <span class="sheet-divisor"><b>/</b>x</span>
+                                <input name="attr_multiplicadorcriticoataque" type="text" spellcheck="false" class="sheet-multiplicador" value="2">
+                            </div>
+                            <input type="hidden" name="attr_danocriticoataque" value="1d8 + 1d8 + 0 + 0" readonly="1">
+
+                            <div class="sheet-moreinfo">
+                                <input type="checkbox" class="sheet-hiddencheckbox">
+                                <span class="sheet-hiddencheckboxcover"></span>
+                                <div class="sheet-containermoreinfo">
+
+                                    <div class="sheet-inputtextbellow sheet-descricao">
+                                        <input name="attr_ataquedescricao" type="text" spellcheck="false" value>
+                                        <span class="sheet-title" data-i18n="descricao_macros">Descrição / Macros</span>
+                                    </div>
+                                    <div class="sheet-inputtextbellow sheet-pericialuta">
+                                        <select name="attr_ataquepericia">
+                                            <option value="@{atuacaototal}+@{condicaomodataquecc}+@{condicaomodataque}">Atuação</option>
+                                            <option value="@{lutatotal}+@{condicaomodataquecc}+@{condicaomodataque}" selected>Luta</option>
+                                            <option value="@{pontariatotal}+@{condicaomodataquedis}+@{condicaomodataque}">Pontaria</option>
+                                        </select>
+                                        <span class="sheet-title" data-i18n="pericia_utilizada">Perícia utilizada</span>
+                                    </div>
+                                    <div class="sheet-inputtextbellow sheet-tipodano">
+                                        <input name="attr_ataquetipodedano" type="text" spellcheck="false" value>
+                                        <span class="sheet-title" data-i18n="tipo_de_dano">Tipo de Dano</span>
+                                    </div>
+                                    <div class="sheet-inputtextbellow sheet-alcance">
+                                        <input name="attr_ataquealcance" type="text" spellcheck="false" value>
+                                        <span class="sheet-title" data-i18n="alcance">Alcance</span>
+                                    </div>
+
+                                    <div class="sheet-inputtextbellow">
+                                        <select name="attr_modatributodano">
+                                            <option value="0" selected>Nenhum</option>
+                                            <option value="@{for_mod}" data-i18n="forca">Força</option>
+                                            <option value="@{des_mod}" data-i18n="destreza">Destreza</option>
+                                            <option value="@{con_mod}" data-i18n="constituicao">Constituição</option>
+                                            <option value="@{int_mod}" data-i18n="inteligencia">Inteligência</option>
+                                            <option value="@{sab_mod}" data-i18n="sabedoria">Sabedoria</option>
+                                            <option value="@{car_mod}" data-i18n="carisma">Carisma</option>
+                                        </select>
+                                        <span class="sheet-title" data-i18n="atributo_no_dano">Atributo no Dano</span>
+                                    </div>
+
+                                    <div class="sheet-inputtextbellow">
+                                        <select name="attr_tipocritico">
+                                            <option value selected>Nenhum</option>
+                                            <option value="dilacerante" data-i18n="dilacerante">Dilacerante</option>
+                                            <option value="lancinante" data-i18n="lancinante">Lancinante</option>
+                                        </select>
+                                        <span class="sheet-title" data-i18n="tipo_critico">Crítico</span>
+                                    </div>
+
+                                    <div class="sheet-inputtextbellow sheet-ataque_rolagens sheet-tiporolagemum">
+                                        <button type="roll" name="roll_failure" class="sheet-buttonrollataque sheet-buttonrollerro sheet-dado btn ui-draggable" value="&amp;{template:t20-error-chance}{{character=@{character_name}}}{{errorroll=[[1d100]]}}" style="margin: auto">KK</button>
+                                        <span class="sheet-title" data-i18n="chanceDeErro">Chance de Erro</span>
+                                    </div>
+                                    <div class="sheet-inputtextbellow sheet-ataque_rolagens sheet-tiporolagemdois">
+                                        <button type="roll" name="roll_attack_best" class="sheet-buttonrollataque sheet-dado btn ui-draggable" value="&amp;{template:t20-attack}{{character=@{character_name}}}{{attackname=@{nomeataque}}}{{attackroll=[[2d20kh1cs>@{margemcriticoataque}+[[@{ataquepericia}]]+@{bonusataque}+@{ataquetemp}]]}} {{damageroll=[[@{danoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}+@{danotemp}+@{rolltemp}]]}} {{criticaldamageroll=[[@{danocriticoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}]]}}{{typeofdamage=@{ataquetipodedano}}}{{description=@{ataquedescricao}}}" style="margin: auto">TT</button>
+                                        <span class="sheet-title" data-i18n="melhorDado">Melhor Dado</span>
+                                    </div>
+                                    <div class="sheet-inputtextbellow sheet-ataque_rolagens sheet-tiporolagemtres">
+                                        <button type="roll" name="roll_attack_worst" class="sheet-buttonrollataque sheet-dado btn ui-draggable" value="&amp;{template:t20-attack}{{character=@{character_name}}}{{attackname=@{nomeataque}}}{{attackroll=[[2d20kl1cs>@{margemcriticoataque}+[[@{ataquepericia}]]+@{bonusataque}+@{ataquetemp}]]}} {{damageroll=[[@{danoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}+@{danotemp}+@{rolltemp}]]}} {{criticaldamageroll=[[@{danocriticoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}]]}}{{typeofdamage=@{ataquetipodedano}}}{{description=@{ataquedescricao}}}" style="margin: auto">tt</button>
+                                        <span class="sheet-title" data-i18n="piorDado">Pior Dado</span>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div></div><div class="repcontrol" data-groupname="repeating_modifiers"><button class="btn repcontrol_edit">Modify</button><button class="btn repcontrol_add">+Add</button></div>
+
+                <div class="sheet-corner sheet-top-left"></div>
+                <div class="sheet-corner sheet-top-right"></div>
+                <div class="sheet-corner sheet-bottom-left"></div>
+                <div class="sheet-corner sheet-bottom-right"></div>
+            </div>
+        </div>
+    </div>
+
+</div>

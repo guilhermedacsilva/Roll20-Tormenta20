@@ -18,15 +18,6 @@ function loadFontOnRoll20(name, path) {
     const node = (document.head || document.documentElement)
     node.appendChild(element)
 }
-/*
-function loadFontOnRoll20(path) {
-    let element = document.createElement('link')
-    element.href = chrome.runtime.getURL('font/' + path)
-    element.rel = 'stylesheet'
-    let node = (document.head || document.documentElement)
-    node.appendChild(element)
-}
-*/
 
 function loadCssOnRoll20(path) {
     let element = document.createElement('link')
@@ -51,13 +42,17 @@ function loadData(path) {
         })
 }
 
+console.log('Roll20-T20 init')
+loadJsOnRoll20('app.js')
+
 $(document).ready(function () {
 
-    console.log('Roll20-T20 init')
-
-    loadJsOnRoll20('app.js')
+    
+    console.log('Roll20-T20 ready')
+    
     loadJsOnRoll20('utils.js')
     loadJsOnRoll20('listeners.js')
+    loadJsOnRoll20('api.js')
     loadJsOnRoll20('datatables.min.js')
 
     loadData('spells.json')
