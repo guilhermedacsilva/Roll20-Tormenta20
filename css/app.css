@@ -45,6 +45,11 @@
     font-size: 16px;
 }
 
+.roll20-t20-dialog-select {
+    font-size: 16px;
+    margin-bottom: 0;
+}
+
 .nome-click {
     cursor: pointer;
     text-decoration: underline;
