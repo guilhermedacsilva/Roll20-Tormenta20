@@ -28,13 +28,13 @@
 }
 
 .roll20-t20-dialog-radio:checked+label {
-    background-color: rgb(0 142 255);
+    background-color: #6c0b0b;
     color: white;
 }
 
 .roll20-t20-dialog-label {
     cursor: pointer;
-    padding: 10px;
+    padding: 5px 10px;
     border-radius: 10px;
     background-color: rgb(209 209 209);
 }
