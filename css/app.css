@@ -11,7 +11,7 @@
     color: white;
     font-size: 10px;
     margin-left: -5px !important;
-    background-color: #6c0b0b;
+    background-color: #cf2a29;
 }
 
 .roll20-t20-dialog-conteudo {
@@ -28,7 +28,7 @@
 }
 
 .roll20-t20-dialog-radio:checked+label {
-    background-color: #6c0b0b;
+    background-color: #cf2a29;
     color: white;
 }
 
