@@ -60,3 +60,9 @@
     cursor: pointer;
     text-decoration: underline;
 }
+
+.sheet-modifiers-container {
+    width: 100%;
+    display: block;
+    margin-bottom: 22px;
+}

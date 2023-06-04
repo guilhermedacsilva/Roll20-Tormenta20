@@ -31,6 +31,34 @@ setInterceptor('debug_d20', val => {
     return T20.d20 = val
 })
 
+T20.modules.modifiers = {
+    initSheet: ($iframe) => {
+        const $element = $(`<div class="sheet-modifiers-container">
+            <div class="sheet-inside">
+                <div class="sheet-container-negative-corner">
+                    <div class="sheet-inside-negative-corner">
+        
+                        <div>
+                            <input value="0">
+                        </div>
+        
+                        <div class="sheet-corner sheet-top-left"></div>
+                        <div class="sheet-corner sheet-top-right"></div>
+                        <div class="sheet-corner sheet-bottom-left"></div>
+                        <div class="sheet-corner sheet-bottom-right"></div>
+                    </div>
+                </div>
+            </div>
+        
+        </div>`)
+        $element.find('input').on('keyup change clear', function () {
+            console.log($(this).val())
+        })
+        $iframe.find('.sheet-pseudo-attributes')
+            .after($element)
+    }
+}
+
 T20.modules.habilities = {
     initSheet: ($iframe) => {
         const openDialog = function () {
@@ -54,17 +82,17 @@ T20.modules.spells = {
 }
 
 T20.utils = {
-    closeContextMenu () {
-      T20.d20.token_editor.closeContextMenu()
+    closeContextMenu() {
+        T20.d20.token_editor.closeContextMenu()
     },
-    getCurrentPage () {
-      return T20.d20.Campaign.activePage()
+    getCurrentPage() {
+        return T20.d20.Campaign.activePage()
     },
-    getCurrentLayer () {
-      return window.currentEditingLayer
+    getCurrentLayer() {
+        return window.currentEditingLayer
     },
-    getCanvasMousePos () {
-      return [...T20.d20.engine.mousePos]
+    getCanvasMousePos() {
+        return [...T20.d20.engine.mousePos]
     },
 
     cortarTexto(nTd, sData, oData, iRow, iCol) {
