@@ -14,8 +14,13 @@
     background-color: #cf2a29;
 }
 
+.roll20-t20-dialog-titlebar {
+    font-family: Tormenta;
+}
+
 .roll20-t20-dialog-conteudo {
-    font-size: 12px;
+    font-size: 16px;
+    font-family: DanteMTS;
 }
 
 .roll20-t20-dialog-form {

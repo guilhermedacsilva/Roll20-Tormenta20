@@ -187,6 +187,9 @@ T20.utils = {
             autoOpen: true,
             height: 500,
             width: 900,
+            classes: {
+                "ui-dialog-titlebar": "roll20-t20-dialog-titlebar"
+            },
             close: () => dialog.remove()
         })
         const modal = dialog.closest('.ui-dialog')

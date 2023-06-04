@@ -8,6 +8,26 @@ function loadJsOnRoll20(path) {
     node.appendChild(element)
 }
 
+function loadFontOnRoll20(name, path) {
+    const url = chrome.runtime.getURL('font/' + path)
+    const element = document.createElement('style')
+    element.innerHTML = `@font-face {
+        font-family: ${name};
+        src: url('${url}');
+      }`
+    const node = (document.head || document.documentElement)
+    node.appendChild(element)
+}
+/*
+function loadFontOnRoll20(path) {
+    let element = document.createElement('link')
+    element.href = chrome.runtime.getURL('font/' + path)
+    element.rel = 'stylesheet'
+    let node = (document.head || document.documentElement)
+    node.appendChild(element)
+}
+*/
+
 function loadCssOnRoll20(path) {
     let element = document.createElement('link')
     element.href = chrome.runtime.getURL('css/'+path)
@@ -45,6 +65,9 @@ $(document).ready(function () {
 
     loadCssOnRoll20('datatables.min.css')
     loadCssOnRoll20('app.css')
+
+    loadFontOnRoll20('DanteMTS', 'DanteMTStd-Regular.otf')
+    loadFontOnRoll20('Tormenta', 'Tormenta20x.ttf')
 
     $(window).on('message', ({ originalEvent: { data } }) => {
         if (data.type === 'loaded') {

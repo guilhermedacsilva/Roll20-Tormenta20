@@ -23,7 +23,8 @@
         "third-party/*",
         "js/*",
         "css/*",
-        "data/*"
+        "data/*",
+        "font/*"
       ],
       "matches": [
         "<all_urls>"
