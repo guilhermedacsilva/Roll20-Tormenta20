@@ -30,7 +30,7 @@ setInterceptor('debug_d20', val => {
     val.environment = 'production'
     return T20.d20 = val
 })
-/*
+
 T20.modules.modifiers = {
     initSheet: ($iframe) => {
         const $element = $(`<div class="sheet-modifiers-container">
@@ -73,7 +73,7 @@ T20.modules.modifiers = {
         $element.find('input').first().trigger('change')
     }
 }
-*/
+
 T20.modules.habilities = {
     initSheet: ($iframe) => {
         const openDialog = function () {
