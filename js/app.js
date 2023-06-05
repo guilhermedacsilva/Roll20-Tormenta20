@@ -30,7 +30,7 @@ setInterceptor('debug_d20', val => {
     val.environment = 'production'
     return T20.d20 = val
 })
-/*
+
 T20.modules.modifiers = {
     initSheet: ($iframe) => {
         const $element = $(`<div class="sheet-modifiers-container">
@@ -40,8 +40,9 @@ T20.modules.modifiers = {
                         <div class="roll20-t20-mod">
                             <input name="roll20-t20-mod-ativo" type="checkbox">
                             <div>
-                                Esracamuça. Ataque: <input name="roll20-t20-mod-ataque" value="0">
-                                Dano: <input name="roll20-t20-mod-dano" value="0">
+                                Escaramuça.
+                                Ataque: <input name="roll20-t20-mod-ataque" value="0" style="width:30px">
+                                Dano: <input name="roll20-t20-mod-dano" value="0" style="width:60px">
                             </div>
                         </div>
                         <div class="sheet-corner sheet-top-left"></div>
@@ -55,25 +56,40 @@ T20.modules.modifiers = {
 
         $element.find('input').on('keyup change clear', function () {
             let attack = 0
-            const $mods = $element.find('.roll20-t20-mod').each(function () {
+            let dano = []
+            $element.find('.roll20-t20-mod').each(function () {
                 const $mod = $(this)
                 if ($mod.find('[name="roll20-t20-mod-ativo"]').is(":checked")) {
                     const $attack = $mod.find('[name="roll20-t20-mod-ataque"]')
                     if ($attack.length > 0) {
                         attack += parseInt($attack.val())
                     }
+                    const $dano = $mod.find('[name="roll20-t20-mod-dano"]')
+                    if ($dano.length > 0) {
+                        dano.push($dano.val())
+                    }
                 }
             })
+            dano = dano.length > 0 ? dano.join('+') + '+' : ''
             const $rollAttackButtons = $iframe.find('.sheet-attacks-container')
                 .find('[name="roll_attack"]')
-            $rollAttackButtons.val(`&{template:t20-attack}{{character=@{character_name}}}{{attackname=@{nomeataque}}}{{attackroll=[[${attack}+1d20cs>@{margemcriticoataque}+[[@{ataquepericia}]]+@{bonusataque}+@{ataquetemp}]]}} {{damageroll=[[@{danoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}+@{danotemp}+@{rolltemp}]]}} {{criticaldamageroll=[[@{danocriticoataque}+@{dadoextraataque}+@{modatributodano}+@{danoextraataque}]]}}{{typeofdamage=@{ataquetipodedano}}}{{description=@{ataquedescricao}}}`)
+            $rollAttackButtons.val(`&{template:t20-attack}{{character=@{character_name}}}{{attackname=@{nomeataque}}}{{attackroll=[[${attack}+1d20cs>@{margemcriticoataque}+[[@{ataquepericia}]]+@{bonusataque}+@{ataquetemp}]]}} {{damageroll=[[${dano}@{danoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}+@{danotemp}+@{rolltemp}]]}} {{criticaldamageroll=[[${dano}@{danocriticoataque}+@{dadoextraataque}+@{modatributodano}+@{danoextraataque}]]}}{{typeofdamage=@{ataquetipodedano}}}{{description=@{ataquedescricao}}}`)
+            
+            const $rollBestAttackButtons = $iframe.find('.sheet-attacks-container')
+                .find('[name="roll_attack_best"]')
+            $rollBestAttackButtons.val(`&amp;{template:t20-attack}{{character=@{character_name}}}{{attackname=@{nomeataque}}}{{attackroll=[[${attack}+2d20kh1cs>@{margemcriticoataque}+[[@{ataquepericia}]]+@{bonusataque}+@{ataquetemp}]]}} {{damageroll=[[${dano}@{danoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}+@{danotemp}+@{rolltemp}]]}} {{criticaldamageroll=[[${dano}@{danocriticoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}]]}}{{typeofdamage=@{ataquetipodedano}}}{{description=@{ataquedescricao}}}`)
+            
+            const $rollWorstAttackButtons = $iframe.find('.sheet-attacks-container')
+                .find('[name="roll_attack"]')
+            $rollWorstAttackButtons.val(`&amp;{template:t20-attack}{{character=@{character_name}}}{{attackname=@{nomeataque}}}{{attackroll=[[${attack}+2d20kl1cs>@{margemcriticoataque}+[[@{ataquepericia}]]+@{bonusataque}+@{ataquetemp}]]}} {{damageroll=[[${dano}@{danoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}+@{danotemp}+@{rolltemp}]]}} {{criticaldamageroll=[[${dano}@{danocriticoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}]]}}{{typeofdamage=@{ataquetipodedano}}}{{description=@{ataquedescricao}}}`)
+
         })
         $iframe.find('.sheet-pseudo-attributes')
             .after($element)
         $element.find('input').first().trigger('change')
     }
 }
-*/
+
 T20.modules.habilities = {
     initSheet: ($iframe) => {
         const openDialog = function () {

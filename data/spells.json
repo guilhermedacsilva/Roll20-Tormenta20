@@ -7,7 +7,7 @@
     "alcance": "Curto",
     "alvo": "Alimento para 1 criatura",
     "duracao": "Cena",
-    "descricao": "Você purifica e abençoa uma porção de comida ou dose de bebida. Isso torna um alimento sujo, estragado ou envenenado próprio para consumo. Além disso, se for consumido até o final da duração, o alimento oferece 5 PV temporários ou 1 PM temporário (além de quaisquer bônus que já oferecesse). Bônus de alimentação duram um dia e cada personagem só pode receber um bônus de alimentação por dia.<br><br>*Truque:* o alimento é purificado (não causa nenhum efeito nocivo se estava estragado ou envenenado), mas não fornece bônus ao ser consumido.<br><br>**+1 PM:** aumenta o número de alvos em +1.<br><br>**+1 PM:** muda a duração para permanente, o alvo para 1 frasco com água e adiciona componente material (pó de prata no valor de T$ 5). Em vez do normal, cria um frasco de água benta."
+    "descricao": "Você purifica e abençoa uma porção de comida ou dose de bebida. Isso torna um alimento sujo, estragado ou envenenado próprio para consumo. Além disso, se for consumido até o final da duração, o alimento oferece 5 PV temporários ou 1 PM temporário (além de quaisquer bônus que já oferecesse). Bônus de alimentação duram um dia e cada personagem só pode receber um bônus de alimentação por dia.<br><br>*Truque:* o alimento é purificado (não causa nenhum efeito nocivo se estava estragado ou envenenado), mas não fornece bônus ao ser consumido.<br><br>**+1 PM:** aumenta o número de alvos em +1.<br><br>**+1 PM:** muda a duração para permanente, o alvo para 1 frasco com água e adiciona *componente material (pó de prata no valor de T$ 5)*. Em vez do normal, cria um frasco de água benta."
 }, {
     "nome": "Acalmar Animal",
     "tipo": "Divina",
@@ -18,7 +18,7 @@
     "alvo": "1 Animal",
     "duracao": "Cena",
     "resistencia": "Vontade anula",
-    "descricao": "O animal fica prestativo em relação a você. Ele não fica sob seu controle, mas percebe suas palavras e ações da maneira mais favorável possível. Você recebe +10 nos testes de Adestramento e Diplomacia que fizer contra o animal. Um alvo hostil ou que esteja envolvido em um combate recebe +5 em seu teste de resistência. Se você ou seus aliados tomarem qualquer ação hostil contra o alvo, a magia é dissipada e ele retorna à atitude que tinha antes (ou piorada, de acordo com o mestre). Se tratar bem o alvo, a atitude pode permanecer mesmo após o término da magia.<br><br>**+1 PM:** muda o alcance para médio.<br><br>**+1 PM:** muda o alvo para 1 monstro ou espírito com Inteligência 1 ou 2. Descrição das magias<br><br>**+2 PM:** aumenta o número de alvos em +1.<br><br>**+5 PM:** muda o alvo para 1 monstro ou espírito. *Requer 3º círculo*."
+    "descricao": "O animal fica prestativo em relação a você. Ele não fica sob seu controle, mas percebe suas palavras e ações da maneira mais favorável possível. Você recebe +10 nos testes de Adestramento e Diplomacia que fizer contra o animal. Um alvo hostil ou que esteja envolvido em um combate recebe +5 em seu teste de resistência. Se você ou seus aliados tomarem qualquer ação hostil contra o alvo, a magia é dissipada e ele retorna à atitude que tinha antes (ou piorada, de acordo com o mestre). Se tratar bem o alvo, a atitude pode permanecer mesmo após o término da magia.<br><br>**+1 PM:** muda o alcance para médio.<br><br>**+1 PM:** muda o alvo para 1 monstro ou espírito com Inteligência 1 ou 2.<br><br>**+2 PM:** aumenta o número de alvos em +1.<br><br>**+5 PM:** muda o alvo para 1 monstro ou espírito. *Requer 3º círculo*."
 }, {
     "nome": "Adaga Mental",
     "tipo": "Arcana",
@@ -39,7 +39,7 @@
     "alcance": "Curto",
     "alvo": "Esfera com 9m de raio",
     "duracao": "1 Dia",
-    "descricao": "Você cria uma barreira protetora invisível que detecta qualquer criatura que tocar ou entrar na área protegida. Ao lançar a magia, você pode escolher quais criaturas podem entrar na área sem ativar seus efeitos. Alarme pode emitir um aviso telepático ou sonoro, decidido quando a magia é lançada. Um aviso telepático alerta apenas você, inclusive acordando-o se estiver dormindo, mas apenas se estiver a até 1km da área protegida. Um aviso sonoro alerta todas as criaturas em alcance longo.<br><br>**+2 PM:** muda o alcance para pessoal. A área é emanada a partir de você.<br><br>**+5 PM:** além do normal, você também percebe qualquer efeito de adivinhação que seja usado dentro da área ou atravesse a área. Você pode fazer um teste oposto de Misticismo contra quem usou o efeito; se passar, tem um vislumbre de seu rosto e uma ideia aproximada de sua localização (“três dias de viagem ao norte”, por exemplo).<br><br>**+9 PM:** muda a duração para um dia ou até ser descarregada e a resistência para Vontade anula. Quando um intruso entra na área, você pode descarregar a magia. Se o intruso falhar na resistência, ficará paralisado por 1d4 rodadas. Além disso, pelas próximas 24 horas você e as criaturas escolhidas ganham +10 em testes de Sobrevivência para rastrear o intruso."
+    "descricao": "Você cria uma barreira protetora invisível que detecta qualquer criatura que tocar ou entrar na área protegida. Ao lançar a magia, você pode escolher quais criaturas podem entrar na área sem ativar seus efeitos. *Alarme* pode emitir um aviso telepático ou sonoro, decidido quando a magia é lançada. Um aviso telepático alerta apenas você, inclusive acordando-o se estiver dormindo, mas apenas se estiver a até 1km da área protegida. Um aviso sonoro alerta todas as criaturas em alcance longo.<br><br>**+2 PM:** muda o alcance para pessoal. A área é emanada a partir de você.<br><br>**+5 PM:** além do normal, você também percebe qualquer efeito de adivinhação que seja usado dentro da área ou atravesse a área. Você pode fazer um teste oposto de Misticismo contra quem usou o efeito; se passar, tem um vislumbre de seu rosto e uma ideia aproximada de sua localização (“três dias de viagem ao norte”, por exemplo).<br><br>**+9 PM:** muda a duração para um dia ou até ser descarregada e a resistência para Vontade anula. Quando um intruso entra na área, você pode descarregar a magia. Se o intruso falhar na resistência, ficará paralisado por 1d4 rodadas. Além disso, pelas próximas 24 horas você e as criaturas escolhidas ganham +10 em testes de Sobrevivência para rastrear o intruso."
 }, {
     "nome": "Aliado Animal",
     "tipo": "Divina",
@@ -49,7 +49,7 @@
     "alcance": "Curto",
     "alvo": "1 Animal prestativo",
     "duracao": "1 Dia",
-    "descricao": "Você cria um vínculo mental com um animal prestativo em relação a você. O Aliado Animal obedece a você no melhor de suas capacidades, mesmo que isso arrisque a vida dele. Ele funciona como um parceiro veterano, de um tipo a sua escolha entre ajudante, combatente, fortão, guardião, montaria ou perseguidor.<br><br>**+1 PM:** muda o alvo para 1 animal Minúsculo e a duração para 1 semana. Em vez do normal, o animal se desloca no melhor de suas capacidades até um local designado por você — em geral, para levar um item, carta ou similar. Quando o animal chega ao destino, fica esperando até o fim da magia, permitindo apenas que uma ou mais criaturas escolhidas por você se aproximem e peguem o que ele estiver carregando.<br><br>**+7 PM:** muda o parceiro para mestre. *Requer 3º círculo*.<br><br>**+12 PM:** muda o alvo para 2 animais prestativos. Cada animal funciona como um parceiro de um tipo diferente, e você pode receber a ajuda de ambos (mas ainda precisa seguir o limite de parceiros de acordo com o seu nível de personagem). *Requer 4º círculo*."
+    "descricao": "Você cria um vínculo mental com um animal prestativo em relação a você. O *Aliado Animal* obedece a você no melhor de suas capacidades, mesmo que isso arrisque a vida dele. Ele funciona como um parceiro veterano, de um tipo a sua escolha entre ajudante, combatente, fortão, guardião, montaria ou perseguidor.<br><br>**+1 PM:** muda o alvo para 1 animal Minúsculo e a duração para 1 semana. Em vez do normal, o animal se desloca no melhor de suas capacidades até um local designado por você — em geral, para levar um item, carta ou similar. Quando o animal chega ao destino, fica esperando até o fim da magia, permitindo apenas que uma ou mais criaturas escolhidas por você se aproximem e peguem o que ele estiver carregando.<br><br>**+7 PM:** muda o parceiro para mestre. *Requer 3º círculo*.<br><br>**+12 PM:** muda o alvo para 2 animais prestativos. Cada animal funciona como um parceiro de um tipo diferente, e você pode receber a ajuda de ambos (mas ainda precisa seguir o limite de parceiros de acordo com o seu nível de personagem). *Requer 4º círculo*."
 }, {
     "nome": "Alterar Destino",
     "tipo": "Arcana",
@@ -112,7 +112,7 @@
     "alcance": "Curto",
     "alvo": "1 Criatura ou objeto",
     "duracao": "Cena",
-    "descricao": "O alvo é envolvido por um campo de força cor de esmeralda que impede qualquer movimento planar. Isso inclui magias de convocação (como Salto Dimensional e Teletransporte), viagens astrais e a habilidade incorpóreo.<br><br>**+2 PM:** muda o alcance para médio, a área para esfera com 3m de raio e o alvo para criaturas escolhidas.<br><br>**+2 PM:** muda o efeito para criar um fio de energia cor de esmeralda que prende o alvo a um ponto no espaço dentro do alcance. O ponto precisa ser fixo, mas não precisa de nenhum apoio ou superfície (pode simplesmente flutuar no ar). O alvo não pode se afastar mais de 3m do ponto, nem fisicamente, nem com movimento planar. O fio possui 20 PV e redução de dano 20 (mas pode ser dissipado por efeitos que libertam criaturas, como o Julgamento Divino: Libertação do paladino).<br><br>**+4 PM:** como acima, mas em vez de um fio, cria uma corrente de energia, com 20 PV e redução de dano 40.<br><br>**+4 PM:** muda o alvo para área de cubo de 9m, a duração para permanente e adiciona componente material (chave de esmeralda no valor de T$ 2.000). Em vez do normal, nenhum tipo de movimento planar pode ser feito para entrar ou sair da área.<br><br>**+9 PM:** muda o alcance para médio, a área para esfera com 3m de raio e o alvo para criaturas escolhidas. Cria um fio de energia (veja acima) que prende todos os alvos ao centro da área."
+    "descricao": "O alvo é envolvido por um campo de força cor de esmeralda que impede qualquer movimento planar. Isso inclui magias de convocação (como *Salto Dimensional* e *Teletransporte*), viagens astrais e a habilidade incorpóreo.<br><br>**+2 PM:** muda o alcance para médio, a área para esfera com 3m de raio e o alvo para criaturas escolhidas.<br><br>**+2 PM:** muda o efeito para criar um fio de energia cor de esmeralda que prende o alvo a um ponto no espaço dentro do alcance. O ponto precisa ser fixo, mas não precisa de nenhum apoio ou superfície (pode simplesmente flutuar no ar). O alvo não pode se afastar mais de 3m do ponto, nem fisicamente, nem com movimento planar. O fio possui 20 PV e redução de dano 20 (mas pode ser dissipado por efeitos que libertam criaturas, como o *Julgamento Divino: Libertação* do paladino).<br><br>**+4 PM:** como acima, mas em vez de um fio, cria uma corrente de energia, com 20 PV e redução de dano 40.<br><br>**+4 PM:** muda o alvo para área de cubo de 9m, a duração para permanente e adiciona *componente material (chave de esmeralda no valor de T$ 2.000)*. Em vez do normal, nenhum tipo de movimento planar pode ser feito para entrar ou sair da área.<br><br>**+9 PM:** muda o alcance para médio, a área para esfera com 3m de raio e o alvo para criaturas escolhidas. Cria um fio de energia (veja acima) que prende todos os alvos ao centro da área."
 }, {
     "nome": "Animar Objetos",
     "tipo": "Arcana",
@@ -122,7 +122,7 @@
     "alcance": "Médio",
     "alvo": "Até 8 objetos Minúsculos ou Pequenos, 4 objetos Médios, 2 objetos Grandes ou 1 objeto Enorme",
     "duracao": "Cena",
-    "descricao": "Você concede vida a objetos inanimados. Cada objeto se torna um parceiro sob seu controle. O tipo dele é escolhido da lista de tamanho e ele não conta em seu limite de parceiros. Com uma ação de movimento, você pode comandar mentalmente qualquer objeto animado dentro do alcance para que auxilie você ou outra criatura. Outros usos criativos para os objetos ficam a cargo do mestre. Objetos animados são construtos com valores de Força, Destreza e PV de acordo com seu tamanho. Todos os outros atributos são nulos, eles não têm valor de Defesa ou testes de resistência e falham automaticamente em qualquer teste oposto. Diferente de parceiros comuns, um objeto pode ser alvo de um ataque direto. Esta magia não afeta itens mágicos, nem objetos que estejam sendo carregados por outra criatura.<br><br>**+5 PM:** muda a duração para permanente e adiciona componente material (prataria no valor de T$ 1.000). Você pode ter um máximo de objetos animados igual à metade do seu nível. Estatísticas de objetos animados Minúsculo: For –3, Des 4, 5 PV; Assassino ou Combatente Iniciante. Pequeno: For –2, Des 2, 10 PV; Combatente ou Guardião Iniciante. Médio: For 0, Des 1, 20 PV; Combatente ou Guardião Veterano. Grande: For 2, Des 0, 40 PV; Fortão, Guardião ou Montaria (cavalo) Veterano. Enorme: For 4, Des –2, 60 PV; Fortão, Guardião ou Montaria (cavalo) Mestre."
+    "descricao": "Você concede vida a objetos inanimados. Cada objeto se torna um parceiro sob seu controle. O tipo dele é escolhido da lista de tamanho e ele não conta em seu limite de parceiros. Com uma ação de movimento, você pode comandar mentalmente qualquer objeto animado dentro do alcance para que auxilie você ou outra criatura. Outros usos criativos para os objetos ficam a cargo do mestre. Objetos animados são construtos com valores de Força, Destreza e PV de acordo com seu tamanho. Todos os outros atributos são nulos, eles não têm valor de Defesa ou testes de resistência e falham automaticamente em qualquer teste oposto. Diferente de parceiros comuns, um objeto pode ser alvo de um ataque direto. Esta magia não afeta itens mágicos, nem objetos que estejam sendo carregados por outra criatura.<br><br>**+5 PM:** muda a duração para permanente e adiciona *componente material (prataria no valor de T$ 1.000)*. Você pode ter um máximo de objetos animados igual à metade do seu nível.<br><br>**Estatísticas de objetos animados**<br><br>*Minúsculo:* For –3, Des 4, 5 PV; Assassino ou Combatente Iniciante.<br><br>*Pequeno:* For –2, Des 2, 10 PV; Combatente ou Guardião Iniciante.<br><br>*Médio:* For 0, Des 1, 20 PV; Combatente ou Guardião Veterano.<br><br>*Grande:* For 2, Des 0, 40 PV; Fortão, Guardião ou Montaria (cavalo) Veterano.<br><br>*Enorme:* For 4, Des –2, 60 PV; Fortão, Guardião ou Montaria (cavalo) Mestre."
 }, {
     "nome": "Anular a Luz",
     "tipo": "Divina",
@@ -132,7 +132,7 @@
     "alcance": "Pessoal",
     "alvo": "Esfera com 6m de raio",
     "duracao": "Ver texto",
-    "descricao": "Esta magia cria uma onda de escuridão que causa diversos efeitos. Magias de até 3º círculo na área são dissipadas se você passar num teste de Religião contra a CD de cada uma. Seus aliados na área são protegidos por uma aura sombria e recebem +4 na Defesa até o fim da cena. Inimigos na área ficam enjoados por 1d4 rodadas (apenas uma vez por cena). Anular a Luz anula Dispersar as Trevas (este efeito tem duração instantânea).<br><br>**+2 PM:** aumenta o bônus na Defesa em +1.<br><br>**+4 PM:** muda as magias dissipadas para até 4º círculo. *Requer 4º círculo*.<br><br>**+9 PM:** muda as magias dissipadas para até 5º círculo. *Requer 5º círculo*."
+    "descricao": "Esta magia cria uma onda de escuridão que causa diversos efeitos. Magias de até 3º círculo na área são dissipadas se você passar num teste de Religião contra a CD de cada uma. Seus aliados na área são protegidos por uma aura sombria e recebem +4 na Defesa até o fim da cena. Inimigos na área ficam enjoados por 1d4 rodadas (apenas uma vez por cena). *Anular a Luz* anula *Dispersar as Trevas* (este efeito tem duração instantânea).<br><br>**+2 PM:** aumenta o bônus na Defesa em +1.<br><br>**+4 PM:** muda as magias dissipadas para até 4º círculo. *Requer 4º círculo*.<br><br>**+9 PM:** muda as magias dissipadas para até 5º círculo. *Requer 5º círculo*."
 }, {
     "nome": "Aparência Perfeita",
     "tipo": "Arcana",
@@ -164,7 +164,7 @@
     "alvo": "Quadrado de 3m ou 1 objeto",
     "duracao": "Cena",
     "resistencia": "Reflexos (veja texto)",
-    "descricao": "Esta magia recobre uma superfície com uma substância gordurosa e escorregadia. Criaturas na área devem passar na resistência para não cair. Nas rodadas seguintes, criaturas que tentem movimentar-se pela área devem fazer testes de Acrobacia para equilíbrio (CD 10). Área Escorregadia pode tornar um item escorregadio. Uma criatura segurando um objeto afetado deve passar na resistência para não deixar o item cair cada vez que usá-lo.<br><br>**+1 PM:** aumenta a área em +1 quadrado de 1,5m.<br><br>**+2 PM:** muda a CD dos testes de Acrobacia para 15.<br><br>**+5 PM:** muda a CD dos testes de Acrobacia para 20."
+    "descricao": "Esta magia recobre uma superfície com uma substância gordurosa e escorregadia. Criaturas na área devem passar na resistência para não cair. Nas rodadas seguintes, criaturas que tentem movimentar-se pela área devem fazer testes de Acrobacia para equilíbrio (CD 10). *Área Escorregadia* pode tornar um item escorregadio. Uma criatura segurando um objeto afetado deve passar na resistência para não deixar o item cair cada vez que usá-lo.<br><br>**+1 PM:** aumenta a área em +1 quadrado de 1,5m.<br><br>**+2 PM:** muda a CD dos testes de Acrobacia para 15.<br><br>**+5 PM:** muda a CD dos testes de Acrobacia para 20."
 }, {
     "nome": "Arma Espiritual",
     "tipo": "Divina",
@@ -215,7 +215,7 @@
     "alvo": "1 Criatura",
     "duracao": "Cena, até ser descarregada",
     "resistencia": "Vontade anula, Fortitude parcial",
-    "descricao": "Usando os medos subconscientes do alvo, você cria uma imagem daquilo que ele mais teme. Apenas a própria vítima pode ver o Assassino Fantasmagórico com nitidez; outras criaturas presentes (incluindo o conjurador) enxergam apenas um espectro sombrio. Quando você lança a magia, o espectro surge adjacente a você e a vítima faz um teste de Vontade. Se ela passar, percebe que o espectro é uma ilusão e a magia é dissipada. Se falhar, acredita na existência do espectro, que então flutua 18m por rodada em direção à vítima, sempre no fim do seu turno. Ele é incorpóreo e imune a magias (exceto magias que dissipam outras). Se o espectro terminar seu turno adjacente à vítima, ela deve fazer um teste de Fortitude. Se passar, sofre 6d6 pontos de dano de trevas (este dano não pode reduzir o alvo a menos de 0 PV e não o deixa sangrando). Se falhar, sofre um colapso, ficando imediatamente com –1 PV e sangrando. O espectro persegue o alvo implacavelmente. Ele desaparece se o alvo ficar inconsciente ou se afastar além de alcance longo dele, ou se for dissipado."
+    "descricao": "Usando os medos subconscientes do alvo, você cria uma imagem daquilo que ele mais teme. Apenas a própria vítima pode ver o *Assassino Fantasmagórico* com nitidez; outras criaturas presentes (incluindo o conjurador) enxergam apenas um espectro sombrio. Quando você lança a magia, o espectro surge adjacente a você e a vítima faz um teste de Vontade. Se ela passar, percebe que o espectro é uma ilusão e a magia é dissipada. Se falhar, acredita na existência do espectro, que então flutua 18m por rodada em direção à vítima, sempre no fim do seu turno. Ele é incorpóreo e imune a magias (exceto magias que dissipam outras). Se o espectro terminar seu turno adjacente à vítima, ela deve fazer um teste de Fortitude. Se passar, sofre 6d6 pontos de dano de trevas (este dano não pode reduzir o alvo a menos de 0 PV e não o deixa sangrando). Se falhar, sofre um colapso, ficando imediatamente com –1 PV e sangrando. O espectro persegue o alvo implacavelmente. Ele desaparece se o alvo ficar inconsciente ou se afastar além de alcance longo dele, ou se for dissipado."
 }, {
     "nome": "Augúrio",
     "tipo": "Divina",
@@ -246,7 +246,7 @@
     "alcance": "Longo",
     "alvo": "1 Criatura",
     "duracao": "Instantânea",
-    "descricao": "Envia um aviso telepático para uma criatura, mesmo que não possa vê-la nem tenha linha de efeito. Escolha um: Alerta: o alvo recebe +5 em seu próximo teste de Iniciativa e de Percepção dentro da cena. Mensagem: o alvo recebe uma mensagem sua de até 25 palavras. Vocês devem ter um idioma em comum para o alvo poder entendê-lo. Localização: o alvo sabe onde você está naquele momento. Se você mudar de posição, ele não saberá.<br><br>**+1 PM:** aumenta o alcance em um fator de 10 (90m para 900m, 900m para 9km e assim por diante).<br><br>**+1 PM:** se escolher mensagem, o alvo pode enviar uma resposta de até 25 palavras para você até o fim de seu próximo turno.<br><br>**+2 PM:** se escolher localização, muda a duração para cena. O alvo sabe onde você está mesmo que você mude de posição.<br><br>**+3 PM:** aumenta o número de alvos em +1."
+    "descricao": "Envia um aviso telepático para uma criatura, mesmo que não possa vê-la nem tenha linha de efeito. Escolha um:<br><br>*Alerta:* o alvo recebe +5 em seu próximo teste de Iniciativa e de Percepção dentro da cena.<br><br>*Mensagem:* o alvo recebe uma mensagem sua de até 25 palavras. Vocês devem ter um idioma em comum para o alvo poder entendê-lo.<br><br>*Localização:* o alvo sabe onde você está naquele momento. Se você mudar de posição, ele não saberá.<br><br>**+1 PM:** aumenta o alcance em um fator de 10 (90m para 900m, 900m para 9km e assim por diante).<br><br>**+1 PM:** se escolher mensagem, o alvo pode enviar uma resposta de até 25 palavras para você até o fim de seu próximo turno.<br><br>**+2 PM:** se escolher localização, muda a duração para cena. O alvo sabe onde você está mesmo que você mude de posição.<br><br>**+3 PM:** aumenta o número de alvos em +1."
 }, {
     "nome": "Banimento",
     "tipo": "Divina",
@@ -377,7 +377,7 @@
     "nome": "Cólera de azgher",
     "tipo": "Divina",
     "circulo": 4,
-    "escola": "evocação",
+    "escola": "Evocação",
     "execucao": "Padrão",
     "alcance": "Médio",
     "alvo": "Esfera com 6m de raio",
@@ -944,7 +944,7 @@
     "nome": "Globo da verdade de gwen",
     "tipo": "Divina",
     "circulo": 2,
-    "escola": "adivinhação",
+    "escola": "Adivinhação",
     "execucao": "Padrão",
     "alcance": "Curto",
     "alvo": "*Efeito:* 1 Globo",
@@ -1069,7 +1069,7 @@
     "nome": "Lágrimas de Wynna",
     "tipo": "Divina",
     "circulo": 5,
-    "escola": "abjuração",
+    "escola": "Abjuração",
     "execucao": "Padrão",
     "alcance": "Curto",
     "alvo": "1 Criatura",
@@ -1123,7 +1123,7 @@
     "nome": "Libertação",
     "tipo": "Universal",
     "circulo": 4,
-    "escola": "abjuração",
+    "escola": "Abjuração",
     "execucao": "Padrão",
     "alcance": "Curto",
     "alvo": "1 Criatura",
