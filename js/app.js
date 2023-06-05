@@ -42,7 +42,8 @@ T20.modules.modifiers = {
                             <div>
                                 Escaramuça.
                                 Ataque: <input name="roll20-t20-mod-ataque" value="0" style="width:30px">
-                                Dano: <input name="roll20-t20-mod-dano" value="0" style="width:60px">
+                                Dano extra: <input name="roll20-t20-mod-dano" value="0" style="width:30px">
+                                Dado extra: <input name="roll20-t20-mod-dado" value="" style="width:60px">
                             </div>
                         </div>
                         <div class="sheet-corner sheet-top-left"></div>
@@ -56,7 +57,8 @@ T20.modules.modifiers = {
 
         $element.find('input').on('keyup change clear', function () {
             let attack = 0
-            let dano = []
+            let dano = 0
+            let dado = []
             $element.find('.roll20-t20-mod').each(function () {
                 const $mod = $(this)
                 if ($mod.find('[name="roll20-t20-mod-ativo"]').is(":checked")) {
@@ -66,23 +68,40 @@ T20.modules.modifiers = {
                     }
                     const $dano = $mod.find('[name="roll20-t20-mod-dano"]')
                     if ($dano.length > 0) {
-                        dano.push($dano.val())
+                        dano += parseInt($dano.val())
+                    }
+                    const $dado = $mod.find('[name="roll20-t20-mod-dado"]')
+                    if ($dado.length > 0) {
+                        dado.push($dado.val())
                     }
                 }
             })
-            dano = dano.length > 0 ? dano.join('+') + '+' : ''
-            const $rollAttackButtons = $iframe.find('.sheet-attacks-container')
-                .find('[name="roll_attack"]')
-            $rollAttackButtons.val(`&{template:t20-attack}{{character=@{character_name}}}{{attackname=@{nomeataque}}}{{attackroll=[[${attack}+1d20cs>@{margemcriticoataque}+[[@{ataquepericia}]]+@{bonusataque}+@{ataquetemp}]]}} {{damageroll=[[${dano}@{danoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}+@{danotemp}+@{rolltemp}]]}} {{criticaldamageroll=[[${dano}@{danocriticoataque}+@{dadoextraataque}+@{modatributodano}+@{danoextraataque}]]}}{{typeofdamage=@{ataquetipodedano}}}{{description=@{ataquedescricao}}}`)
-            
-            const $rollBestAttackButtons = $iframe.find('.sheet-attacks-container')
-                .find('[name="roll_attack_best"]')
-            $rollBestAttackButtons.val(`&amp;{template:t20-attack}{{character=@{character_name}}}{{attackname=@{nomeataque}}}{{attackroll=[[${attack}+2d20kh1cs>@{margemcriticoataque}+[[@{ataquepericia}]]+@{bonusataque}+@{ataquetemp}]]}} {{damageroll=[[${dano}@{danoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}+@{danotemp}+@{rolltemp}]]}} {{criticaldamageroll=[[${dano}@{danocriticoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}]]}}{{typeofdamage=@{ataquetipodedano}}}{{description=@{ataquedescricao}}}`)
-            
-            const $rollWorstAttackButtons = $iframe.find('.sheet-attacks-container')
-                .find('[name="roll_attack"]')
-            $rollWorstAttackButtons.val(`&amp;{template:t20-attack}{{character=@{character_name}}}{{attackname=@{nomeataque}}}{{attackroll=[[${attack}+2d20kl1cs>@{margemcriticoataque}+[[@{ataquepericia}]]+@{bonusataque}+@{ataquetemp}]]}} {{damageroll=[[${dano}@{danoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}+@{danotemp}+@{rolltemp}]]}} {{criticaldamageroll=[[${dano}@{danocriticoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}]]}}{{typeofdamage=@{ataquetipodedano}}}{{description=@{ataquedescricao}}}`)
+            // quando o parseInt falha, dá NaN, avisar com css de erro
+            dado = dado.join('+')
+            if (dado.length > 0) {
+                dado += '+'
+            }
 
+            console.log(attack)
+            console.log(dado)
+            console.log(dano)
+
+            $iframe.find('.sheet-attacks-container .repitem').each(function () {
+                const $attack = $(this)
+                const critico = $attack.find('[name="attr_tipocritico"]').val()
+                let lancinante = 0
+                if (critico == 'lancinante') {
+                    lancinante = dano
+                }
+                console.log('lancinante')
+                console.log(lancinante)
+                $attack.find('[name="roll_attack"]').val(`&{template:t20-attack}{{character=@{character_name}}}{{attackname=@{nomeataque}}}{{attackroll=[[1d20cs>@{margemcriticoataque}+${attack}+[[@{ataquepericia}]]+@{bonusataque}+@{ataquetemp}]]}} {{damageroll=[[${dado}${dano}+@{danoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}+@{danotemp}+@{rolltemp}]]}} {{criticaldamageroll=[[${dado}${dano}+${lancinante}+@{danocriticoataque}+@{dadoextraataque}+@{modatributodano}+@{danoextraataque}]]}}{{typeofdamage=@{ataquetipodedano}}}{{description=@{ataquedescricao}}}`)
+
+                $attack.find('[name="roll_attack_best"]').val(`&amp;{template:t20-attack}{{character=@{character_name}}}{{attackname=@{nomeataque}}}{{attackroll=[[2d20kh1cs>@{margemcriticoataque}+${attack}+[[@{ataquepericia}]]+@{bonusataque}+@{ataquetemp}]]}} {{damageroll=[[${dado}${dano}+@{danoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}+@{danotemp}+@{rolltemp}]]}} {{criticaldamageroll=[[${dado}${dano}+${lancinante}+@{danocriticoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}]]}}{{typeofdamage=@{ataquetipodedano}}}{{description=@{ataquedescricao}}}`)
+
+                $attack.find('[name="roll_attack"]').val(`&amp;{template:t20-attack}{{character=@{character_name}}}{{attackname=@{nomeataque}}}{{attackroll=[[2d20kl1cs>@{margemcriticoataque}+${attack}+[[@{ataquepericia}]]+@{bonusataque}+@{ataquetemp}]]}} {{damageroll=[[${dado}${dano}+@{danoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}+@{danotemp}+@{rolltemp}]]}} {{criticaldamageroll=[[${dado}${dano}+${lancinante}+@{danocriticoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}]]}}{{typeofdamage=@{ataquetipodedano}}}{{description=@{ataquedescricao}}}`)
+            })
+            
         })
         $iframe.find('.sheet-pseudo-attributes')
             .after($element)
