@@ -24,22 +24,37 @@
     overflow: hidden !important;
     font-size: 14px;
     font-family: DanteMTS;
+    flex: 1;
+    display: flex !important;
+    flex-direction: column;
 }
 
-/*
-#roll20-t20-table-habilities {
-    width: 100%!important;
-}
-.roll20-t20-dialog-conteudo thead {
-    display: block;
+.roll20-t20-dialog-conteudo hr {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 0;
 }
 
-.roll20-t20-dialog-conteudo tbody {
-    display: block;
-    overflow-y: scroll;
-    height: 180px;
+#roll20-t20-table-habilities_wrapper,
+#roll20-t20-table-spells_wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
-*/
+
+#roll20-t20-table-habilities_wrapper>.dataTables_scroll,
+#roll20-t20-table-spells_wrapper>.dataTables_scroll {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+#roll20-t20-table-habilities_wrapper .dataTables_scrollBody,
+#roll20-t20-table-spells_wrapper .dataTables_scrollBody {
+    flex: 150px;
+    max-height: none !important;
+}
+
 .roll20-t20-dialog-columns th {
     font-family: Tormenta;
 }

@@ -30,7 +30,7 @@ setInterceptor('debug_d20', val => {
     val.environment = 'production'
     return T20.d20 = val
 })
-
+/*
 T20.modules.modifiers = {
     initSheet: ($iframe) => {
         const $element = $(`<div class="sheet-modifiers-container">
@@ -73,7 +73,7 @@ T20.modules.modifiers = {
         $element.find('input').first().trigger('change')
     }
 }
-
+*/
 T20.modules.habilities = {
     initSheet: ($iframe) => {
         const openDialog = function () {
@@ -269,10 +269,6 @@ T20.utils = {
             height: 500,
             width: 900,
             close: () => dialog.remove(),
-            /*
-            resizeStop: (event, ui) => {
-                dialog.closest('.ui-dialog').find('.dataTables_scrollBody').css('max-height', ui.size.height-285)
-            }*/
         })
         const modal = dialog.closest('.ui-dialog')
         modal.addClass('roll20-t20-dialog')
@@ -282,9 +278,8 @@ T20.utils = {
             scrollY: '215px',
             scrollCollapse: true,
             paging: false,
+            dom: 'rt',
             data: T20.db.habilities,
-            dom: 'rtip',
-            pageLength: 50,
             columns: [
                 { title: 'Tipo', data: 0, orderData: [0, 1] },
                 {
@@ -299,7 +294,6 @@ T20.utils = {
             ],
             language: {
                 zeroRecords: "Nenhum item encontrado",
-                info: 'Exibindo do _START_ ao _END_ de um total de _TOTAL_ itens',
                 infoEmpty: "Nenhum item encontrado",
                 infoFiltered: "(filtrado de um total de _MAX_ itens)",
                 paginate: {
@@ -324,7 +318,6 @@ T20.utils = {
                             column.search(val).draw()
                         })
                     })
-                //$('#roll20-t20-table-habilities tfoot tr').appendTo('#roll20-t20-table-habilities thead')
                 $('#roll20-t20-table-habilities_wrapper .dataTables_scrollFoot').insertAfter('#roll20-t20-table-habilities_wrapper .dataTables_scrollHead')
             },
         })
@@ -379,8 +372,10 @@ T20.utils = {
         modal.find('.ui-dialog-title').addClass('roll20-t20-dialog-titlebar')
         const content = modal.find('.ui-dialog-content')
         const table = content.find('#roll20-t20-table-spells').DataTable({
-            dom: 'rtip',
-            pageLength: 50,
+            scrollY: '215px',
+            scrollCollapse: true,
+            paging: false,
+            dom: 'rt',
             data: T20.db.spells,
             columns: [
                 { title: 'C', data: 'circulo', orderData: [0, 2, 1, 3] },
@@ -431,7 +426,7 @@ T20.utils = {
                             column.search(val, true, false).draw()
                         })
                     })
-                $('#roll20-t20-table-spells tfoot tr').appendTo('#roll20-t20-table-spells thead')
+                $('#roll20-t20-table-spells_wrapper .dataTables_scrollFoot').insertAfter('#roll20-t20-table-spells_wrapper .dataTables_scrollHead')
             },
         })
     },
