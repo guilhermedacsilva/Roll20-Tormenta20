@@ -1,7 +1,7 @@
 {
   "name": "T20++",
   "description": "T20++",
-  "version": "1.6",
+  "version": "1.7",
   "manifest_version": 3,
   "permissions": ["storage", "activeTab", "scripting"],
   "content_scripts": [
