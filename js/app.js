@@ -30,7 +30,7 @@ setInterceptor('debug_d20', val => {
     val.environment = 'production'
     return T20.d20 = val
 })
-
+/*
 T20.modules.modifiers = {
     initSheet: ($iframe) => {
         const $element = $(`<div class="sheet-modifiers-container">
@@ -73,7 +73,7 @@ T20.modules.modifiers = {
         $element.find('input').first().trigger('change')
     }
 }
-
+*/
 T20.modules.habilities = {
     initSheet: ($iframe) => {
         const openDialog = function () {
@@ -354,7 +354,17 @@ T20.utils = {
                         <option value="Arcana">Arcanas</option>
                         <option value="Divina">Divinas</option>
                     </select></th>
-                    <th><input style="width:85px"></th>
+                    <th><select class="roll20-t20-dialog-select" style="width:85px">
+                        <option value="">--</option>
+                        <option value="Abjuração">Abjuração</option>
+                        <option value="Adivinhação">Adivinhação</option>
+                        <option value="Convocação">Convocação</option>
+                        <option value="Encantamento">Encantamento</option>
+                        <option value="Evocação">Evocação</option>
+                        <option value="Ilusão">Ilusão</option>
+                        <option value="Necromancia">Necromancia</option>
+                        <option value="Transmutação">Transmutação</option>
+                    </select></th>
                     <th><input style="width:85px"></th>
                     <th><input style="width:100%"></th>
                 </tr>
