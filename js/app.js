@@ -37,11 +37,13 @@ T20.modules.modifiers = {
             <div class="sheet-inside">
                 <div class="sheet-container-negative-corner">
                     <div class="sheet-inside-negative-corner">
-        
-                        <div>
-                            <input value="0">
+                        <div class="roll20-t20-mod">
+                            <input name="roll20-t20-mod-ativo" type="checkbox">
+                            <div>
+                                Esracamuça. Ataque: <input name="roll20-t20-mod-ataque" value="0">
+                                Dano: <input name="roll20-t20-mod-dano" value="0">
+                            </div>
                         </div>
-        
                         <div class="sheet-corner sheet-top-left"></div>
                         <div class="sheet-corner sheet-top-right"></div>
                         <div class="sheet-corner sheet-bottom-left"></div>
@@ -49,13 +51,26 @@ T20.modules.modifiers = {
                     </div>
                 </div>
             </div>
-        
         </div>`)
+
         $element.find('input').on('keyup change clear', function () {
-            console.log($(this).val())
+            let attack = 0
+            const $mods = $element.find('.roll20-t20-mod').each(function () {
+                const $mod = $(this)
+                if ($mod.find('[name="roll20-t20-mod-ativo"]').is(":checked")) {
+                    const $attack = $mod.find('[name="roll20-t20-mod-ataque"]')
+                    if ($attack.length > 0) {
+                        attack += parseInt($attack.val())
+                    }
+                }
+            })
+            const $rollAttackButtons = $iframe.find('.sheet-attacks-container')
+                .find('[name="roll_attack"]')
+            $rollAttackButtons.val(`&{template:t20-attack}{{character=@{character_name}}}{{attackname=@{nomeataque}}}{{attackroll=[[${attack}+1d20cs>@{margemcriticoataque}+[[@{ataquepericia}]]+@{bonusataque}+@{ataquetemp}]]}} {{damageroll=[[@{danoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}+@{danotemp}+@{rolltemp}]]}} {{criticaldamageroll=[[@{danocriticoataque}+@{dadoextraataque}+@{modatributodano}+@{danoextraataque}]]}}{{typeofdamage=@{ataquetipodedano}}}{{description=@{ataquedescricao}}}`)
         })
         $iframe.find('.sheet-pseudo-attributes')
             .after($element)
+        $element.find('input').first().trigger('change')
     }
 }
 
@@ -181,11 +196,11 @@ T20.utils = {
             <form class="roll20-t20-dialog-form">
               <div>
                 <input class="roll20-t20-dialog-radio" type="radio" name="roll20-t20-dialog-coluna" id="poderColunaE" checked>
-                <label class="roll20-t20-dialog-label" for="poderColunaE">Inserir na coluna da esquerda</label>
+                <label class="roll20-t20-dialog-label" for="poderColunaE">Coluna da esquerda</label>
               </div>
               <div>
                 <input class="roll20-t20-dialog-radio" type="radio" name="roll20-t20-dialog-coluna" id="poderColunaD">
-                <label class="roll20-t20-dialog-label" for="poderColunaD">Inserir na coluna da direita</label>
+                <label class="roll20-t20-dialog-label" for="poderColunaD">Coluna da direita</label>
               </div>
             </form>
           <hr>
@@ -253,12 +268,20 @@ T20.utils = {
             autoOpen: true,
             height: 500,
             width: 900,
-            close: () => dialog.remove()
+            close: () => dialog.remove(),
+            /*
+            resizeStop: (event, ui) => {
+                dialog.closest('.ui-dialog').find('.dataTables_scrollBody').css('max-height', ui.size.height-285)
+            }*/
         })
         const modal = dialog.closest('.ui-dialog')
+        modal.addClass('roll20-t20-dialog')
         modal.find('.ui-dialog-title').addClass('roll20-t20-dialog-titlebar')
         const content = modal.find('.ui-dialog-content')
         content.find('#roll20-t20-table-habilities').DataTable({
+            scrollY: '215px',
+            scrollCollapse: true,
+            paging: false,
             data: T20.db.habilities,
             dom: 'rtip',
             pageLength: 50,
@@ -301,7 +324,8 @@ T20.utils = {
                             column.search(val).draw()
                         })
                     })
-                $('#roll20-t20-table-habilities tfoot tr').appendTo('#roll20-t20-table-habilities thead')
+                //$('#roll20-t20-table-habilities tfoot tr').appendTo('#roll20-t20-table-habilities thead')
+                $('#roll20-t20-table-habilities_wrapper .dataTables_scrollFoot').insertAfter('#roll20-t20-table-habilities_wrapper .dataTables_scrollHead')
             },
         })
     },

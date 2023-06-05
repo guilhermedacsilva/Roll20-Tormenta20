@@ -16,15 +16,30 @@
 
 .roll20-t20-dialog-titlebar {
     font-family: Tormenta;
-    color: #cf2a29!important;
-    font-size: 22px;
+    color: #cf2a29 !important;
+    font-size: 24px;
 }
 
 .roll20-t20-dialog-conteudo {
-    font-size: 16px;
+    overflow: hidden !important;
+    font-size: 14px;
     font-family: DanteMTS;
 }
 
+/*
+#roll20-t20-table-habilities {
+    width: 100%!important;
+}
+.roll20-t20-dialog-conteudo thead {
+    display: block;
+}
+
+.roll20-t20-dialog-conteudo tbody {
+    display: block;
+    overflow-y: scroll;
+    height: 180px;
+}
+*/
 .roll20-t20-dialog-columns th {
     font-family: Tormenta;
 }
@@ -46,7 +61,6 @@
 .roll20-t20-dialog-label {
     cursor: pointer;
     padding: 5px 10px;
-    border-radius: 10px;
     background-color: rgb(209 209 209);
     font-size: 16px;
 }
