@@ -14,6 +14,10 @@
     background-color: #cf2a29;
 }
 
+.roll20-t20-dialog {
+    min-height: 500px;
+}
+
 .roll20-t20-dialog-titlebar {
     font-family: Tormenta;
     color: #cf2a29 !important;

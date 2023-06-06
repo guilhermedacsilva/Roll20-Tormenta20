@@ -106,6 +106,7 @@ T20.modules.spells = {
             close: () => dialog.remove()
         })
         const modal = dialog.closest('.ui-dialog')
+        modal.addClass('roll20-t20-dialog')
         modal.find('.ui-dialog-title').addClass('roll20-t20-dialog-titlebar')
         const content = modal.find('.ui-dialog-content')
         const table = content.find('#roll20-t20-table-spells').DataTable({
