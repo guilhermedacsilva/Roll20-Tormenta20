@@ -8,6 +8,17 @@ const T20 = {
     api: null
 }
 
+Object.defineProperty(window, 'd20ext', {
+    enumerable: true,
+    configurable: true,
+    set(value) {
+        delete this.d20ext
+        window.d20ext = value
+        T20.d20 = value
+    }
+})
+
+/*
 function setInterceptor(prop, callback) {
     Object.defineProperty(window, prop, {
         enumerable: true,
@@ -30,7 +41,7 @@ setInterceptor('debug_d20', val => {
     val.environment = 'production'
     return T20.d20 = val
 })
-
+*/
 T20.utils = {
     cortarTexto(nTd, descricao) {
         if (descricao.length > 100) {

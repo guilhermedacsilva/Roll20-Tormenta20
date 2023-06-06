@@ -52,52 +52,7 @@ T20.modules.spells = {
     },
 
     showDialogSpells($iframe) {
-        const dialog = $(`
-        <div class="roll20-t20-dialog-conteudo">
-            <table id="roll20-t20-table-spells" class="table table-sm">
-              <thead>
-                <tr class="roll20-t20-dialog-columns">
-                  <th>C</th>
-                  <th>Tipo</th>
-                  <th>Escola</th>
-                  <th>Nome</th>
-                  <th>Descrição</th>
-                </tr>
-              </thead>
-              <tbody>
-              </tbody>
-              <tfoot>
-                <tr>
-                    <th><select class="roll20-t20-dialog-select" style="width:40px">
-                        <option value="">--</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select></th>
-                    <th><select class="roll20-t20-dialog-select" style="width:60px">
-                        <option value="">--</option>
-                        <option value="Arcana">Arcanas</option>
-                        <option value="Divina">Divinas</option>
-                    </select></th>
-                    <th><select class="roll20-t20-dialog-select" style="width:85px">
-                        <option value="">--</option>
-                        <option value="Abjuração">Abjuração</option>
-                        <option value="Adivinhação">Adivinhação</option>
-                        <option value="Convocação">Convocação</option>
-                        <option value="Encantamento">Encantamento</option>
-                        <option value="Evocação">Evocação</option>
-                        <option value="Ilusão">Ilusão</option>
-                        <option value="Necromancia">Necromancia</option>
-                        <option value="Transmutação">Transmutação</option>
-                    </select></th>
-                    <th><input style="width:85px"></th>
-                    <th><input style="width:100%"></th>
-                </tr>
-              </tfoot>
-            </table>
-        </div>`)
+        const dialog = $(this.dialogSpellsHtml)
         dialog.dialog({
             title: 'Listagem de magias',
             autoOpen: true,
@@ -138,15 +93,7 @@ T20.modules.spells = {
             ],
             language: {
                 zeroRecords: "Nenhum item encontrado",
-                info: 'Exibindo do _START_ ao _END_ de um total de _TOTAL_ itens',
                 infoEmpty: "Nenhum item encontrado",
-                infoFiltered: "(filtrado de um total de _MAX_ itens)",
-                paginate: {
-                    first: 'Primeira',
-                    last: 'Última',
-                    next: 'Próxima',
-                    previous: 'Anterior'
-                },
             },
             initComplete: function () {
                 this.api()
@@ -170,4 +117,51 @@ T20.modules.spells = {
             },
         })
     },
+
+    dialogSpellsHtml: `
+    <div class="roll20-t20-dialog-conteudo">
+        <table id="roll20-t20-table-spells" class="table table-sm">
+          <thead>
+            <tr class="roll20-t20-dialog-columns">
+              <th>C</th>
+              <th>Tipo</th>
+              <th>Escola</th>
+              <th>Nome</th>
+              <th>Descrição</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+          <tfoot>
+            <tr>
+                <th><select class="roll20-t20-dialog-select" style="width:40px">
+                    <option value="">--</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select></th>
+                <th><select class="roll20-t20-dialog-select" style="width:60px">
+                    <option value="">--</option>
+                    <option value="Arcana">Arcanas</option>
+                    <option value="Divina">Divinas</option>
+                </select></th>
+                <th><select class="roll20-t20-dialog-select" style="width:85px">
+                    <option value="">--</option>
+                    <option value="Abjuração">Abjuração</option>
+                    <option value="Adivinhação">Adivinhação</option>
+                    <option value="Convocação">Convocação</option>
+                    <option value="Encantamento">Encantamento</option>
+                    <option value="Evocação">Evocação</option>
+                    <option value="Ilusão">Ilusão</option>
+                    <option value="Necromancia">Necromancia</option>
+                    <option value="Transmutação">Transmutação</option>
+                </select></th>
+                <th><input style="width:85px"></th>
+                <th><input style="width:100%"></th>
+            </tr>
+          </tfoot>
+        </table>
+    </div>`
 }
