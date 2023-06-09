@@ -13,7 +13,7 @@ T20.modules.modifiers = {
                             <div class="sheet-small-title">Bônus de Ataque</div>
                             <div class="sheet-small-title">Dano Extra</div>
                             <div class="sheet-small-title">Dados Extra</div>
-                            <div class="sheet-small-title">Margem de ameaça</div>
+                            <div class="sheet-small-title">Margem</div>
                             <div class="sheet-small-title">Mult.</div>
                         </div>
 
@@ -25,6 +25,11 @@ T20.modules.modifiers = {
                             <input name="roll20-t20-mod-dado" value="">
                             <input name="roll20-t20-mod-ameaca" value="">
                             <input name="roll20-t20-mod-mult" value="">
+                        </div>
+
+                        <div class="roll20-t20-mod-footer repcontrol">
+                            <button class="btn no-margin repcontrol_add"></button>
+                            <button class="btn no-margin repcontrol_refresh"></button>
                         </div>
 
                         <div class="sheet-corner sheet-top-left"></div>

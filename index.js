@@ -30,7 +30,8 @@ function loadCssOnRoll20(path) {
 
 function loadCssOnRoll20CharSheet(charId) {
     const iframe = $(`iframe[name="iframe_${charId}"]`).contents()
-    iframe.find('head').append($(`<link href="${chrome.runtime.getURL('css/app.css')}" rel="stylesheet">`))
+    const head = iframe.find('head')
+    head.append($(`<link href="${chrome.runtime.getURL('css/app.css')}" rel="stylesheet">`))
 }
 
 function loadData(path) {
