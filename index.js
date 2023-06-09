@@ -53,7 +53,7 @@ $(document).ready(function () {
     loadJsOnRoll20('utils.js')
     loadJsOnRoll20('mod-habilities.js')
     loadJsOnRoll20('mod-spells.js')
-    //loadJsOnRoll20('mod-modifiers.js')
+    loadJsOnRoll20('mod-modifiers.js')
     loadJsOnRoll20('listeners.js')
     loadJsOnRoll20('api.js')
     loadJsOnRoll20('datatables.min.js')
