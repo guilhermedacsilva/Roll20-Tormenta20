@@ -78,6 +78,7 @@ T20.modules.spells = {
                     title: 'Nome',
                     data: 'nome',
                     orderData: 3,
+                    type: 'diacritics-neutralise',
                     fnCreatedCell: (nTd, sData, oData, iRow, iCol) => {
                         T20.modules.spells.prepararLinkMagia(nTd, sData, oData, iRow, iCol, $iframe)
                     }

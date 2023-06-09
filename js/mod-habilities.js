@@ -66,6 +66,7 @@ T20.modules.habilities = {
                     title: 'Nome',
                     data: 1,
                     orderData: [1, 0],
+                    type: 'diacritics-neutralise',
                     fnCreatedCell: (nTd, sData, oData, iRow, iCol) => {
                         T20.modules.habilities.prepararLinkPoder(nTd, sData, oData, iRow, iCol, $iframe)
                     }

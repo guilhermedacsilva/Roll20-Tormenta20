@@ -57,6 +57,7 @@ $(document).ready(function () {
     loadJsOnRoll20('listeners.js')
     loadJsOnRoll20('api.js')
     loadJsOnRoll20('datatables.min.js')
+    loadJsOnRoll20('diacritics-sort.min.js')
 
     loadData('spells.json')
     loadData('habilities.json')
