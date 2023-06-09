@@ -1,7 +1,7 @@
 {
   "name": "T20++",
   "description": "T20++",
-  "version": "1.7",
+  "version": "1.8",
   "manifest_version": 3,
   "permissions": ["storage", "activeTab", "scripting"],
   "content_scripts": [
@@ -10,8 +10,8 @@
         "https://app.roll20.net/editor*"
       ],
       "js": [
-        "third-party/jquery-3.6.0.min.js",
-        "third-party/jquery-ui-1.12.1.min.js",
+        "js-auto-load/jquery-3.6.0.min.js",
+        "js-auto-load/jquery-ui-1.12.1.min.js",
         "index.js"
       ],
       "run_at": "document_start"
@@ -20,7 +20,7 @@
   "web_accessible_resources": [
     {
       "resources": [
-        "third-party/*",
+        "js-auto-load/*",
         "js/*",
         "css/*",
         "data/*",
