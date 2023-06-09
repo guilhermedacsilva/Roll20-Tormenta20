@@ -28,8 +28,9 @@ T20.modules.modifiers = {
                         </div>
 
                         <div class="roll20-t20-mod-footer repcontrol">
-                            <button class="btn no-margin repcontrol_add"></button>
-                            <button class="btn no-margin repcontrol_refresh"></button>
+                            <button class="btn repcontrol_add" style="margin: 0!important"></button>
+                            <button class="btn roll20-t20-btn-refresh" style="margin: 0!important" title="Recarregar"></button>
+                            <button class="btn roll20-t20-btn-help" style="margin: 0!important" title="Ajuda">?</button>
                         </div>
 
                         <div class="sheet-corner sheet-top-left"></div>
