@@ -1,6 +1,6 @@
 {
-  "name": "T20++",
-  "description": "T20++",
+  "name": "T20++ (JdA)",
+  "description": "T20++ (JdA)",
   "version": "1.8",
   "manifest_version": 3,
   "permissions": ["storage", "activeTab", "scripting"],
