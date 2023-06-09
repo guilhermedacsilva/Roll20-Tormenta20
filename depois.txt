@@ -1,7 +1,5 @@
 COLOCAR RESTRIÇÕES DOS DEUSES
 
-ARRUMAR ORDENAÇÃO COM ACENTUAÇÃO NA TABELA Âncora e Área
-
 Mudar pré-requisitos para itálico
 
 Gerar ficha de NPC automaticamente
