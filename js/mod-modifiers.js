@@ -2,7 +2,7 @@
 
 T20.modules.modifiers = {
     initSheet: ($iframe) => {
-        const $element = $(`<div class="sheet-modifiers-container">
+        const $modContainer = $(`<div class="sheet-modifiers-container">
             <div class="sheet-inside">
                 <div class="sheet-container-negative-corner">
                     <div class="sheet-inside-negative-corner">
@@ -17,14 +17,14 @@ T20.modules.modifiers = {
                             <div class="sheet-small-title">Mult.</div>
                         </div>
 
-                        <div class="roll20-t20-mod sheet-t20-modifiersgrid">
-                            <input name="roll20-t20-mod-ativo" type="checkbox">
-                            <input name="roll20-t20-mod-nome">
-                            <input name="roll20-t20-mod-ataque" value="0">
-                            <input name="roll20-t20-mod-dano" value="0">
-                            <input name="roll20-t20-mod-dado" value="">
-                            <input name="roll20-t20-mod-ameaca" value="">
-                            <input name="roll20-t20-mod-mult" value="">
+                        <div class="roll20-t20-mod-itens sheet-t20-modifiersgrid">
+                            <input type="checkbox" name="roll20-t20-mod-ativo">
+                            <input type="text" name="roll20-t20-mod-nome">
+                            <input type="text" name="roll20-t20-mod-ataque" value="0">
+                            <input type="text" name="roll20-t20-mod-dano" value="0">
+                            <input type="text" name="roll20-t20-mod-dado" value="">
+                            <input type="text" name="roll20-t20-mod-ameaca" value="">
+                            <input type="text" name="roll20-t20-mod-mult" value="">
                         </div>
 
                         <div class="roll20-t20-mod-footer repcontrol">
@@ -42,12 +42,12 @@ T20.modules.modifiers = {
             </div>
         </div>`)
 
-        $element.find('input').on('keyup change clear', function () {
+        function applyMods() {
             const nomes = []
             let attack = 0
             let dano = 0
             const dados = []
-            $element.find('.roll20-t20-mod').each(function () {
+            $modContainer.find('.roll20-t20-mod-itens').each(function () {
                 const $mod = $(this)
                 if ($mod.find('[name="roll20-t20-mod-ativo"]').is(":checked")) {
                     nomes.push($mod.find('[name="roll20-t20-mod-nome"]').val())
@@ -66,7 +66,8 @@ T20.modules.modifiers = {
                 }
             })
             // quando o parseInt falha, dá NaN, avisar com css de erro
-            let dado = dados.join('+')
+            // filter removes blanks
+            let dado = dados.filter(x => x).join('+')
             if (dado.length > 0) {
                 dado += '+'
             }
@@ -79,7 +80,7 @@ T20.modules.modifiers = {
                     lancinante = dano
                     // se o cara muda o tipo de crítico para lancinante, ele precisa desligar e ligar o modificador para rodar este código.
                 }
-                let descricao = nomes.join(', ')
+                let descricao = nomes.filter(x => x).join(', ')
                 if (descricao.length > 0) {
                     descricao = `*Já incluso: ${descricao}*`
                     const ataqueDesc = $attackElement.find('[name="attr_ataquedescricao"]').val()
@@ -94,9 +95,11 @@ T20.modules.modifiers = {
                 $attackElement.find('[name="roll_attack_worst"]').val(`&{template:t20-attack}{{character=@{character_name}}}{{attackname=@{nomeataque}}}{{attackroll=[[${attack}+2d20kl1cs>@{margemcriticoataque}+[[@{ataquepericia}]]+@{bonusataque}+@{ataquetemp}]]}} {{damageroll=[[${dado}${dano}+@{danoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}+@{danotemp}+@{rolltemp}]]}} {{criticaldamageroll=[[${dado}${dano}+${lancinante}+@{danocriticoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}]]}}{{typeofdamage=@{ataquetipodedano}}}{{description=@{ataquedescricao}${descricao}}}`)
                 
             })
-        })
-        $iframe.find('.sheet-pseudo-attributes')
-            .after($element)
-        //$element.find('input').first().trigger('change')
+        }
+
+        $modContainer.find('.roll20-t20-mod-itens input').on('keyup change clear', applyMods)
+        $modContainer.find('.roll20-t20-btn-refresh').on('click', applyMods)
+        $iframe.find('.sheet-pseudo-attributes').after($modContainer)
+        //$modContainer.find('input').first().trigger('change')
     }
 }

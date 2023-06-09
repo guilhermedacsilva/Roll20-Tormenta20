@@ -133,11 +133,11 @@
     /* check, nome, ataque, dano, dado, margem, mult */
 }
 
-.roll20-t20-mod {
+.roll20-t20-mod-itens {
     margin-bottom: 2px;
 }
 
-.roll20-t20-mod input {
+.roll20-t20-mod-itens input[type=text] {
     display: inline-block;
     width: 100%;
     height: 24px;
