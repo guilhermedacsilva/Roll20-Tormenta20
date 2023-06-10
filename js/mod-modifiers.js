@@ -13,7 +13,7 @@ T20.modules.modifiers = {
                             <div class="sheet-small-title">Bônus de Ataque</div>
                             <div class="sheet-small-title">Dano Extra</div>
                             <div class="sheet-small-title">Dados Extra</div>
-                            <div class="sheet-small-title">Margem</div>
+                            <div class="sheet-small-title">Bônus de Ameaça</div>
                         </div>
 
                         <div class="roll20-t20-mod-itens">
