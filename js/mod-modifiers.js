@@ -51,8 +51,14 @@ T20.modules.modifiers = {
         }
 
         function applyMods() {
+            let a = T20.api.getAttrib(characterId, 't20_mod_list')
+            if (a) {
+                a += '1'
+            } else {
+                a = '1'
+            }
             let atributoSalvo = 'hahaha'
-            T20.api.setAttribs(characterId, {t20_mod_list: 'hahaha'})
+            T20.api.setAttrib(characterId, 't20_mod_list', a)
             const nomes = []
             let attack = 0
             let dano = 0

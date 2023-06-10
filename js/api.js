@@ -6,6 +6,32 @@ T20.api = {
         return Campaign.characters.get(characterId)
         // c = Campaign.characters.get("-NWQ313nc46cFDYegtk6")
     },
+    getAttrib(characterId, name) {
+        const char = this.getCharacter(characterId)
+        char.attribs.fetch()
+        const find = char.attribs.models.find((attr) => {
+            return attr.attributes.name == name
+        })
+        if (find) {
+            return find.attributes.current
+        }
+        return null
+    },
+    setAttrib(characterId, name, current) {
+        const char = this.getCharacter(characterId)
+        char.attribs.fetch()
+        const find = char.attribs.models.find((attr) => {
+            return attr.attributes.name == name
+        })
+        if (find) {
+            find.save({ name, current })
+        } else {
+            char.attribs.create({ name, current })
+        }
+    },
+
+    /*
+    
     setAttribs(characterId, attribs) {
         const char = this.getCharacter(characterId)
         Object.entries(attribs).forEach(([name, current]) => {
@@ -20,8 +46,6 @@ T20.api = {
             }
         })
     },
-    
-    /*
     isGM: () => window.is_gm,
     getUuid: () => window.generateUUID().replace(/_/g, 'Z'),
     getHandout(handoutId) {
