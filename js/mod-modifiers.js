@@ -59,6 +59,7 @@ T20.modules.modifiers = {
                     .on('blur', saveModAttribs)
                 $modItens.append($modItem)
             })
+            applyMods()
         }
 
         function saveModAttribs() {
