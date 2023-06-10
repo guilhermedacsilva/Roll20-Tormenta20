@@ -14,11 +14,10 @@ T20.modules.modifiers = {
                             <div class="sheet-small-title">Dano Extra</div>
                             <div class="sheet-small-title">Dados Extra</div>
                             <div class="sheet-small-title">Bônus de Ameaça</div>
+                            <div class="sheet-small-title"></div>
                         </div>
 
-                        <div class="roll20-t20-mod-itens">
-                            
-                        </div>
+                        <div class="roll20-t20-mod-itens"></div>
 
                         <div class="roll20-t20-mod-footer repcontrol">
                             <button class="btn repcontrol_add" style="margin: 0!important"></button>
@@ -41,25 +40,33 @@ T20.modules.modifiers = {
             let attribT20ModList = T20.api.getAttrib(characterId, 't20_mod_list')
             if (attribT20ModList) {
                 attribT20ModList = JSON.parse(attribT20ModList)
-            } else {
-                attribT20ModList = []
-            }
-            attribT20ModList.forEach(attriMod => {
-                const $modItem = $(`<div class="roll20-t20-mod-item sheet-t20-modifiersgrid">
+                attribT20ModList.forEach(attriMod => {
+                    const $modItem = $(`<div class="roll20-t20-mod-item sheet-t20-modifiersgrid">
                         <input type="checkbox" name="roll20-t20-mod-ativo" class="roll20-t20-checkbox">
                         <input type="text" name="roll20-t20-mod-nome" value="${attriMod.nome}">
                         <input type="text" name="roll20-t20-mod-ataque" value="${attriMod.ataque}">
                         <input type="text" name="roll20-t20-mod-dano" value="${attriMod.dano}">
                         <input type="text" name="roll20-t20-mod-dado" value="${attriMod.dado}">
                         <input type="text" name="roll20-t20-mod-margem" value="${attriMod.margem}">
+                        
                     </div>`)
-                $modItem.find('[name="roll20-t20-mod-ativo"]').prop("checked", attriMod.ativo);
-                $modItem.find('input')
-                    .on('keyup change clear', applyMods)
-                    .on('blur', saveModAttribs)
-                $modItens.append($modItem)
-            })
+                    $modItem.find('[name="roll20-t20-mod-ativo"]')
+                        .prop('checked', attriMod.ativo)
+                        .on('change', applyModsAndSave);
+                    $modItem.find('input[type="text"]')
+                        .on('keyup change clear', applyMods)
+                        .on('blur', saveModAttribs)
+                    $modItens.append($modItem)
+                })
+                if (attribT20ModList.length > 0) {
+                    applyMods()
+                }
+            }
+        }
+
+        function applyModsAndSave() {
             applyMods()
+            saveModAttribs()
         }
 
         function saveModAttribs() {
@@ -88,7 +95,8 @@ T20.modules.modifiers = {
                     <input type="text" name="roll20-t20-mod-dado" value="">
                     <input type="text" name="roll20-t20-mod-margem" value="">
                 </div>`)
-            $modItem.find('input')
+            $modItem.find('[name="roll20-t20-mod-ativo"]').on('change', applyModsAndSave);
+            $modItem.find('input[type="text"]')
                 .on('keyup change clear', applyMods)
                 .on('blur', saveModAttribs)
             $modItens.append($modItem)
@@ -157,10 +165,8 @@ T20.modules.modifiers = {
         }
 
         $modContainer.find('.repcontrol_add').on('click', addMod)
-        $modContainer.find('.roll20-t20-btn-refresh')
-            .on('click', applyMods)
-            .on('click', saveModAttribs)
+        $modContainer.find('.roll20-t20-btn-refresh').on('click', applyModsAndSave)
         $iframe.find('.sheet-pseudo-attributes').after($modContainer)
-        loadModListHtml()
+        setTimeout(loadModListHtml, 3000);
     }
 }
