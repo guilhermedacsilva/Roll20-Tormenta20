@@ -12,10 +12,7 @@ T20.api = {
         const find = char.attribs.models.find((attr) => {
             return attr.attributes.name == name
         })
-        if (find) {
-            return find.attributes.current
-        }
-        return null
+        return find ? find.attributes.current : null
     },
     setAttrib(characterId, name, current) {
         const char = this.getCharacter(characterId)

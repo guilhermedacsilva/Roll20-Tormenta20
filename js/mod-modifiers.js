@@ -37,6 +37,47 @@ T20.modules.modifiers = {
 
         const $modItens = $modContainer.find('.roll20-t20-mod-itens')
 
+        function loadModListHtml() {
+            let attribT20ModList = T20.api.getAttrib(characterId, 't20_mod_list')
+            if (attribT20ModList) {
+                attribT20ModList = JSON.parse(attribT20ModList)
+            } else {
+                attribT20ModList = []
+            }
+            attribT20ModList.forEach(attriMod => {
+                const $modItem = $(`<div class="roll20-t20-mod-item sheet-t20-modifiersgrid">
+                        <input type="checkbox" name="roll20-t20-mod-ativo" class="roll20-t20-checkbox">
+                        <input type="text" name="roll20-t20-mod-nome" value="${attriMod.nome}">
+                        <input type="text" name="roll20-t20-mod-ataque" value="${attriMod.ataque}">
+                        <input type="text" name="roll20-t20-mod-dano" value="${attriMod.dano}">
+                        <input type="text" name="roll20-t20-mod-dado" value="${attriMod.dado}">
+                        <input type="text" name="roll20-t20-mod-margem" value="${attriMod.margem}">
+                    </div>`)
+                $modItem.find('[name="roll20-t20-mod-ativo"]').prop("checked", attriMod.ativo);
+                $modItem.find('input')
+                    .on('keyup change clear', applyMods)
+                    .on('blur', saveModAttribs)
+                $modItens.append($modItem)
+            })
+        }
+
+        function saveModAttribs() {
+            const attribT20ModList = []
+            $modItens.find('.roll20-t20-mod-item').each(function () {
+                const $modItem = $(this)
+                attribT20ModList.push({
+                    ativo: $modItem.find('[name="roll20-t20-mod-ativo"]').is(':checked'),
+                    nome: $modItem.find('[name="roll20-t20-mod-nome"]').val(),
+                    ataque: $modItem.find('[name="roll20-t20-mod-ataque"]').val(),
+                    dano: $modItem.find('[name="roll20-t20-mod-dano"]').val(),
+                    dado: $modItem.find('[name="roll20-t20-mod-dado"]').val(),
+                    margem: $modItem.find('[name="roll20-t20-mod-margem"]').val()
+                })
+            })
+            console.log('attribT20ModList', attribT20ModList)
+            T20.api.setAttrib(characterId, 't20_mod_list', JSON.stringify(attribT20ModList))
+        }
+
         function addMod() {
             const $modItem = $(`<div class="roll20-t20-mod-item sheet-t20-modifiersgrid">
                     <input type="checkbox" name="roll20-t20-mod-ativo" class="roll20-t20-checkbox">
@@ -46,25 +87,19 @@ T20.modules.modifiers = {
                     <input type="text" name="roll20-t20-mod-dado" value="">
                     <input type="text" name="roll20-t20-mod-margem" value="">
                 </div>`)
-            $modItem.find('input').on('keyup change clear', applyMods)
+            $modItem.find('input')
+                .on('keyup change clear', applyMods)
+                .on('blur', saveModAttribs)
             $modItens.append($modItem)
         }
 
         function applyMods() {
-            let a = T20.api.getAttrib(characterId, 't20_mod_list')
-            if (a) {
-                a += '1'
-            } else {
-                a = '1'
-            }
-            let atributoSalvo = 'hahaha'
-            T20.api.setAttrib(characterId, 't20_mod_list', a)
             const nomes = []
             let attack = 0
             let dano = 0
             let margem = 0
             const dados = []
-            $modContainer.find('.roll20-t20-mod-item').each(function () {
+            $modItens.find('.roll20-t20-mod-item').each(function () {
                 const $mod = $(this)
                 if ($mod.find('[name="roll20-t20-mod-ativo"]').is(":checked")) {
                     nomes.push($mod.find('[name="roll20-t20-mod-nome"]').val())
@@ -116,13 +151,15 @@ T20.modules.modifiers = {
                 $attackElement.find('[name="roll_attack_best"]').val(`&{template:t20-attack}{{character=@{character_name}}}{{attackname=@{nomeataque}}}{{attackroll=[[${attack}+2d20kh1cs>${margemFinal}+[[@{ataquepericia}]]+@{bonusataque}+@{ataquetemp}]]}} {{damageroll=[[${dado}${dano}+@{danoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}+@{danotemp}+@{rolltemp}]]}} {{criticaldamageroll=[[${dado}${dano}+${lancinante}+@{danocriticoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}]]}}{{typeofdamage=@{ataquetipodedano}}}{{description=@{ataquedescricao}${descricao}}}`)
 
                 $attackElement.find('[name="roll_attack_worst"]').val(`&{template:t20-attack}{{character=@{character_name}}}{{attackname=@{nomeataque}}}{{attackroll=[[${attack}+2d20kl1cs>${margemFinal}+[[@{ataquepericia}]]+@{bonusataque}+@{ataquetemp}]]}} {{damageroll=[[${dado}${dano}+@{danoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}+@{danotemp}+@{rolltemp}]]}} {{criticaldamageroll=[[${dado}${dano}+${lancinante}+@{danocriticoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}]]}}{{typeofdamage=@{ataquetipodedano}}}{{description=@{ataquedescricao}${descricao}}}`)
-                
+
             })
         }
 
         $modContainer.find('.repcontrol_add').on('click', addMod)
-        $modContainer.find('.roll20-t20-btn-refresh').on('click', applyMods)
+        $modContainer.find('.roll20-t20-btn-refresh')
+            .on('click', applyMods)
+            .on('click', saveModAttribs)
         $iframe.find('.sheet-pseudo-attributes').after($modContainer)
-        //$modContainer.find('input').first().trigger('change')
+        loadModListHtml()
     }
 }
