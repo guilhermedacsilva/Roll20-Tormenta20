@@ -4,17 +4,23 @@ T20.api = {
     getCharacter(characterId) {
         Campaign.characters.fetch()
         return Campaign.characters.get(characterId)
+        // c = Campaign.characters.get("-NWQ313nc46cFDYegtk6")
     },
     setAttribs(characterId, attribs) {
         const char = this.getCharacter(characterId)
         Object.entries(attribs).forEach(([name, current]) => {
+            char.attribs.fetch()
             const find = char.attribs.models.find((attr) => {
-                return attr.attributes.name === name
+                return attr.attributes.name == name
             })
-            if (find) find.save({ name, current })
-            else char.attribs.create({ name, current })
+            if (find) {
+                find.save({ name, current })
+            } else {
+                char.attribs.create({ name, current })
+            }
         })
     },
+    
     /*
     isGM: () => window.is_gm,
     getUuid: () => window.generateUUID().replace(/_/g, 'Z'),
@@ -24,6 +30,13 @@ T20.api = {
     },
     getIframe(char) {
         return $(`[data-characterid=${char.id || char}] iframe`).contents()
+    },
+    async getAttrib(characterId, attrib) {
+        const input = () => this.getIframe(characterId).find(`[name=attr_${attrib}]`)
+        await checkTimeout(() => {
+            return input().length && !input().val().startsWith('@')
+        })
+        return input().val()
     },
     async openSheet(char) {
         const charMenu = () => $(`.character[data-itemid=${char.id || char}]`)
@@ -79,13 +92,6 @@ T20.api = {
             }
         })
         return $el
-    },
-    async getAttrib(characterId, attrib) {
-        const input = () => this.getIframe(characterId).find(`[name=attr_${attrib}]`)
-        await checkTimeout(() => {
-            return input().length && !input().val().startsWith('@')
-        })
-        return input().val()
     },
     async syncSkills(characterId, skills) {
         const attribs = {}
