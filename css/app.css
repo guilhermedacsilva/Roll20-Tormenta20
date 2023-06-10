@@ -148,10 +148,19 @@
     border-bottom: 2px solid black;
 }
 
+.roll20-t20-checkbox {
+    width: 20px!important;
+    height: 20px!important;
+}
+
 .roll20-t20-mod-footer {
     padding: 2px 10px 10px;
     display: flex;
     gap: 15px;
+}
+
+.roll20-t20-btn-refresh:active {
+    background-color: #4b2525!important;
 }
 
 .roll20-t20-btn-refresh::before {
@@ -179,6 +188,10 @@
     height: 22px;
     width: 22px;
     font-weight: bold!important;
+}
+
+.roll20-t20-btn-help:active {
+    background-color: #4b2525!important;
 }
 
 .roll20-t20-btn-help:hover {

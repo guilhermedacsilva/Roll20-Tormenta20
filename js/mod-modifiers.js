@@ -18,7 +18,7 @@ T20.modules.modifiers = {
                         </div>
 
                         <div class="roll20-t20-mod-itens sheet-t20-modifiersgrid">
-                            <input type="checkbox" name="roll20-t20-mod-ativo">
+                            <input type="checkbox" name="roll20-t20-mod-ativo" class="roll20-t20-checkbox">
                             <input type="text" name="roll20-t20-mod-nome">
                             <input type="text" name="roll20-t20-mod-ataque" value="0">
                             <input type="text" name="roll20-t20-mod-dano" value="0">
