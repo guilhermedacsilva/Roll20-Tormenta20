@@ -1,15 +1,26 @@
 'use strict'
 
 T20.api = {
+    getCharacter(characterId) {
+        Campaign.characters.fetch()
+        return Campaign.characters.get(characterId)
+    },
+    setAttribs(characterId, attribs) {
+        const char = this.getCharacter(characterId)
+        Object.entries(attribs).forEach(([name, current]) => {
+            const find = char.attribs.models.find((attr) => {
+                return attr.attributes.name === name
+            })
+            if (find) find.save({ name, current })
+            else char.attribs.create({ name, current })
+        })
+    },
+    /*
     isGM: () => window.is_gm,
     getUuid: () => window.generateUUID().replace(/_/g, 'Z'),
-    getCharacter(characterId) {
-        T20.d20.Campaign.characters.fetch()
-        return T20.d20.Campaign.characters.get(characterId)
-    },
     getHandout(handoutId) {
-        T20.d20.Campaign.handouts.fetch()
-        return T20.d20.Campaign.handouts.get(handoutId)
+        Campaign.handouts.fetch()
+        return Campaign.handouts.get(handoutId)
     },
     getIframe(char) {
         return $(`[data-characterid=${char.id || char}] iframe`).contents()
@@ -39,7 +50,7 @@ T20.api = {
         await this.openSheet(char)
     },
     async addCharacter(name, folder, attribs, skills) {
-        const newChar = T20.d20.Campaign.characters.create({ name })
+        const newChar = Campaign.characters.create({ name })
         T20.d20.journal.addItemToFolderStructure(newChar.id, T20.api.getFolderId(folder))
         if (attribs) this.setAttribs(newChar.id, attribs)
         await this.openSheet(newChar)
@@ -47,7 +58,7 @@ T20.api = {
         return newChar.id
     },
     getFolderId(folderName) {
-        const folders = JSON.parse(T20.d20.Campaign.attributes.journalfolder || '[]')
+        const folders = JSON.parse(Campaign.attributes.journalfolder || '[]')
         const find = folders.find(folder => folder.n === folderName)
         if (find) return find.id
         T20.d20.journal.addFolderToFolderStructure(folderName)
@@ -68,14 +79,6 @@ T20.api = {
             }
         })
         return $el
-    },
-    setAttribs(characterId, attribs) {
-        const char = this.getCharacter(characterId)
-        Object.entries(attribs).forEach(([name, current]) => {
-            const find = char.attribs.models.find(attr => attr.name === name)
-            if (find) find.save({ name, current })
-            else char.attribs.create({ name, current })
-        })
     },
     async getAttrib(characterId, attrib) {
         const input = () => this.getIframe(characterId).find(`[name=attr_${attrib}]`)
@@ -169,7 +172,7 @@ T20.api = {
         char.abilities.fetch()
             ;[...char.abilities.models].forEach(ability => {
                 if (!ability.attributes.action.startsWith('   ')) return
-                T20.d20.Campaign.players.each(player => {
+                Campaign.players.each(player => {
                     player.removeFromMacroBar(ability.id)
                 })
                 ability.destroy()
@@ -187,4 +190,5 @@ T20.api = {
             .find(`[data-groupname="${attrGroup}"] [data-reprowid="${rowId}"] [name="attr_${attrKey}"]`)[0]
         if (el) el.dispatchEvent(new CustomEvent('blur'))
     }
+    */
 }

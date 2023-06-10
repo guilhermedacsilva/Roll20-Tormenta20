@@ -1,7 +1,7 @@
 'use strict'
 
 T20.modules.modifiers = {
-    initSheet: ($iframe) => {
+    initSheet: ($iframe, characterId) => {
         const $modContainer = $(`<div class="sheet-modifiers-container">
             <div class="sheet-inside">
                 <div class="sheet-container-negative-corner">
@@ -51,6 +51,8 @@ T20.modules.modifiers = {
         }
 
         function applyMods() {
+            let atributoSalvo = 'hahaha'
+            T20.api.setAttribs(characterId, {t20_mod_list: 'hahaha'})
             const nomes = []
             let attack = 0
             let dano = 0

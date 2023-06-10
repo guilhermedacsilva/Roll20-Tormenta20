@@ -1,7 +1,7 @@
 'use strict'
 
 T20.modules.habilities = {
-    initSheet($iframe) {
+    initSheet($iframe, characterId) {
         const openDialog = function () {
             T20.modules.habilities.showDialogHabilities($iframe)
         }
