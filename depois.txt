@@ -3,3 +3,5 @@ COLOCAR RESTRIÇÕES DOS DEUSES
 Mudar pré-requisitos para itálico
 
 Gerar ficha de NPC automaticamente
+
+Firebase: busca mais otimizada

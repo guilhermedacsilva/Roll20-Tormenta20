@@ -111,22 +111,27 @@ T20.modules.modifiers = {
             $modItens.find('.roll20-t20-mod-item').each(function () {
                 const $mod = $(this)
                 if ($mod.find('[name="roll20-t20-mod-ativo"]').is(":checked")) {
-                    nomes.push($mod.find('[name="roll20-t20-mod-nome"]').val())
-                    const $attack = $mod.find('[name="roll20-t20-mod-ataque"]').val()
-                    if ($attack.length > 0) {
-                        attack += parseInt($attack)
+                    const modName = $mod.find('[name="roll20-t20-mod-nome"]').val()
+                    if (modName.length > 0) {
+                        nomes.push(modName)
+                    } else {
+                        nomes.push('Buff sem nome')
                     }
-                    const $dano = $mod.find('[name="roll20-t20-mod-dano"]').val()
-                    if ($dano.length > 0) {
-                        dano += parseInt($dano)
+                    const modAttack = $mod.find('[name="roll20-t20-mod-ataque"]').val()
+                    if (modAttack.length > 0) {
+                        attack += parseInt(modAttack)
                     }
-                    const $dado = $mod.find('[name="roll20-t20-mod-dado"]').val()
-                    if ($dado.length > 0) {
-                        dados.push($dado)
+                    const modDamage = $mod.find('[name="roll20-t20-mod-dano"]').val()
+                    if (modDamage.length > 0) {
+                        dano += parseInt(modDamage)
                     }
-                    const $margem = $mod.find('[name="roll20-t20-mod-margem"]').val()
-                    if ($margem.length > 0) {
-                        margem += parseInt($margem)
+                    const modDice = $mod.find('[name="roll20-t20-mod-dado"]').val()
+                    if (modDice.length > 0) {
+                        dados.push(modDice)
+                    }
+                    const modCrit = $mod.find('[name="roll20-t20-mod-margem"]').val()
+                    if (modCrit.length > 0) {
+                        margem += parseInt(modCrit)
                     }
                 }
             })
