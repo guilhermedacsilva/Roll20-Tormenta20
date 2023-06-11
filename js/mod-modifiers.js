@@ -112,21 +112,21 @@ T20.modules.modifiers = {
                 const $mod = $(this)
                 if ($mod.find('[name="roll20-t20-mod-ativo"]').is(":checked")) {
                     nomes.push($mod.find('[name="roll20-t20-mod-nome"]').val())
-                    const $attack = $mod.find('[name="roll20-t20-mod-ataque"]')
+                    const $attack = $mod.find('[name="roll20-t20-mod-ataque"]').val()
                     if ($attack.length > 0) {
-                        attack += parseInt($attack.val())
+                        attack += parseInt($attack)
                     }
-                    const $dano = $mod.find('[name="roll20-t20-mod-dano"]')
+                    const $dano = $mod.find('[name="roll20-t20-mod-dano"]').val()
                     if ($dano.length > 0) {
-                        dano += parseInt($dano.val())
+                        dano += parseInt($dano)
                     }
-                    const $dado = $mod.find('[name="roll20-t20-mod-dado"]')
+                    const $dado = $mod.find('[name="roll20-t20-mod-dado"]').val()
                     if ($dado.length > 0) {
-                        dados.push($dado.val())
+                        dados.push($dado)
                     }
-                    const $margem = $mod.find('[name="roll20-t20-mod-margem"]')
+                    const $margem = $mod.find('[name="roll20-t20-mod-margem"]').val()
                     if ($margem.length > 0) {
-                        margem += parseInt($margem.val())
+                        margem += parseInt($margem)
                     }
                 }
             })
