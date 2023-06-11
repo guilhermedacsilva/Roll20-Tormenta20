@@ -229,3 +229,11 @@
 .roll20-t20-btn-remove:active {
     background-color: #4b2525 !important;
 }
+
+.roll20-t20-btn-refresh-text {
+    font-family: 'Pictos' !important;
+    font-size: 13px;
+    font-weight: normal;
+    position: relative;
+    top: -2px;
+}

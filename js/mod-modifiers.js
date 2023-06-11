@@ -12,7 +12,7 @@ T20.modules.modifiers = {
                             <div class="sheet-grid-title">Nome do Buff</div>
                             <div class="sheet-small-title">Bônus de Ataque</div>
                             <div class="sheet-small-title">Dano Extra</div>
-                            <div class="sheet-small-title">Dados Extra</div>
+                            <div class="sheet-small-title">Dados Extras</div>
                             <div class="sheet-small-title">Bônus de Ameaça</div>
                             <div class="sheet-small-title"></div>
                         </div>
@@ -181,7 +181,26 @@ T20.modules.modifiers = {
 
         $modContainer.find('.repcontrol_add').on('click', addMod)
         $modContainer.find('.roll20-t20-btn-refresh').on('click', applyModsAndSave)
+        $modContainer.find('.roll20-t20-btn-help').on('click', T20.modules.modifiers.showDialogHelp)
         $iframe.find('.sheet-pseudo-attributes').after($modContainer)
         setTimeout(loadModListHtml, 3000);
+    },
+
+    showDialogHelp() {
+        const dialog = $(`<div>
+        <p>Você pode cadastrar e remover buffs, que são modificadores para os ataques!</p>
+        <p>Os buffs podem conter valores positivos ou negativos.</p>
+        <p>O campo Dados Extras é o único que aceita dados. Exemplo: 1d6.</p>
+        <p>Para os buffs funcionarem, basta rolar o ataque normalmente. Também funciona com Melhor Dado e Pior Dado.</p>
+        <p>Depois de alterar um <u>buff</u>, você não precisa fazer nada. Ele funciona automaticamente.</p>
+        <p style="font-weight:bold">Atenção! <u>Sempre</u> que você alterar um <u>ataque</u>, você deve recarregar os buffs. Você pode fazer isso clicando no botão de recarregar <span class="roll20-t20-btn-refresh-text">1</span>.</p>
+        </div>`)
+        dialog.dialog({
+            title: 'Ajuda da Seção Buffs',
+            autoOpen: true,
+            height: 310,
+            width: 515,
+            close: () => dialog.remove(),
+        })
     }
 }
