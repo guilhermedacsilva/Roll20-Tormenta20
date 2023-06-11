@@ -48,7 +48,7 @@ T20.modules.modifiers = {
                         <input type="text" name="roll20-t20-mod-dano" value="${attriMod.dano}">
                         <input type="text" name="roll20-t20-mod-dado" value="${attriMod.dado}">
                         <input type="text" name="roll20-t20-mod-margem" value="${attriMod.margem}">
-                        <button class="btn roll20-t20-btn-remove" style="margin: 0!important" title="Remover"></button>
+                        <button class="btn roll20-t20-btn-remove" title="Remover"></button>
                     </div>`)
                     $modItem.find('[name="roll20-t20-mod-ativo"]')
                         .prop('checked', attriMod.ativo)
@@ -56,12 +56,19 @@ T20.modules.modifiers = {
                     $modItem.find('input[type="text"]')
                         .on('keyup change clear', applyMods)
                         .on('blur', saveModAttribs)
+                    $modItem.find('.roll20-t20-btn-remove')
+                        .on('click', removeMod)
                     $modItens.append($modItem)
                 })
                 if (attribT20ModList.length > 0) {
                     applyMods()
                 }
             }
+        }
+
+        function removeMod() {
+            $(this).parent().remove()
+            applyModsAndSave()
         }
 
         function applyModsAndSave() {
@@ -94,11 +101,14 @@ T20.modules.modifiers = {
                     <input type="text" name="roll20-t20-mod-dano" value="0">
                     <input type="text" name="roll20-t20-mod-dado" value="">
                     <input type="text" name="roll20-t20-mod-margem" value="">
+                    <button class="btn roll20-t20-btn-remove" title="Remover"></button>
                 </div>`)
             $modItem.find('[name="roll20-t20-mod-ativo"]').on('change', applyModsAndSave);
             $modItem.find('input[type="text"]')
                 .on('keyup change clear', applyMods)
                 .on('blur', saveModAttribs)
+            $modItem.find('.roll20-t20-btn-remove')
+                .on('click', removeMod)
             $modItens.append($modItem)
         }
 
