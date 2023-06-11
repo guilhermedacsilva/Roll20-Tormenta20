@@ -1,11 +1,21 @@
 'use strict'
 
-function loadJsOnRoll20(path) {
-    let element = document.createElement('script')
-    element.src = chrome.runtime.getURL('js/' + path)
-    element.type = 'text/javascript'
-    let node = (document.head || document.documentElement)
-    node.appendChild(element)
+function loadJsOnRoll20(path, delay = 0) {
+    if (delay == 0) {
+        const element = document.createElement('script')
+        element.src = chrome.runtime.getURL('js/' + path)
+        element.type = 'text/javascript'
+        const node = (document.head || document.documentElement)
+        node.appendChild(element)
+    } else {
+        setTimeout(() => {
+            const element = document.createElement('script')
+            element.src = chrome.runtime.getURL('js/' + path)
+            element.type = 'text/javascript'
+            const node = (document.head || document.documentElement)
+            node.appendChild(element)
+        }, delay);
+    }
 }
 
 function loadFontOnRoll20(name, path) {
@@ -20,11 +30,11 @@ function loadFontOnRoll20(name, path) {
 }
 
 function loadCssOnRoll20(path) {
-    let element = document.createElement('link')
-    element.href = chrome.runtime.getURL('css/'+path)
+    const element = document.createElement('link')
+    element.href = chrome.runtime.getURL('css/' + path)
     element.rel = 'stylesheet'
     element.type = 'text/css'
-    let node = (document.head || document.documentElement)
+    const node = (document.head || document.documentElement)
     node.appendChild(element)
 }
 
@@ -48,9 +58,9 @@ loadJsOnRoll20('app.js')
 
 $(document).ready(function () {
 
-    
+
     console.log('Roll20-T20 ready')
-    
+
     loadJsOnRoll20('utils.js')
     loadJsOnRoll20('mod-habilities.js')
     loadJsOnRoll20('mod-spells.js')
@@ -58,7 +68,7 @@ $(document).ready(function () {
     loadJsOnRoll20('listeners.js')
     loadJsOnRoll20('api.js')
     loadJsOnRoll20('datatables.min.js')
-    loadJsOnRoll20('diacritics-sort.min.js')
+    loadJsOnRoll20('diacritics-sort.min.js', 5000)
 
     loadData('spells.json')
     loadData('habilities.json')
