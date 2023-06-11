@@ -1,14 +1,8 @@
 'use strict'
 
 T20.api = {
-    getCharacter(characterId) {
-        Campaign.characters.fetch()
-        return Campaign.characters.get(characterId)
-        // c = Campaign.characters.get("-NWQ313nc46cFDYegtk6")
-    },
     getAttrib(characterId, name) {
-        const char = this.getCharacter(characterId)
-        char.attribs.fetch()
+        const char = Campaign.characters.get(characterId)
         const find = char.attribs.models.find((attr) => {
             return attr.attributes.name == name
         })
@@ -29,6 +23,11 @@ T20.api = {
 
     /*
     
+    getCharacter(characterId) {
+        //Campaign.characters.fetch()
+        return Campaign.characters.get(characterId)
+        // c = Campaign.characters.get("-NWQ313nc46cFDYegtk6")
+    },
     setAttribs(characterId, attribs) {
         const char = this.getCharacter(characterId)
         Object.entries(attribs).forEach(([name, current]) => {
