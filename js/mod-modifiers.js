@@ -2,6 +2,7 @@
 
 T20.modules.modifiers = {
     initSheet: ($iframe, characterId) => {
+        console.log('T20.modules.modifiers.initSheet')
         const $modContainer = $(`<div class="sheet-modifiers-container">
             <div class="sheet-inside">
                 <div class="sheet-container-negative-corner">
@@ -89,7 +90,6 @@ T20.modules.modifiers = {
                     margem: $modItem.find('[name="roll20-t20-mod-margem"]').val()
                 })
             })
-            console.log('attribT20ModList', attribT20ModList)
             T20.api.setAttrib(characterId, 't20_mod_list', JSON.stringify(attribT20ModList))
         }
 

@@ -39,9 +39,13 @@ function loadCssOnRoll20(path) {
 }
 
 function loadCssOnRoll20CharSheet(charId) {
-    const iframe = $(`iframe[name="iframe_${charId}"]`).contents()
-    const head = iframe.find('head')
-    head.append($(`<link href="${chrome.runtime.getURL('css/app.css')}" rel="stylesheet">`))
+    const doc = document.querySelector(`iframe[name="iframe_${charId}"]`).contentWindow.document
+    const link = doc.createElement('link')
+    link.href = chrome.runtime.getURL('css/app.css')
+    link.rel = 'stylesheet'
+    link.type = 'text/css'
+    const node = (doc.head || doc.documentElement)
+    node.appendChild(link)
 }
 
 function loadData(path) {
@@ -56,9 +60,7 @@ function loadData(path) {
 console.log('Roll20-T20 init')
 loadJsOnRoll20('app.js')
 
-$(document).ready(function () {
-
-
+document.addEventListener('DOMContentLoaded', function() {
     console.log('Roll20-T20 ready')
 
     loadJsOnRoll20('utils.js')
@@ -79,27 +81,9 @@ $(document).ready(function () {
     loadFontOnRoll20('DanteMTS', 'DanteMTStd-Regular.otf')
     loadFontOnRoll20('Tormenta', 'Tormenta20x.ttf')
 
-    $(window).on('message', ({ originalEvent: { data } }) => {
-        if (data.type === 'loaded') {
-            loadCssOnRoll20CharSheet(data.characterId)
+    window.addEventListener('message', e => {
+        if (e.data.type === 'loaded') {
+            loadCssOnRoll20CharSheet(e.data.characterId)
         }
     })
-
-    /*
-
-    setTimeout(() => window.postMessage({ type: 't20-scripts-loaded' }, '*'), 100)
-
-    // load tormenta20 book rules
-    loadJsOnRoll20('tormenta20_book.js')
-
-    fetch(chrome.runtime.getURL('data/rules.json'))
-        .then((response) => response.json())
-        .then((rules) => {
-            const book = { 'rules': rules, 'icon': chrome.runtime.getURL('images/32.png') }
-            window.postMessage({ type: 'FROM_CONTENT', text: JSON.stringify(book) }, '*')
-        })
-
-
-    */
-
 })
