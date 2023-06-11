@@ -97,8 +97,8 @@ T20.modules.modifiers = {
             const $modItem = $(`<div class="roll20-t20-mod-item sheet-t20-modifiersgrid">
                     <input type="checkbox" name="roll20-t20-mod-ativo" class="roll20-t20-checkbox">
                     <input type="text" name="roll20-t20-mod-nome">
-                    <input type="text" name="roll20-t20-mod-ataque" value="0">
-                    <input type="text" name="roll20-t20-mod-dano" value="0">
+                    <input type="text" name="roll20-t20-mod-ataque" value="">
+                    <input type="text" name="roll20-t20-mod-dano" value="">
                     <input type="text" name="roll20-t20-mod-dado" value="">
                     <input type="text" name="roll20-t20-mod-margem" value="">
                     <button class="btn roll20-t20-btn-remove" title="Remover"></button>
