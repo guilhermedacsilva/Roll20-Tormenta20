@@ -25,7 +25,7 @@ T20.api = {
     getCharacter(characterId) {
         //Campaign.characters.fetch()
         return Campaign.characters.get(characterId)
-        // c = Campaign.characters.get("-NWQ313nc46cFDYegtk6")
+        // char = Campaign.characters.get("-NWQ313nc46cFDYegtk6")
     },
     setAttribs(characterId, attribs) {
         const char = this.getCharacter(characterId)

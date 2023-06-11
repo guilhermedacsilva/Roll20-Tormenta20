@@ -125,7 +125,7 @@
 
 .sheet-t20-modifiersgrid {
     display: grid;
-    grid-template-columns: 24px auto 40px 40px 40px 40px 24px;
+    grid-template-columns: 24px auto 40px 40px 40px 40px 40px 24px;
     column-gap: 7px;
     padding-left: 10px;
     padding-right: 10px;

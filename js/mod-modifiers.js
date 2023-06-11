@@ -15,6 +15,7 @@ T20.modules.modifiers = {
                             <div class="sheet-small-title">Dano Extra</div>
                             <div class="sheet-small-title">Dados Extras</div>
                             <div class="sheet-small-title">Bônus de Ameaça</div>
+                            <div class="sheet-small-title">Bônus de Mult.</div>
                             <div class="sheet-small-title"></div>
                         </div>
 
@@ -49,6 +50,7 @@ T20.modules.modifiers = {
                         <input type="text" name="roll20-t20-mod-dano" value="${attriMod.dano}">
                         <input type="text" name="roll20-t20-mod-dado" value="${attriMod.dado}">
                         <input type="text" name="roll20-t20-mod-margem" value="${attriMod.margem}">
+                        <input type="text" name="roll20-t20-mod-mult" value="${attriMod.mult}">
                         <button class="btn roll20-t20-btn-remove" title="Remover"></button>
                     </div>`)
                     $modItem.find('[name="roll20-t20-mod-ativo"]')
@@ -87,7 +89,8 @@ T20.modules.modifiers = {
                     ataque: $modItem.find('[name="roll20-t20-mod-ataque"]').val(),
                     dano: $modItem.find('[name="roll20-t20-mod-dano"]').val(),
                     dado: $modItem.find('[name="roll20-t20-mod-dado"]').val(),
-                    margem: $modItem.find('[name="roll20-t20-mod-margem"]').val()
+                    margem: $modItem.find('[name="roll20-t20-mod-margem"]').val(),
+                    mult: $modItem.find('[name="roll20-t20-mod-mult"]').val()
                 })
             })
             T20.api.setAttrib(characterId, 't20_mod_list', JSON.stringify(attribT20ModList))
@@ -101,6 +104,7 @@ T20.modules.modifiers = {
                     <input type="text" name="roll20-t20-mod-dano">
                     <input type="text" name="roll20-t20-mod-dado">
                     <input type="text" name="roll20-t20-mod-margem">
+                    <input type="text" name="roll20-t20-mod-mult">
                     <button class="btn roll20-t20-btn-remove" title="Remover"></button>
                 </div>`)
             $modItem.find('[name="roll20-t20-mod-ativo"]').on('change', applyModsAndSave);
@@ -117,6 +121,7 @@ T20.modules.modifiers = {
             let attack = 0
             let dano = 0
             let margem = 0
+            let multTotal = 0
             const dados = []
             $modItens.find('.roll20-t20-mod-item').each(function () {
                 const $mod = $(this)
@@ -143,6 +148,10 @@ T20.modules.modifiers = {
                     if (modCrit.length > 0) {
                         margem += parseInt(modCrit)
                     }
+                    const modMult = $mod.find('[name="roll20-t20-mod-mult"]').val()
+                    if (modMult.length > 0) {
+                        multTotal += parseInt(modMult)
+                    }
                 }
             })
             // quando o parseInt falha, dá NaN, avisar com css de erro
@@ -154,14 +163,17 @@ T20.modules.modifiers = {
 
             $iframe.find('.sheet-attacks-container .repitem').each(function () {
                 const $attackElement = $(this)
+
                 let margemFinal = parseInt($attackElement.find('[name="attr_margemcriticoataque"]').val())
                 margemFinal -= margem
+
                 const critico = $attackElement.find('[name="attr_tipocritico"]').val()
                 let lancinante = 0
                 if (critico == 'lancinante') {
                     lancinante = dano
                     // se o cara muda o tipo de crítico para lancinante, ele precisa desligar e ligar o modificador para rodar este código.
                 }
+
                 let descricao = nomes.filter(x => x).join(', ')
                 if (descricao.length > 0) {
                     descricao = `*Já incluso: ${descricao}*`
@@ -170,11 +182,20 @@ T20.modules.modifiers = {
                         descricao = '%NEWLINE%' + descricao
                     }
                 }
-                $attackElement.find('[name="roll_attack"]').val(`&{template:t20-attack}{{character=@{character_name}}}{{attackname=@{nomeataque}}}{{attackroll=[[${attack}+1d20cs>${margemFinal}+[[@{ataquepericia}]]+@{bonusataque}+@{ataquetemp}]]}} {{damageroll=[[${dado}${dano}+@{danoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}+@{danotemp}+@{rolltemp}]]}} {{criticaldamageroll=[[${dado}${dano}+${lancinante}+@{danocriticoataque}+@{dadoextraataque}+@{modatributodano}+@{danoextraataque}]]}}{{typeofdamage=@{ataquetipodedano}}}{{description=@{ataquedescricao}${descricao}}}`)
 
-                $attackElement.find('[name="roll_attack_best"]').val(`&{template:t20-attack}{{character=@{character_name}}}{{attackname=@{nomeataque}}}{{attackroll=[[${attack}+2d20kh1cs>${margemFinal}+[[@{ataquepericia}]]+@{bonusataque}+@{ataquetemp}]]}} {{damageroll=[[${dado}${dano}+@{danoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}+@{danotemp}+@{rolltemp}]]}} {{criticaldamageroll=[[${dado}${dano}+${lancinante}+@{danocriticoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}]]}}{{typeofdamage=@{ataquetipodedano}}}{{description=@{ataquedescricao}${descricao}}}`)
+                let mult = ''
+                if (multTotal > 0) {
+                    const dadoBase = $attackElement.find('[name="attr_danoataque"]').val()
+                    for (let i = 0; i < multTotal; i++) {
+                        mult = mult + dadoBase + ' + ';
+                    }
+                }
 
-                $attackElement.find('[name="roll_attack_worst"]').val(`&{template:t20-attack}{{character=@{character_name}}}{{attackname=@{nomeataque}}}{{attackroll=[[${attack}+2d20kl1cs>${margemFinal}+[[@{ataquepericia}]]+@{bonusataque}+@{ataquetemp}]]}} {{damageroll=[[${dado}${dano}+@{danoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}+@{danotemp}+@{rolltemp}]]}} {{criticaldamageroll=[[${dado}${dano}+${lancinante}+@{danocriticoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}]]}}{{typeofdamage=@{ataquetipodedano}}}{{description=@{ataquedescricao}${descricao}}}`)
+                $attackElement.find('[name="roll_attack"]').val(`&{template:t20-attack}{{character=@{character_name}}}{{attackname=@{nomeataque}}}{{attackroll=[[${attack}+1d20cs>${margemFinal}+[[@{ataquepericia}]]+@{bonusataque}+@{ataquetemp}]]}} {{damageroll=[[${dado}${dano}+@{danoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}+@{danotemp}+@{rolltemp}]]}} {{criticaldamageroll=[[${dado}${dano}+${lancinante}+${mult}@{danocriticoataque}+@{dadoextraataque}+@{modatributodano}+@{danoextraataque}]]}}{{typeofdamage=@{ataquetipodedano}}}{{description=@{ataquedescricao}${descricao}}}`)
+
+                $attackElement.find('[name="roll_attack_best"]').val(`&{template:t20-attack}{{character=@{character_name}}}{{attackname=@{nomeataque}}}{{attackroll=[[${attack}+2d20kh1cs>${margemFinal}+[[@{ataquepericia}]]+@{bonusataque}+@{ataquetemp}]]}} {{damageroll=[[${dado}${dano}+@{danoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}+@{danotemp}+@{rolltemp}]]}} {{criticaldamageroll=[[${dado}${dano}+${lancinante}+${mult}@{danocriticoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}]]}}{{typeofdamage=@{ataquetipodedano}}}{{description=@{ataquedescricao}${descricao}}}`)
+
+                $attackElement.find('[name="roll_attack_worst"]').val(`&{template:t20-attack}{{character=@{character_name}}}{{attackname=@{nomeataque}}}{{attackroll=[[${attack}+2d20kl1cs>${margemFinal}+[[@{ataquepericia}]]+@{bonusataque}+@{ataquetemp}]]}} {{damageroll=[[${dado}${dano}+@{danoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}+@{danotemp}+@{rolltemp}]]}} {{criticaldamageroll=[[${dado}${dano}+${lancinante}+${mult}@{danocriticoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}]]}}{{typeofdamage=@{ataquetipodedano}}}{{description=@{ataquedescricao}${descricao}}}`)
 
             })
         }
