@@ -48,7 +48,7 @@ T20.modules.modifiers = {
                         <input type="text" name="roll20-t20-mod-dano" value="${attriMod.dano}">
                         <input type="text" name="roll20-t20-mod-dado" value="${attriMod.dado}">
                         <input type="text" name="roll20-t20-mod-margem" value="${attriMod.margem}">
-                        
+                        <button class="btn roll20-t20-btn-remove" style="margin: 0!important" title="Remover"></button>
                     </div>`)
                     $modItem.find('[name="roll20-t20-mod-ativo"]')
                         .prop('checked', attriMod.ativo)
