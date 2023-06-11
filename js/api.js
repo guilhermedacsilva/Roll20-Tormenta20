@@ -9,8 +9,7 @@ T20.api = {
         return find ? find.attributes.current : null
     },
     setAttrib(characterId, name, current) {
-        const char = this.getCharacter(characterId)
-        char.attribs.fetch()
+        const char = Campaign.characters.get(characterId)
         const find = char.attribs.models.find((attr) => {
             return attr.attributes.name == name
         })
