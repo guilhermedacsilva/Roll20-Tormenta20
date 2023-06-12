@@ -170,8 +170,9 @@ T20.modules.modifiers = {
                 const critico = $attackElement.find('[name="attr_tipocritico"]').val()
                 let lancinante = 0
                 if (critico == 'lancinante') {
-                    lancinante = dano
-                    // se o cara muda o tipo de crítico para lancinante, ele precisa desligar e ligar o modificador para rodar este código.
+                    let multAtual = $attackElement.find('[name="attr_multiplicadorcriticoataque"]').val()
+                    multAtual = parseInt(multAtual) + multTotal - 1
+                    lancinante = dano * multAtual
                 }
 
                 let descricao = nomes.filter(x => x).join(', ')
@@ -179,7 +180,7 @@ T20.modules.modifiers = {
                     descricao = `*Já incluso: ${descricao}*`
                     const ataqueDesc = $attackElement.find('[name="attr_ataquedescricao"]').val()
                     if (ataqueDesc.length > 0) {
-                        descricao = '%NEWLINE%' + descricao
+                        descricao = '%NEWLINE%%NEWLINE%' + descricao
                     }
                 }
 
