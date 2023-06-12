@@ -8,6 +8,7 @@ window.addEventListener('message', async ({ data }) => {
         // when user opens a character sheet
         const characterId = data.characterId
         const $iframe = $(`iframe[name="iframe_${characterId}"]`).contents()
+        // $iframe = $(`iframe[name="iframe_-NWQ313nc46cFDYegtk6"]`).contents()
         Object.entries(T20.modules).map(async ([key, module]) => {
             await checkTimeout(() => $iframe.find('.sheet-logo-tormenta').length)
             module.initSheet($iframe, characterId)

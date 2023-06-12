@@ -37,8 +37,43 @@ T20.modules.modifiers = {
         </div>`)
 
         const $modItens = $modContainer.find('.roll20-t20-mod-itens')
+        const $modGlobalRoll = $iframe.find('[name="attr_rolltemp"]')
+        const $modGlobalDamage = $iframe.find('[name="attr_danotemp"]')
 
         function loadModListHtml() {
+            $modGlobalRoll.on('change blur', () => { setTimeout(applyMods, 200) })
+            $modGlobalDamage.on('change blur', () => { setTimeout(applyMods, 200) })
+            const $repContainer = $iframe.find('.sheet-attacks-container .repcontainer')
+            $repContainer.find('input[type="text"]')
+                .on('blur', applyMods)
+            $repContainer.find('input[name="attr_danoataque"]')
+                .on('change keyup clear', applyMods)
+            $repContainer.find('input[name="attr_danoextraataque"]')
+                .on('change keyup clear', applyMods)
+            $repContainer.find('input[name="attr_margemcriticoataque"]')
+                .on('change keyup clear', applyMods)
+            $repContainer.find('input[name="attr_multiplicadorcriticoataque"]')
+                .on('change keyup clear', applyMods)
+            $repContainer.find('select').on('change', applyMods)
+            $iframe.find('button[name="act_eraseglobal"]')
+                .on('click', () => { setTimeout(applyMods, 1000) })
+            $iframe.find('.sheet-attacks-container .repcontrol_add')
+                .on('click', () => {
+                    setTimeout(() => {
+                        const $newAttack = $iframe.find('.sheet-attacks-container .repitem:last-child')
+                        $newAttack.find('input[type="text"]').on('blur', applyMods)
+                        $newAttack.find('input[name="attr_danoataque"]')
+                            .on('change keyup clear', applyMods)
+                        $newAttack.find('input[name="attr_danoextraataque"]')
+                            .on('change keyup clear', applyMods)
+                        $newAttack.find('input[name="attr_margemcriticoataque"]')
+                            .on('change keyup clear', applyMods)
+                        $newAttack.find('input[name="attr_multiplicadorcriticoataque"]')
+                            .on('change keyup clear', applyMods)
+                        $newAttack.find('select').on('change', applyMods)
+                    }, 600);
+                })
+
             let attribT20ModList = T20.api.getAttrib(characterId, 't20_mod_list')
             if (attribT20ModList) {
                 attribT20ModList = JSON.parse(attribT20ModList)
@@ -117,9 +152,10 @@ T20.modules.modifiers = {
         }
 
         function applyMods() {
+            console.log('T20 applyMods')
             const nomes = []
             let attack = 0
-            let dano = 0
+            let danoTotal = 0
             let margem = 0
             let multTotal = 0
             const dados = []
@@ -138,7 +174,7 @@ T20.modules.modifiers = {
                     }
                     const modDamage = $mod.find('[name="roll20-t20-mod-dano"]').val()
                     if (modDamage.length > 0) {
-                        dano += parseInt(modDamage)
+                        danoTotal += parseInt(modDamage)
                     }
                     const modDice = $mod.find('[name="roll20-t20-mod-dado"]').val()
                     if (modDice.length > 0) {
@@ -168,11 +204,33 @@ T20.modules.modifiers = {
                 margemFinal -= margem
 
                 const critico = $attackElement.find('[name="attr_tipocritico"]').val()
-                let lancinante = 0
+                let lancinante = ''
                 if (critico == 'lancinante') {
+                    // inclui todos os danos de buffs
                     let multAtual = $attackElement.find('[name="attr_multiplicadorcriticoataque"]').val()
                     multAtual = parseInt(multAtual) + multTotal - 1
-                    lancinante = dano * multAtual
+                    lancinante = String(danoTotal * multAtual) + '+'
+
+                    // inclui os danos da força para atacar
+                    const attribDamageSelected = $attackElement
+                        .find('[name="attr_modatributodano"]')
+                        .val()
+                    // inclui o dano extra cadastrado no ataque
+                    const attackExtraDamage = $attackElement
+                        .find('[name="attr_danoextraataque"]')
+                        .val()
+                    // inclui modificador global Rolagem
+                    const modGlobalRoll = $modGlobalRoll.val()
+                    // inclui modificador global Dano
+                    const modGlobalDamage = $modGlobalDamage.val()
+                    for (let i = 0; i < multTotal; i++) {
+                        lancinante += attribDamageSelected + '+'
+                            + attackExtraDamage + '+'
+                            + modGlobalRoll + '+'
+                            + modGlobalDamage + '+'
+                    }
+
+                    lancinante = '(' + lancinante.slice(0, -1) + ')+'
                 }
 
                 let descricao = nomes.filter(x => x).join(', ')
@@ -192,11 +250,11 @@ T20.modules.modifiers = {
                     }
                 }
 
-                $attackElement.find('[name="roll_attack"]').val(`&{template:t20-attack}{{character=@{character_name}}}{{attackname=@{nomeataque}}}{{attackroll=[[${attack}+1d20cs>${margemFinal}+[[@{ataquepericia}]]+@{bonusataque}+@{ataquetemp}]]}} {{damageroll=[[${dado}${dano}+@{danoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}+@{danotemp}+@{rolltemp}]]}} {{criticaldamageroll=[[${dado}${dano}+${lancinante}+${mult}@{danocriticoataque}+@{dadoextraataque}+@{modatributodano}+@{danoextraataque}]]}}{{typeofdamage=@{ataquetipodedano}}}{{description=@{ataquedescricao}${descricao}}}`)
+                $attackElement.find('[name="roll_attack"]').val(`&{template:t20-attack}{{character=@{character_name}}}{{attackname=@{nomeataque}}}{{attackroll=[[${attack}+1d20cs>${margemFinal}+[[@{ataquepericia}]]+@{bonusataque}+@{ataquetemp}]]}} {{damageroll=[[${dado}${danoTotal}+@{danoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}+@{danotemp}+@{rolltemp}]]}} {{criticaldamageroll=[[${dado}${danoTotal}+${lancinante}${mult}@{danocriticoataque}+@{dadoextraataque}+@{modatributodano}+@{danoextraataque}]]}}{{typeofdamage=@{ataquetipodedano}}}{{description=@{ataquedescricao}${descricao}}}`)
 
-                $attackElement.find('[name="roll_attack_best"]').val(`&{template:t20-attack}{{character=@{character_name}}}{{attackname=@{nomeataque}}}{{attackroll=[[${attack}+2d20kh1cs>${margemFinal}+[[@{ataquepericia}]]+@{bonusataque}+@{ataquetemp}]]}} {{damageroll=[[${dado}${dano}+@{danoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}+@{danotemp}+@{rolltemp}]]}} {{criticaldamageroll=[[${dado}${dano}+${lancinante}+${mult}@{danocriticoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}]]}}{{typeofdamage=@{ataquetipodedano}}}{{description=@{ataquedescricao}${descricao}}}`)
+                $attackElement.find('[name="roll_attack_best"]').val(`&{template:t20-attack}{{character=@{character_name}}}{{attackname=@{nomeataque}}}{{attackroll=[[${attack}+2d20kh1cs>${margemFinal}+[[@{ataquepericia}]]+@{bonusataque}+@{ataquetemp}]]}} {{damageroll=[[${dado}${danoTotal}+@{danoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}+@{danotemp}+@{rolltemp}]]}} {{criticaldamageroll=[[${dado}${danoTotal}+${lancinante}${mult}@{danocriticoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}]]}}{{typeofdamage=@{ataquetipodedano}}}{{description=@{ataquedescricao}${descricao}}}`)
 
-                $attackElement.find('[name="roll_attack_worst"]').val(`&{template:t20-attack}{{character=@{character_name}}}{{attackname=@{nomeataque}}}{{attackroll=[[${attack}+2d20kl1cs>${margemFinal}+[[@{ataquepericia}]]+@{bonusataque}+@{ataquetemp}]]}} {{damageroll=[[${dado}${dano}+@{danoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}+@{danotemp}+@{rolltemp}]]}} {{criticaldamageroll=[[${dado}${dano}+${lancinante}+${mult}@{danocriticoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}]]}}{{typeofdamage=@{ataquetipodedano}}}{{description=@{ataquedescricao}${descricao}}}`)
+                $attackElement.find('[name="roll_attack_worst"]').val(`&{template:t20-attack}{{character=@{character_name}}}{{attackname=@{nomeataque}}}{{attackroll=[[${attack}+2d20kl1cs>${margemFinal}+[[@{ataquepericia}]]+@{bonusataque}+@{ataquetemp}]]}} {{damageroll=[[${dado}${danoTotal}+@{danoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}+@{danotemp}+@{rolltemp}]]}} {{criticaldamageroll=[[${dado}${danoTotal}+${lancinante}${mult}@{danocriticoataque}+@{modatributodano}+@{danoextraataque}+@{dadoextraataque}]]}}{{typeofdamage=@{ataquetipodedano}}}{{description=@{ataquedescricao}${descricao}}}`)
 
             })
         }
@@ -214,14 +272,14 @@ T20.modules.modifiers = {
         <p>Os buffs podem conter valores positivos ou negativos.</p>
         <p>O campo Dados Extras é o único que aceita dados. Exemplo: 1d6.</p>
         <p>Para os buffs funcionarem, basta rolar o ataque normalmente. Também funciona com Melhor Dado e Pior Dado.</p>
-        <p>Depois de alterar um <u>buff</u>, você não precisa fazer nada. Ele funciona automaticamente.</p>
-        <p style="font-weight:bold">Atenção! <u>Sempre</u> que você alterar um <u>ataque</u>, você deve recarregar os buffs. Você pode fazer isso clicando no botão de recarregar <span class="roll20-t20-btn-refresh-text">1</span>.</p>
+        <p>O cálculo dos bônus numéricos do crítico lancinante considera os seguintes campos: o Atributo no Dano do ataque (ex: Força), o Dano Extra do ataque, o Modificador Global de Rolagem, o Modificador Global de Dano e o Dano Extra dos buffs.</p>
+        <p>Caso você encontre algum erro na soma dos buffs, clique no botão de recarregar <span class="roll20-t20-btn-refresh-text">1</span>. Se tudo der errado, feche e abra a ficha. Se nada der certo, só lamento.</p>
         </div>`)
         dialog.dialog({
             title: 'Ajuda da Seção Buffs',
             autoOpen: true,
-            height: 310,
-            width: 515,
+            height: 360,
+            width: 505,
             close: () => dialog.remove(),
         })
     }
