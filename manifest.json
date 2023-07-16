@@ -1,7 +1,7 @@
 {
   "name": "T20++ (JdA)",
   "description": "T20++ (JdA)",
-  "version": "2.6",
+  "version": "2.7",
   "manifest_version": 3,
   "permissions": ["storage", "activeTab", "scripting"],
   "content_scripts": [
@@ -21,7 +21,8 @@
         "js/*",
         "css/*",
         "data/*",
-        "font/*"
+        "font/*",
+        "images/*"
       ],
       "matches": [
         "<all_urls>"

@@ -17,6 +17,7 @@ T20.modules.modifiers = {
                             <div class="sheet-small-title">Bônus de Ameaça</div>
                             <div class="sheet-small-title">Bônus de Mult.</div>
                             <div class="sheet-small-title"></div>
+                            <div class="sheet-small-title"></div>
                         </div>
 
                         <div class="roll20-t20-mod-itens"></div>
@@ -78,7 +79,7 @@ T20.modules.modifiers = {
             if (attribT20ModList) {
                 attribT20ModList = JSON.parse(attribT20ModList)
                 attribT20ModList.forEach(attriMod => {
-                    const $modItem = $(`<div class="roll20-t20-mod-item sheet-t20-modifiersgrid">
+                    const $modItem = $(`<div draggable="true" class="roll20-t20-mod-item sheet-t20-modifiersgrid" >
                         <input type="checkbox" name="roll20-t20-mod-ativo" class="roll20-t20-checkbox">
                         <input type="text" name="roll20-t20-mod-nome" value="${attriMod.nome}">
                         <input type="text" name="roll20-t20-mod-ataque" value="${attriMod.ataque}">
@@ -87,7 +88,12 @@ T20.modules.modifiers = {
                         <input type="text" name="roll20-t20-mod-margem" value="${attriMod.margem}">
                         <input type="text" name="roll20-t20-mod-mult" value="${attriMod.mult}">
                         <button class="btn roll20-t20-btn-remove" title="Remover"></button>
+                        <button class="btn roll20-t20-btn-move" title="Mover"></button>
                     </div>`)
+                    $modItem.on('dragstart', onDragStart);
+                    $modItem.on('dragenter', onDragEnter);
+                    $modItem.on('dragover', onDragOver);
+                    $modItem.on('dragend', onDragEnd);
                     $modItem.find('[name="roll20-t20-mod-ativo"]')
                         .prop('checked', attriMod.ativo)
                         .on('change', applyModsAndSave);
@@ -102,6 +108,45 @@ T20.modules.modifiers = {
                     applyMods()
                 }
             }
+        }
+
+        let $currentDraggingItem
+        let currentIndex = 0
+        function recalculateDataOrder() {
+            $modItens.find('.roll20-t20-mod-item').each(function (i) {
+                const $mod = $(this)
+                $mod.prop('data-order', i)
+                if ($currentDraggingItem.get(0) == this) {
+                    currentIndex = i
+                }
+            })
+        }
+
+        function onDragStart(e) {
+            $currentDraggingItem = $(e.target).css('background', '#d4f0f7')
+            recalculateDataOrder()
+        }
+
+        function onDragEnter(e) {
+            const $target = $(e.target)
+            const targetIndex = $target.prop('data-order')
+            if (currentIndex < targetIndex) {
+                $currentDraggingItem.insertAfter($target)
+                recalculateDataOrder()
+            } else if (currentIndex > targetIndex) {
+                $currentDraggingItem.insertBefore($target)
+                recalculateDataOrder()
+            }
+        }
+
+        function onDragOver(e) {
+            e.preventDefault();
+        }
+
+        function onDragEnd(e) {
+            e.preventDefault();
+            $currentDraggingItem.css('background', '')
+            saveModAttribs()
         }
 
         function removeMod() {
@@ -132,7 +177,7 @@ T20.modules.modifiers = {
         }
 
         function addMod() {
-            const $modItem = $(`<div class="roll20-t20-mod-item sheet-t20-modifiersgrid">
+            const $modItem = $(`<div draggable="true" class="roll20-t20-mod-item sheet-t20-modifiersgrid">
                     <input type="checkbox" name="roll20-t20-mod-ativo" class="roll20-t20-checkbox">
                     <input type="text" name="roll20-t20-mod-nome">
                     <input type="text" name="roll20-t20-mod-ataque">
@@ -141,7 +186,12 @@ T20.modules.modifiers = {
                     <input type="text" name="roll20-t20-mod-margem">
                     <input type="text" name="roll20-t20-mod-mult">
                     <button class="btn roll20-t20-btn-remove" title="Remover"></button>
+                    <button class="btn roll20-t20-btn-move" title="Mover"></button>
                 </div>`)
+            $modItem.on('dragstart', onDragStart);
+            $modItem.on('dragenter', onDragEnter);
+            $modItem.on('dragover', onDragOver);
+            $modItem.on('dragend', onDragEnd);
             $modItem.find('[name="roll20-t20-mod-ativo"]').on('change', applyModsAndSave);
             $modItem.find('input[type="text"]')
                 .on('keyup change clear', applyMods)

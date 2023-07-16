@@ -125,7 +125,7 @@
 
 .sheet-t20-modifiersgrid {
     display: grid;
-    grid-template-columns: 24px auto 40px 40px 40px 40px 40px 24px;
+    grid-template-columns: 24px auto 40px 40px 40px 40px 40px 24px 24px;
     column-gap: 7px;
     padding-left: 10px;
     padding-right: 10px;
@@ -146,6 +146,7 @@
     line-height: 24px;
     border: 0;
     border-bottom: 2px solid black;
+    background: none;
 }
 
 .roll20-t20-checkbox {
@@ -154,7 +155,7 @@
 }
 
 .roll20-t20-mod-footer {
-    padding: 2px 10px 10px;
+    padding: 5px 12px 10px 10px;
     display: flex;
     gap: 15px;
 }
@@ -236,4 +237,39 @@
     font-weight: normal;
     position: relative;
     top: -2px;
+}
+
+.roll20-t20-btn-move{
+    background-color: #0e0e0e;
+    font-size: 2px;
+    border: none;
+    background-image: none;
+    text-shadow: none;
+    box-shadow: none;
+    border-radius: 0;
+    height: 22px;
+    width: 22px;
+    position: relative;
+    cursor: n-resize;
+}
+
+.roll20-t20-btn-move:hover {
+    background-color: #0e0e0e;
+}
+
+.roll20-t20-btn-move::before {
+    position: absolute;
+    content: ";";
+    font-weight: 0;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-family: 'Pictos' !important;
+    line-height: 12px;
+    height: 13px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
