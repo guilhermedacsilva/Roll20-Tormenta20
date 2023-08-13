@@ -1,9 +1,8 @@
 {
   "name": "T20++ (JdA)",
   "description": "T20++ (JdA)",
-  "version": "2.7",
+  "version": "2.8",
   "manifest_version": 3,
-  "permissions": ["storage", "activeTab", "scripting"],
   "content_scripts": [
     {
       "matches": [
