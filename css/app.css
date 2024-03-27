@@ -273,3 +273,7 @@
     top: 50%;
     transform: translate(-50%, -50%);
 }
+
+.roll20-t20-text-blue {
+    color: blue!important;
+}

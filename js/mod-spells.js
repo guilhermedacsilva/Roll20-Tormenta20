@@ -1,13 +1,45 @@
 'use strict'
 
 T20.modules.spells = {
+    sustainBlue: false,
+
     initSheet: ($iframe, characterId) => {
         const openDialog = function () {
             T20.modules.spells.showDialogSpells($iframe)
         }
+        const colorSustain = function() {
+            T20.modules.spells.colorSustainSpells($iframe)
+        }
         $iframe.find('.sheet-spells')
             .find('.repcontrol_add')
             .after($('<button class="btn repcontrol_more">T20</button>').click(openDialog))
+        
+        $iframe.find('.sheet-spells')
+                .find('.repcontrol_add')
+                .after($('<button class="btn repcontrol_more">S</button>').click(colorSustain))
+    },
+
+    colorSustainSpells($iframe) {
+        T20.modules.spells.sustainBlue = !T20.modules.spells.sustainBlue
+        if (T20.modules.spells.sustainBlue) {
+            $iframe.find('.sheet-spells').find('.repitem').each(function() {
+                const $spellDiv = $(this)
+                const $spellName = $spellDiv.find('[name="attr_namespell"]')
+                const duration = $spellDiv.find('[name="attr_spellduracao"]').val()
+                if (/Sustentada/i.test(duration)) {
+                    $spellName.addClass('roll20-t20-text-blue')
+                } else {
+                    $spellName.removeClass('roll20-t20-text-blue')
+                }
+            })
+        
+        } else {
+            $iframe.find('.sheet-spells').find('.repitem').each(function() {
+                const $spellDiv = $(this)
+                const $spellName = $spellDiv.find('[name="attr_namespell"]')
+                $spellName.removeClass('roll20-t20-text-blue')
+            })
+        }
     },
 
     fichaInserirMagia(magia, $iframe) {
